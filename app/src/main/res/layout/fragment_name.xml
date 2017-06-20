@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backblue"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PersonalityFragment">
+    <RelativeLayout
+        android:id="@+id/relativelayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/heximage"
+        android:padding="10dp"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/Backbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/playlifebutton"
+            android:background="@drawable/buttonstyle"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:text="@string/back"
+            android:onClick="toselectcity"/>
+
+        <Button
+            android:id="@+id/playlifebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/buttonstyle"
+            android:textColor="@color/white"
+            android:text="@string/play_life" />
+
+
+        <ScrollView
+            android:id="@+id/scrollview_choices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:layout_below="@id/selectacity"
+            android:layout_above="@id/Backbutton"
+            >
+
+            <RadioGroup
+                android:id="@+id/choices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                >
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="20dp"
+                    android:buttonTint="@color/white"
+                    android:text="RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:buttonTint="@color/white"
+                    android:text="RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="20dp"
+                    android:buttonTint="@color/white"
+                    android:text="RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:text="RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:text="RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:text="RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:padding="20dp"
+                    android:text="RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:text="RadioButton" />
+                <RadioButton
+                    android:id="@+id/radioButton9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:text="RadioButton" />
+            </RadioGroup>
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

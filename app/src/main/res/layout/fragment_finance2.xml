@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/backblue"
+    android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/heximage">
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_below="@id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/totalLoaned_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="TOTAL LOANED AMOUNT"/>
+
+
+        <TextView
+            android:id="@+id/totalLoaned_value"
+            android:layout_below="@id/totalLoaned_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="1234 INR"/>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@id/rl1"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="2dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_below="@id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/totalInvested_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="TOTAL INVESTED AMOUNT"/>
+
+
+        <TextView
+            android:id="@+id/totalInvested_value"
+            android:layout_below="@id/totalInvested_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="1234 INR"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_below="@id/rl2"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="2dp" />
+
+    <LinearLayout
+        android:id="@+id/LL_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@id/rl2"
+        >
+
+        <Button
+            android:id="@+id/geta_loan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonstyle"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+           android:layout_weight="1"
+            android:text="GET A LOAN"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/buttonstyle"
+            android:textColor="@color/white"
+            android:text="INVEST MONEY"/>
+    </LinearLayout>
+    <View
+        android:layout_below="@id/LL_buttons"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="2dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/status1"
+        android:layout_width="match_parent"
+        android:background="@drawable/layout_bg"
+        android:layout_below="@id/LL_buttons"
+        android:layout_height="230dp"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backblue"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/p1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:text="LOAN"/>
+
+            <TextView
+                android:id="@+id/p1.2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:text="Current"/>
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@id/rel1"
+            android:background="@android:color/holo_orange_dark" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_below="@id/rel1"
+            >
+            <TextView
+                android:id="@+id/statusinfo1_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:text="Family Loan"/>
+
+            <TextView
+                android:id="@+id/maininfo1_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:layout_below="@id/statusinfo1_title"
+                android:textColor="@color/black"
+                android:text="@string/loan_info"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/maininfo1_subtitle"
+                android:layout_margin="10dp">
+            <TextView
+                android:id="@+id/enter_amount"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="15dp"
+                android:text="Enter Amount"/>
+            <Button
+                android:id="@+id/WO"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="PAY OFF"
+                android:background="@drawable/buttonstyle"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@id/enter_amount"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/status2"
+        android:layout_width="match_parent"
+        android:background="@drawable/layout_bg"
+        android:layout_below="@id/status1"
+        android:layout_height="230dp"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:id="@+id/rel2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backblue"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/p2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:text="INVESTMENT"/>
+
+            <TextView
+                android:id="@+id/p2.2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:text="Current"/>
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@id/rel2"
+            android:background="@android:color/holo_green_dark" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_below="@id/rel2"
+            >
+            <TextView
+                android:id="@+id/statusinfo2_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:text="Bank Account"/>
+
+            <TextView
+                android:id="@+id/maininfo2_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:layout_below="@id/statusinfo2_title"
+                android:textColor="@color/black"
+                android:text="@string/invest_info"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/maininfo2_subtitle"
+                android:layout_margin="10dp">
+                <TextView
+                    android:id="@+id/enter_amount2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:padding="15dp"
+                    android:text="Enter Amount"/>
+                <Button
+                    android:id="@+id/WO1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="WITHDRAW"
+                    android:background="@drawable/buttonstyle"
+                    android:textColor="@color/white"
+                    android:layout_toRightOf="@id/enter_amount"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/status3"
+            android:layout_width="match_parent"
+            android:layout_below="@id/status2"
+            android:layout_height="150dp"
+            android:layout_margin="20dp">
+
+            <RelativeLayout
+                android:id="@+id/rel3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backblue"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/p3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="LOAN"/>
+
+                <TextView
+                    android:id="@+id/p2.3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    android:text="Age 19 to 23"/>
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@id/rel3"
+                android:background="@android:color/holo_orange_light" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_below="@id/rel3"
+                >
+                <TextView
+                    android:id="@+id/statusinfo3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:text="FAMILY LOAN"/>
+
+                <TextView
+                    android:id="@+id/maininfo3_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
+                    android:layout_below="@id/statusinfo3_title"
+                    android:textColor="@color/white"
+                    android:text="@string/history_loan_info"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/status4"
+            android:layout_width="match_parent"
+            android:layout_below="@id/status3"
+            android:layout_height="150dp"
+            android:layout_margin="20dp">
+
+            <RelativeLayout
+                android:id="@+id/rel4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backblue"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/p4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="INVESTMENT"/>
+
+                <TextView
+                    android:id="@+id/p2.4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    android:text="Age 19 to 23"/>
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@id/rel4"
+                android:background="@android:color/holo_orange_light" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_below="@id/rel4"
+                >
+                <TextView
+                    android:id="@+id/statusinfo4_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:text="BANK ACCOUNT"/>
+
+                <TextView
+                    android:id="@+id/maininfo4_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
+                    android:layout_below="@id/statusinfo4_title"
+                    android:textColor="@color/white"
+                    android:text="@string/history_invest_info"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+
+
+
+
+    </RelativeLayout>
+</ScrollView>
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_bgnocorners">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="38dp"
+        android:text="You've met a girl named Abida Parvej Sajjad whom you are attracted to. Would you like get involved romantically?"
+        android:textColor="#000000"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="A romantic relationship can cause happiness or sadness.
+Many people would consider their livesincomplete without a romantic relationship. Romantic relationships take away from the time available for other activities.
+"
+        android:textSize="15dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Iformation about Abeda Parvej Sajjad"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/info"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="2dp"
+        android:text="Occupation: domestic chores . Age:13
+Health:100 . Happiness:45 . Intelligece:31
+Artistic:30 . Musical:46 . Athletic:27
+Strength:63 . Endurance:56 . Conscience:14
+Wisdom:6" />
+
+    <Button
+        android:id="@+id/no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/info"
+        android:layout_alignRight="@+id/info"
+        android:layout_below="@+id/textView5"
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginTop="38dp"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonstyle"
+        android:text="No" />
+
+    <Button
+        android:id="@+id/yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/no"
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/white"
+        android:text="yes" />
+
+
+</RelativeLayout>

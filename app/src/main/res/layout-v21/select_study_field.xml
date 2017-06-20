@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/layout_bgnocorners">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select a field of study for college"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:id="@+id/relative_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/parents_dialog_moveout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Confirm"
+            android:backgroundTint="@color/colorRadioButton"
+            android:textColor="#ffffff"
+            android:layout_alignParentRight="true" />
+
+        <Button
+            android:id="@+id/parents_dialog_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_toLeftOf="@id/parents_dialog_moveout"
+            android:padding="0dp"
+            android:text="Cancel"
+            android:backgroundTint="@color/colorRadioButton"
+            android:textColor="#ffffff"
+            android:layout_marginRight="16dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:scrollbarThumbVertical="@color/colorRadioButton"
+        android:scrollbarSize="6dp"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="16dp"
+        android:layout_above="@id/relative_buttons">
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/afghanistan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:textColor="#000000"
+                android:paddingLeft="8dp"
+                android:text="@string/select_country_afghanistan"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/albania"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:textColor="#000000"
+                android:text="@string/select_country_albania"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/algeria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:textColor="#000000"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:text="@string/select_country_algeria"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/andorra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000"
+                android:buttonTint="@color/colorRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:text="@string/select_country_andorra"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/angolla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:textColor="#000000"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:text="@string/select_country_angolla"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/antigua_and_barbuda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:textColor="#000000"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:text="@string/select_country_antigua_and_barbuda"
+                android:textSize="18sp" />
+            <RadioButton
+                android:id="@+id/argentina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:textColor="#000000"
+                android:paddingLeft="8dp"
+                android:text="@string/select_country_argentina"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/armenia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:textColor="#000000"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:text="@string/select_country_armenia"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/australia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:textColor="#000000"
+                android:text="@string/select_country_australia"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/austria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:textColor="#000000"
+                android:text="@string/select_country_austria"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/azerbaijan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:textColor="#000000"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:text="@string/select_country_azerbaijan"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/bahrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000"
+                android:buttonTint="@color/colorRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:text="@string/select_country_bahrain"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:textColor="#000000"
+                android:paddingLeft="8dp"
+                android:text="@string/select_country_albania"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/colorRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:paddingLeft="8dp"
+                android:textColor="#000000"
+                android:text="@string/select_country_albania"
+                android:textSize="18sp" />
+        </RadioGroup>
+    </ScrollView>
+
+
+</RelativeLayout>

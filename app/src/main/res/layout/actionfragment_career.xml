@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backblue"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActionCareerFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/heximage">
+        <RelativeLayout
+            android:id="@+id/status0"
+            android:layout_width="match_parent"
+            android:background="@drawable/layout_bg"
+            android:layout_height="150dp"
+            android:layout_margin="20dp">
+
+            <RelativeLayout
+                android:id="@+id/rel0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backblue">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/p0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="UNEMPLOYED"/>
+
+                <TextView
+                    android:id="@+id/p0.2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    android:text="Current"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@id/rel0"
+                android:background="@android:color/holo_green_dark" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_below="@id/rel0"
+                >
+                <TextView
+                    android:id="@+id/statusinfo0_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Not working right now"/>
+
+
+
+
+
+                <Button
+                    android:id="@+id/getajob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GET A JOB"
+                    android:background="@drawable/buttonstyle"
+                    android:textColor="@color/white"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/statusinfo0_title"/>
+
+                <Button
+                    android:id="@+id/AFAR0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="START A BUSSINESS"
+                    android:background="@drawable/buttonstyle"
+                    android:textColor="@color/white"
+                    android:layout_toRightOf="@id/getajob"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/statusinfo0_title"/>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/status1"
+            android:layout_width="match_parent"
+            android:background="@drawable/layout_bg"
+            android:layout_below="@id/status0"
+            android:layout_height="300dp"
+            android:layout_margin="20dp">
+
+            <RelativeLayout
+                android:id="@+id/rel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backblue">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/p1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="JOB"/>
+
+                <TextView
+                    android:id="@+id/p1.2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    android:text="Current"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@id/rel1"
+                android:background="@android:color/holo_green_dark" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_below="@id/rel1"
+                >
+                <TextView
+                    android:id="@+id/statusinfo1_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:text="Artifact Worker"/>
+
+                <TextView
+                    android:id="@+id/maininfo1_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+
+                    android:textSize="15dp"
+                    android:layout_below="@id/statusinfo1_title"
+                    android:textColor="@color/black"
+                    android:text="@string/subtitle"/>
+
+                <TextView
+                    android:id="@+id/maininfo1_inf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/maininfo1_subtitle"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:text="@string/inf"/>
+
+                <Button
+                    android:id="@+id/WO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WORK OVERTIME"
+                    android:background="@drawable/buttonstyle"
+                    android:textColor="@color/white"
+                    android:layout_alignParentLeft="true"
+                   android:layout_below="@id/maininfo1_inf"/>
+
+                <Button
+                    android:id="@+id/AFAR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ASK FOR A RAISE"
+                    android:background="@drawable/buttonstyle"
+                    android:textColor="@color/white"
+                    android:layout_toRightOf="@id/WO"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/maininfo1_inf"/>
+
+                <Button
+                    android:id="@+id/QuitJob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="QUIT JOB"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttonstyle"
+                    android:textColor="@color/white"
+
+                    android:layout_below="@id/WO"/>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/status2"
+            android:layout_width="match_parent"
+            android:layout_below="@id/status1"
+            android:background="@drawable/layout_bg"
+            android:layout_height="200dp"
+            android:layout_margin="20dp">
+
+            <RelativeLayout
+                android:id="@+id/rel2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backblue">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/p2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="BUSSINESS"/>
+
+                <TextView
+                    android:id="@+id/p2.2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    android:text="Age 18 to 22"/>
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@id/rel2"
+                android:background="@android:color/holo_orange_dark" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_below="@id/rel2"
+                >
+                <TextView
+                    android:id="@+id/statusinfo2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:text="Artifact Worker"/>
+
+                <TextView
+                    android:id="@+id/maininfo2_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
+                    android:layout_below="@id/statusinfo2_title"
+                    android:textColor="@color/black"
+                    android:text="@string/subtitle"/>
+
+                <TextView
+                    android:id="@+id/maininfo2_inf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/maininfo2_subtitle"
+                    android:textColor="@color/black"
+                    android:text="@string/inf"/>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

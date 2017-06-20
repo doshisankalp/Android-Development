@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backblue"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActionResidenceFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/heximage">
+
+
+            <RelativeLayout
+                android:id="@+id/status0"
+                android:layout_width="match_parent"
+                android:background="@drawable/layout_bg"
+                android:layout_height="230dp"
+                android:layout_margin="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/rel0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/backblue">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:id="@+id/p0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:text="OWN"/>
+
+                    <TextView
+                        android:id="@+id/p0.2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:layout_alignParentRight="true"
+                        android:text="Current"/>
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@id/rel0"
+                    android:background="@android:color/holo_blue_light"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:layout_below="@id/rel0"
+                    >
+                    <TextView
+                        android:id="@+id/statusinfo0_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:layout_margin="5dp"
+                        android:text="Luxurious"/>
+                    <TextView
+                        android:id="@+id/statusinfo0_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/statusinfo0_title"
+                        android:textSize="15dp"
+                        android:text="2 years completed."/>
+
+                    <TextView
+                        android:id="@+id/statusinfo0_inf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/statusinfo0_subtitle"
+                        android:textSize="15dp"
+                        android:text="Location:Ulanhat,Mongol,China."/>
+
+                    <Button
+                        android:id="@+id/WO"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CHANGE CITY"
+                        android:background="@drawable/buttonstyle"
+                        android:textColor="@color/white"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/statusinfo0_inf"/>
+
+                    <Button
+                        android:id="@+id/AFAR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EMMIGRATE"
+                        android:background="@drawable/buttonstyle"
+                        android:textColor="@color/white"
+                        android:layout_toRightOf="@id/WO"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@id/statusinfo0_inf"/>
+
+                    <Button
+                        android:id="@+id/QJ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MOVE IN WITH PARENTS"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/buttonstyle"
+                        android:textColor="@color/white"
+                        android:layout_below="@id/WO"/>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/status1"
+                android:layout_width="match_parent"
+                android:background="@drawable/layout_bg"
+                android:layout_below="@id/status0"
+                android:layout_height="200dp"
+                android:layout_margin="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/rel1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/backblue">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:id="@+id/p1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:text="PARENT'S"/>
+
+                    <TextView
+                        android:id="@+id/p1.2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:layout_alignParentRight="true"
+                        android:text="Current"/>
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@id/rel1"
+                    android:background="@android:color/holo_blue_light"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:layout_below="@id/rel1"
+                    >
+                    <TextView
+                        android:id="@+id/statusinfo1_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:layout_margin="5dp"
+                        android:text="Luxurious"/>
+                    <TextView
+                        android:id="@+id/statusinfo1_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/statusinfo1_title"
+                        android:textSize="15dp"
+                        android:text="2 years completed."/>
+
+                    <TextView
+                        android:id="@+id/statusinfo1_inf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/statusinfo1_subtitle"
+                        android:textSize="15dp"
+                        android:text="Location:Ulanhat,Mongol,China."/>
+
+                    <Button
+                        android:id="@+id/move_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MOVE OUT"
+                        android:background="@drawable/buttonstyle"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:layout_below="@id/statusinfo1_inf"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/status2"
+                android:layout_width="match_parent"
+                android:layout_below="@id/status1"
+                android:layout_height="150dp"
+                android:layout_margin="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/rel2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/backblue">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:id="@+id/p2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:text="PARENT'S"/>
+
+                    <TextView
+                        android:id="@+id/p2.2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:layout_alignParentRight="true"
+                        android:text="Age 18 to 22"/>
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@id/rel2"
+                    android:background="@android:color/holo_orange_dark" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:layout_below="@id/rel2"
+                    >
+                    <TextView
+                        android:id="@+id/statusinfo2_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:text="AMPLE"/>
+
+                    <TextView
+                        android:id="@+id/statusinfo2_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15dp"
+                        android:layout_below="@id/statusinfo2_title"
+                        android:textColor="@color/white"
+                        android:text="4 years completed"/>
+
+                    <TextView
+                        android:id="@+id/statusinfo2_inf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_below="@id/statusinfo2_subtitle"
+                        android:textSize="15dp"
+                        android:text="Location:Ulanhat,Mongol,China."/>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

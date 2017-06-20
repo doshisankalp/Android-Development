@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_bgnocorners">
+
+    <TextView
+        android:id="@+id/a4j"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="APPLY FOR JOB"
+        android:layout_marginTop="10dp"/>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Switch
+            android:id="@+id/alljobs"
+            android:layout_width="113dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="ALL JOBS" />
+
+        <TextView
+            android:id="@+id/i_qualify"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="3dp"
+            android:text="JOBS FOR WHCIH I QUALIFY" />
+
+    </TableRow>
+
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seljob">
+
+            <RadioButton
+                android:id="@+id/senior_govt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Senior Govt. Official         INR 15,000"
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:onClick="SelectJob"/>
+
+            <RadioButton
+                android:id="@+id/architecture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/senior_govt"
+                android:text="Architecture                       INR 15,000"
+                android:textSize="20dp"
+                android:onClick="SelectJob"/>
+
+            <RadioButton
+                android:id="@+id/art"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/architecture"
+                android:text="Art                                       INR 15,000"
+                android:textSize="20dp"
+                android:onClick="SelectJob"/>
+
+            <RadioButton
+                android:id="@+id/astronomy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/art"
+                android:text="Astronomy                         INR 15,000"
+                android:textSize="20dp"
+                android:onClick="SelectJob"/>
+
+            <RadioButton
+                android:id="@+id/artifact_worker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/astronomy"
+                android:text="Artifacts Worker               INR 15,000"
+                android:textSize="20dp"
+                android:onClick="SelectJob"/>
+
+            <RadioButton
+                android:id="@+id/ba"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/artifact_worker"
+                android:text="Business Admin                INR 15,000"
+                android:textSize="20dp"
+                android:onClick="SelectJob"/>
+
+            <RadioButton
+                android:id="@+id/chemistry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/ba"
+                android:text="Chemistry                           INR 15,000"
+                android:textSize="20dp"
+                android:onClick="SelectJob"/>
+
+            <RadioButton
+                android:id="@+id/cs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/chemistry"
+                android:text="Computer Science            INR 15,000"
+                android:textSize="20dp"
+                android:onClick="SelectJob"/>
+
+            <RadioButton
+                android:id="@+id/economics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/cs"
+                android:text="Economics                         INR 15,000"
+                android:textSize="20dp"
+                android:onClick="SelectJob"/>
+
+            <RadioButton
+                android:id="@+id/education"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/economics"
+                android:text="Education                           INR 15,000"
+                android:textSize="20dp"
+                android:onClick="SelectJob"/>
+
+            <RadioButton
+                android:id="@+id/engineering"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/education"
+                android:text="Engineering                        INR 15,000"
+                android:textSize="20dp"
+                android:onClick="SelectJob"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+    </ScrollView>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
+            android:text="CANCEL"
+            android:textSize="17dp"
+            android:background="@drawable/buttonstyle"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp"
+            android:layout_toEndOf="@id/cancel"
+            android:layout_toRightOf="@id/cancel"
+            android:text="OK"
+            android:background="@drawable/buttonstyle"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+    </TableRow>
+
+</LinearLayout>

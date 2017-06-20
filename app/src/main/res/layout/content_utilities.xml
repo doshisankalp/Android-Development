@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backblue"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.anuja.reall.Utilities"
+    tools:showIn="@layout/activity_utilities">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+      >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:background="@drawable/heximage">
+
+            <RelativeLayout
+                android:id="@+id/RL1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+              >
+
+                <ImageView
+                    android:id="@+id/diet_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/diet_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/diet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DIET"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/diet_image"
+                    android:layout_marginLeft="10dp"
+
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    android:text="Minimal"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL1"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+
+            <RelativeLayout
+                android:id="@+id/RL2"
+                android:layout_below="@id/RL1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/shelter_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/residence_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/shelter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SHELTER"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/shelter_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    android:text="Simplest"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL2"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/RL3"
+                android:layout_below="@id/RL2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/safewater_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/safewater_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/safewater"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SAFE WATER"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/safewater_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL3"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/RL4"
+                android:layout_below="@id/RL3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/medicalcare_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/medicalcare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MEDICAL CARE"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/medicalcare_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                   />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL4"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/RL5"
+                android:layout_below="@id/RL4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/publicsani_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/publicsanitation_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/publicsani"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PUBLIC SANITATION"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/publicsani_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL5"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/RL6"
+                android:layout_below="@id/RL5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/refri_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/refigrator_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/refri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REFRIGERATORS"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/refri_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="2"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL6"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/RL7"
+                android:layout_below="@id/RL6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/comp_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/computer_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/comp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="COMPUTERS"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/comp_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="1"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL7"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+
+            <RelativeLayout
+                android:id="@+id/RL8"
+                android:layout_below="@id/RL7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/internet_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/internet_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/internet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INTERNET"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/internet_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL8"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+
+            <RelativeLayout
+                android:id="@+id/RL9"
+                android:layout_below="@id/RL8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/cellphoneimage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cellphone_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/cellphone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CELL PHONES"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/cellphoneimage"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="3"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL9"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/RL10"
+                android:layout_below="@id/RL9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/cars_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cars_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/cars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CARS"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/cars_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="2"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL10"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+
+            <RelativeLayout
+                android:id="@+id/RL11"
+                android:layout_below="@id/RL10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/tele_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/telephone_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/tele"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TELEPHONES"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/tele_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="1"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL11"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+
+
+            <RelativeLayout
+                android:id="@+id/RL12"
+                android:layout_below="@id/RL11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/radio_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RADIOS"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/radio_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:text="1"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL12"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/RL13"
+                android:layout_below="@id/RL12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/telev_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_utility"
+                    />
+
+                <TextView
+                    android:id="@+id/telev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TELEVISIONS"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/telev_image"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="1"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@id/RL13"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

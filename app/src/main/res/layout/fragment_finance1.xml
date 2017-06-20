@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backblue">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/heximage">
+
+
+
+<RelativeLayout
+    android:id="@+id/rl1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_bgnocorners"
+    android:paddingLeft="10dp"
+    android:paddingBottom="10dp"
+   android:paddingTop="5dp"
+    >
+    <TextView
+        android:id="@+id/networth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Net Worth"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_below="@id/networth"
+        android:textSize="15dp"
+        android:text="15 MILLION INR"/>
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_below="@id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/currentinc_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="CURRENT INCOME"/>
+        <TextView
+            android:id="@+id/cash_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            android:text="CASH"/>
+
+        <TextView
+            android:id="@+id/currentinc_value"
+            android:layout_below="@id/currentinc_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="44,444.2 INR/m"/>
+
+        <TextView
+            android:id="@+id/cash_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cash_heading"
+            android:paddingTop="5dp"
+            android:textSize="15dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            android:text="12.5 Million INR"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@id/rl2"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="2dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl3"
+        android:layout_below="@id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/liabilities_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="LIABILITIES"/>
+        <TextView
+            android:id="@+id/assets_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            android:text="ASSETS"/>
+
+        <TextView
+            android:id="@+id/liabilities_value"
+            android:layout_below="@id/liabilities_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="500 INR"/>
+
+        <TextView
+            android:id="@+id/assets_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/assets_heading"
+            android:paddingTop="5dp"
+            android:textSize="15dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            android:text="12,323 INR"/>
+    </RelativeLayout>
+    <View
+        android:layout_below="@id/rl3"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="2dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_bgnocorners"
+        android:layout_below="@id/rl3"
+        android:padding="10dp"
+        >
+        <TextView
+            android:id="@+id/totalexpenses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="TOTAL EXPENSES"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_below="@id/totalexpenses"
+            android:textSize="15dp"
+            android:text="121,235.31/m INR"/>
+
+        <Button
+            android:id="@+id/changeexpenses_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/buttonstyle"
+            android:textColor="@color/white"
+            android:text="CHANGE EXPENSES"/>
+
+
+    </RelativeLayout>
+
+   <ScrollView
+       android:id="@+id/scroll_replace"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/rl4">
+    <RelativeLayout
+        android:layout_below="@id/rl4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/rl5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/diet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="DIET"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/diet">
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:background="@drawable/layout_bgnocorners"
+            android:popupBackground="@drawable/layout_bgnocorners"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+               android:padding="20dp"
+                android:background="@drawable/ic_arrow_drop_down_black_24dp" />
+
+
+</FrameLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@id/rl5"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="2dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl5"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        >
+        <TextView
+            android:id="@+id/shelter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="SHELTER"/>
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/shelter">
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:background="@drawable/layout_bgnocorners"
+
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+
+            android:padding="20dp"
+            android:background="@drawable/ic_arrow_drop_down_black_24dp" />
+</FrameLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@id/rl6"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="2dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl6"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        >
+        <TextView
+            android:id="@+id/charity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="CHARITY"/>
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/charity">
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:background="@drawable/layout_bgnocorners"
+            />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+
+        android:padding="20dp"
+        android:background="@drawable/ic_arrow_drop_down_black_24dp" />
+</FrameLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@id/rl7"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="2dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl7"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        >
+        <TextView
+            android:id="@+id/consumeritems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="CONSUMER ITEMS"/>
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/consumeritems">
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:background="@drawable/layout_bgnocorners"
+
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+
+            android:padding="20dp"
+            android:background="@drawable/ic_arrow_drop_down_black_24dp" />
+</FrameLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@id/rl8"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="2dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl8"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        >
+        <TextView
+            android:id="@+id/otherexpenses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="OTHER EXPENSES"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/otherexpenses"
+            android:textSize="15dp"
+            android:text="600 INR/m"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@id/rl9"
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="2dp" />
+    </RelativeLayout>
+
+   </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

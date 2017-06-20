@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout android:layout_height="match_parent"-->
+    <!--android:layout_width="match_parent"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar3"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--android:minHeight="?attr/actionBarSize"-->
+        <!--android:theme="?attr/actionBarTheme" />-->
+
+    <!--<ImageView android:layout_height="match_parent"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:src="@mipmap/second_background"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:background="@color/colorDarkBlue">-->
+
+
+
+    <!--</ImageView>-->
+
+
+<!--</LinearLayout>-->
+
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/colorDarkBlue">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorDarkBlue"
+        android:elevation="16dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/heximage">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="0dp"
+                android:src="@drawable/backnavigation" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/well_being_indicators_title"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:background="@drawable/heximage">
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/health_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_00"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <View
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resistance_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_01"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <View
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/happiness_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_02"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+
+            <View
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/intelligence_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_03"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/artistic_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_04"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/musical_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_05"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/athletic_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_06"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/strength_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_07"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/endurance_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_08"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/spiritual_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_09"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wisdom_chart_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_title"
+                    android:textAllCaps="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_010"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backblue">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/backblue"
+        android:elevation="16dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/heximage"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="0dp"
+                android:src="@drawable/backnavigation" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/well_being_indicators_title"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_info"
+            android:textSize="18sp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarThumbVertical="@color/colorMediumBlue"
+            android:scrollbarSize="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/conscience_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conscience"
+                    android:onClick="onCheckboxClicked"
+                    android:textSize="20sp"
+                    android:buttonTint="@color/white"
+                    android:textColorHighlight="@color/colorDarkBlue"/>
+
+                <CheckBox
+                    android:id="@+id/conscience_sub_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Conscience"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/charity_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Charity"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/crime_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Crime"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/colorLightBlue"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/volunteer_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Volunteering"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/greed_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Greed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/selfSacrifice_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Self Sacrifice"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/truthfulness_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Truthfulness"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/takingAStand_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Taking A Stand"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/famAndSexuality_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Family And Sexuality"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/homosexuality_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Homosexuality"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/infertility_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Infertility"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/outOfWedlock_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Out-of-wedlock children"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/pregnancy_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Pregnancy/Children"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/romanticRelationship_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Romantic relationship"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/sexuallyTransmittedDisease_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Sexually Transmitted disease"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/love_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Love"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/governmentHumanRights_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Government/Human Rights"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/consription_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Conscription"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/governmentCorruption_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Government Corruption"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/humanRightsAbuses_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Human rights abuses"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/war_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="War"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/welfareGovernmentAssistance_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Welfare/Government assistance"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/corruption_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Corruption"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/naturalDisasters_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Government/Human Rights"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/allDisasters_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="All Disasters"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/vices_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/white"
+
+                    android:text="Vices"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/alcoholUse_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Alcohol use"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/drugUse_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Drug use"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/smoking_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Smoking"
+                    android:textColor="@color/white"
+
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/countryAndCulture_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Country and Culture"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/customs_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Customs"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/climate_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Climate"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/arts_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Arts"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/housing_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Housing"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisine_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Cuisine"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/sports_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Sports"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/history_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="History"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/nature_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Nature"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/traditions_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Traditions"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/religion_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Religion"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/crimeAndAbuse_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Crime and Abuse"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/assault_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Assault"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/burglary_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Burglary"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/emotionalAbuse_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Emotional Abuse"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/motorVehicleTheft_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Motor Vehicle theft"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/murder_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Murder"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/physicalAbuse_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Religion"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/rape_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Rape"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/robbery_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Robbery"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/sexualAbuse_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Sexual abuse"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/workPlaceCorruption_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Work place corruption"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/health_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Health"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/accidentsAndTrauma_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Accident and trauma"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/birthDefects_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Birth Defects"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/cancers_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Cancers"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/cardiovascular_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Cardiovascular diseases"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/degenerative_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Degenerative diseases"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/infectious_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Infectious diseases"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/malnutrition_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Malnutrition"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/parasitic_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Parasitic disease"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/psychologicalDisease_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Psychological diseases"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/substanceAbuse_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Substance abuse"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/otherConditions_Box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Other Conditions"
+                    android:textColor="@color/white"
+
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.1"
+        android:paddingRight="16dp"
+        android:background="@drawable/heximage">
+
+        <Button
+            android:layout_marginLeft="16dp"
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="0dp"
+            android:background="@drawable/buttonstyle"/>
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            android:layout_toLeftOf="@id/save_button"
+            android:background="@drawable/buttonstyle"/>
+
+
+    </RelativeLayout>
+</LinearLayout>

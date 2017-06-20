@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">RealL</string>
+    <string name="action_settings">Settings</string>
+    <string name="DAL">Design A Life</string>
+    <string name="LL">Load Life</string>
+    <string name="CL">Completed Lives</string>
+    <string name="S">Settings</string>
+    <string name="E">Exit</string>
+    <string name="title_activity_loadlife">LOAD LIFE</string>
+    <string name="compelted_lives">COMPLETED LIVES</string>
+    <string name="show_life">SHOW LIFE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="title_activity_designalife">Designalife</string>
+    <string name="design_your_character">DESIGN YOUR CHARACTER</string>
+    <string name="select_a_country">SELECT A COUNTRY</string>
+    <string name="title_activity_designlife">designlife</string>
+    <string name="title_activity_dalife">Dalife</string>
+    <string name="play_life">PLAY LIFE</string>
+    <string name="selectcity">SELECT CITY</string>
+    <string name="select_a_city">SELECT A CITY</string>
+    <string name="selectattr">SELECT ATTRIBUTES</string>
+    <string name="back">BACK</string>
+    <string name="title_activity_select_attributes">SelectAttributes</string>
+    <string name="title_activity_select_attri">SelectAttri</string>
+    <string name="gender">GENDER</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="locale">LOCALE</string>
+    <string name="rural">Rural</string>
+    <string name="urban">Urban</string>
+    <string name="potential_attributes">POTENTIAL ATTRIBUTES</string>
+    <string name="health">Health</string>
+    <string name="resistance">Resistance</string>
+    <string name="happiness">Happiness</string>
+    <string name="intelligence">Intelligence</string>
+    <string name="artistic">Artistic</string>
+    <string name="musical">Musical</string>
+    <string name="athletic">Athletic</string>
+    <string name="strength">Strength</string>
+    <string name="phys_endurance">Physical\nEndurance</string>
+    <string name="spiritual">Spiritual</string>
+    <string name="wisdom">Wisdom</string>
+    <string name="utilities">UTILITIES</string>
+    <string name="event">Life event at Age 12 \n In Norway breakfasts are often...</string>
+    <string name="subtitle">3 years completed.\nYearly Salary:1234 INR \nTotal earnings yet:2344 INR</string>
+    <string name="inf">Art dealers buy art and sell art.Some art dealers represent a single painter.</string>
+    <string name="loan_info">0 years completed.\nTotal Initial Loan: 1234 INR\nInterest Rate: 5%\n<b>Total Balance: 1234 INR</b></string>
+    <string name="invest_info">0 years completed.\nTotal Initial Loan: 1234 INR\nInterest Rate: 3%\n<b>Total Balance: 1234 INR</b></string>
+    <string name="history_loan_info">4 years completed.\nTotal Initial Loan: 122 INR\n<b>Total Balance: 0 INR</b></string>
+    <string name="history_invest_info">4 years completed.\nTotal Initial Loan: 125 INR\n<b>Total Balance: 0 INR</b></string>
+
+    <string name="two">two</string>
+    <string name="three">three</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="title_activity_selectattributes">Selectattributes</string>
+    <string name="title_activity_you_are">YouAre</string>
+    <string name="title_activity_completed_lives">CompletedLives</string>
+    <string name="title_activity_live_alife">LiveALife</string>
+    <string name="title_activity_utilities">Utilities</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_startlife">StartALife</string>
+
+
+    <string name="health_chart_title">Health</string>
+    <string name="percent_title">100%</string>
+    <string name="well_being_indicators_title">Well Being Indicators</string>
+    <string name="resistance_chart_title">Resistance</string>
+    <string name="happiness_chart_title">Happiness</string>
+    <string name="intelligence_chart_title">Intelligence</string>
+    <string name="artistic_chart_title">Artistic</string>
+    <string name="musical_chart_title">Musical</string>
+    <string name="athletic_chart_title">Athlectic</string>
+    <string name="strength_chart_title">Strength</string>
+    <string name="endurance_chart_title">Endurance</string>
+    <string name="spiritual_chart_title">Spiritual</string>
+    <string name="wisdom_chart_title">Wisdom</string>
+    <string name="tab_text_statistics">Statistics</string>
+    <string name="tab_text_wikipedia">Wikipedia</string>
+    <string name="tab_text_lonely_planet">Lonely Planet</string>
+    <string name="settings_info">By Default, RealLives considers all the below issues. Uncheck an issue to have RealLives avoid it.</string>
+    <string name="select_country_afghanistan">Afghanistan</string>
+    <string name="select_country_albania">Albania</string>
+    <string name="select_country_algeria">Algeria</string>
+    <string name="select_country_andorra">Andorra</string>
+    <string name="select_country_angolla">Angolla</string>
+    <string name="select_country_antigua_and_barbuda">Antigua and Barbuda</string>
+    <string name="select_country_argentina">Argentina</string>
+    <string name="select_country_armenia">Armenia</string>
+    <string name="select_country_australia">Australia</string>
+    <string name="select_country_austria">Australia</string>
+    <string name="select_country_azerbaijan">Azerbaijan</string>
+    <string name="select_country_bahrain">Bahrain</string>
+    <string name="title_activity_loading">Loading</string>
+
+
+    <!--YourCountry Statistics Table-->
+    <!--Country Detals-->
+    <string name="capital">Capital</string>
+    <string name="currency_name">Currency Name</string>
+    <string name="primary_school">Primary School</string>
+
+    <!--Prevalent Parameters-->
+    <string name="population">Population</string>
+    <string name="sex_ratio">Sex Ratio</string>
+    <string name="birth_rate">Birth Rate</string>
+    <string name="death_rate">Death Rate</string>
+    <string name="infant_mortality">Infant Mortality</string>
+
+    <!--Per Capita-->
+    <string name="primary_school_enrollment">Primary School Enrollment</string>
+    <string name="unemployment_rate">Unemployment Rate</string>
+    <string name="health_exp_per_capita">Health Exp. per capita</string>
+    <string name="access_to_electricity">Access to Electricity</string>
+
+    <!--Labour Force By Occupation-->
+    <string name="agriculture">Agriculture</string>
+    <string name="services">Services</string>
+    <string name="industry">Industry</string>
+
+    <!--Per Index/Ranking-->
+    <string name="ppp">PPP</string>
+    <string name="gini">GINIRate</string>
+    <string name="sdg">SDG</string>
+    <string name="happiness_index">Happiness Index</string>
+    <string name="hdi">HDI</string>
+    <string name="corruption">Corruption</string>
+    <string name="goitre">Goitre</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

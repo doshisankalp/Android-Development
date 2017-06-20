@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backblue">
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       >
+
+
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/heximage">
+            <RelativeLayout
+                android:id="@+id/rl5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="5dp"
+                >
+                <TextView
+                    android:id="@+id/diet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="DIET"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/diet"
+                    android:textSize="15dp"
+                    android:text="Optimal : 200 INR/m"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_below="@id/rl5"
+                android:layout_width="match_parent"
+                android:background="@android:color/darker_gray"
+                android:layout_height="2dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl5"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="5dp"
+                >
+                <TextView
+                    android:id="@+id/shelter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="SHELTER"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/shelter"
+                    android:textSize="15dp"
+                    android:text="Simplest : 300 INR/m"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_below="@id/rl6"
+                android:layout_width="match_parent"
+                android:background="@android:color/darker_gray"
+                android:layout_height="2dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl6"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="5dp"
+                >
+                <TextView
+                    android:id="@+id/charity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="CHARITY"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/charity"
+                    android:textSize="15dp"
+                    android:text="Token : 30.76 INR/m"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_below="@id/rl7"
+                android:layout_width="match_parent"
+                android:background="@android:color/darker_gray"
+                android:layout_height="2dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl7"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="5dp"
+                >
+                <TextView
+                    android:id="@+id/consumeritems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="CONSUMER ITEMS"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/consumeritems"
+                    android:textSize="15dp"
+                    android:text="Conservative : 100 INR/m"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_below="@id/rl8"
+                android:layout_width="match_parent"
+                android:background="@android:color/darker_gray"
+                android:layout_height="2dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl8"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="5dp"
+                >
+                <TextView
+                    android:id="@+id/otherexpenses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="OTHER EXPENSES"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/otherexpenses"
+                    android:textSize="15dp"
+                    android:text="Conservative : 600 INR/m"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_below="@id/rl9"
+                android:layout_width="match_parent"
+                android:background="@android:color/darker_gray"
+                android:layout_height="2dp" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

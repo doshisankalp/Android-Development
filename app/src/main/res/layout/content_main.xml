@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/homebackground"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:id="@+id/showdescriptioncontenttitle"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ImageView
+        android:id="@+id/rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rlglogo"/>
+
+    <ImageButton
+        android:id="@+id/playbutton"
+        android:background="@drawable/playbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="tolivealife"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#07000000"
+        android:textColor="#FFFF"
+        android:text="@string/DAL"
+        android:layout_marginTop="210dp"
+        android:layout_below="@+id/rl"
+        android:layout_centerHorizontal="true"
+        android:onClick="loadlife"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF"
+        android:layout_centerHorizontal="true"
+        android:padding="1dp"
+        android:text="@string/LL"
+        android:layout_below="@+id/button1"
+        android:background="#07000000"
+        android:onClick="sendMessage"
+        />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#07000000"
+        android:textColor="#FFFF"
+        android:layout_centerHorizontal="true"
+        android:text="@string/CL"
+        android:layout_below="@+id/button2"
+        android:onClick="tocompletedlives"
+        />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF"
+        android:gravity="center"
+        android:background="#07000000"
+        android:text="@string/S"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:onClick="tosettings"/>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF"
+        android:background="#07000000"
+        android:text="@string/E"
+        android:layout_below="@+id/button4"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>
+
+
