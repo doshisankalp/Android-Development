@@ -54,7 +54,7 @@ Button btn_exit;
 
     public void loadlife(View view)
     {
-        Intent intent = new Intent(MainActivity.this, DesignALife.class);
+        Intent intent = new Intent(MainActivity.this, login.class);
         startActivity(intent);
         finish();
     }
