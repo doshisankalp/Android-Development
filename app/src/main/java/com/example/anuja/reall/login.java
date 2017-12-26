@@ -158,6 +158,7 @@ public class login extends AppCompatActivity {
                         SharedPreferences pref = getApplicationContext().getSharedPreferences("Options", MODE_PRIVATE); // 0 - for private mode
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString("token",entry.getValue());
+                        editor.putString("username",name.getText().toString());
                         editor.commit();
                         correct=true;
                         if(correct==true) {
