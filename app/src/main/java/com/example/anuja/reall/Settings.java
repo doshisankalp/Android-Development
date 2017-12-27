@@ -1,5 +1,7 @@
 package com.example.anuja.reall;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
@@ -44,9 +47,10 @@ public class Settings extends AppCompatActivity {
             checkBox28,checkBox29,checkBox30,checkBox31,checkBox32,checkBox33,checkBox34,checkBox35,checkBox36,checkBox37,
             checkBox38,checkBox39,checkBox40,checkBox41,checkBox42,checkBox43,checkBox44,checkBox45,checkBox46,checkBox47,
             checkBox48,checkBox49,checkBox50,checkBox51,checkBox52,checkBox53,checkBox54,checkBox55,checkBox56,checkBox57;
-    Button save;
+    Button save,cancel;
+            ImageButton back;
 
-    
+
 
 
     @Override
@@ -54,6 +58,9 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
         save=(Button)findViewById(R.id.save_button);
+        cancel=(Button)findViewById(R.id.cancel_button);
+        back=(ImageButton)findViewById(R.id.Back);
+
 
         conscience_main=(CheckBox)findViewById(R.id.conscience_Box) ;
         family_main=(CheckBox)findViewById(R.id.famAndSexuality_Box) ;
@@ -156,6 +163,25 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 save();
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Settings.this, MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Settings.this, MainActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -1060,8 +1086,12 @@ public String data(boolean flag)
             }
         });
         requestQueue.add(jsonObjReq);
-        Intent intent=new Intent(Settings.this,MainActivity.class);
-        startActivity(intent);
+        AlertDialog.Builder a_builder = new AlertDialog.Builder(Settings.this);
+        a_builder.setMessage("Settings saved successfully !!!")
+                .setCancelable(true);
+        AlertDialog alert = a_builder.create();
+        alert.setTitle("Settings");
+        alert.show();
 
 
     }

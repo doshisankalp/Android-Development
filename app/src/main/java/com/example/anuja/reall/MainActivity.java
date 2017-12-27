@@ -1,6 +1,7 @@
 package com.example.anuja.reall;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,7 +11,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
+SharedPreferences pref;
 Button btn_exit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,13 @@ Button btn_exit;
             btn_exit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish();
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("Options", MODE_PRIVATE); // 0 - for private mode
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString("token","");
+                    editor.putString("username","");
+                    editor.commit();
+                    Intent intent = new Intent(MainActivity.this,login.class);
+                    startActivity(intent);
                 }
             });
 
@@ -49,35 +56,35 @@ Button btn_exit;
     {
         Intent intent = new Intent(MainActivity.this, Loadlife.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void loadlife(View view)
     {
         Intent intent = new Intent(MainActivity.this, DesignALife.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void tocompletedlives(View view)
     {
         Intent intent = new Intent(MainActivity.this, CompletedLives.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void tolivealife(View view)
     {
         Intent intent = new Intent(MainActivity.this, Loading.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void tosettings(View view)
     {
         Intent intent = new Intent(MainActivity.this, Settings.class);
         startActivity(intent);
-        finish();
+
     }
 
 
