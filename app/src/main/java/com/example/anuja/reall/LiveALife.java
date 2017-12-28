@@ -4,15 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class LiveALife extends AppCompatActivity {
 
-
+    Intent i;
+    JSONObject responce_object;
     int position=0;
     RelativeLayout relativeLayout;
     LinearLayout linearLayout;
@@ -33,6 +38,16 @@ public class LiveALife extends AppCompatActivity {
         btn_relation= (Button) findViewById(R.id.btn_relations);
         btn_leisure= (Button) findViewById(R.id.btn_leisure);
         btn_residence= (Button) findViewById(R.id.btn_residence);
+
+        i =getIntent();
+        String responce_string= i.getStringExtra("responce_object");
+        Log.e("responce string:", responce_string);
+        try {
+            responce_object=new JSONObject(responce_string);
+            Log.d("responce object", String.valueOf(responce_object));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         relativeLayout = (RelativeLayout) findViewById(R.id.rightRL);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +127,8 @@ public class LiveALife extends AppCompatActivity {
 
     public void goto_utility(View view) {
         Intent intent = new Intent(LiveALife.this, Utilities.class);
+        intent.putExtra("utility_object", String.valueOf(responce_object));
+        Log.e("utility_object", String.valueOf(responce_object));
         startActivity(intent);
 
     }

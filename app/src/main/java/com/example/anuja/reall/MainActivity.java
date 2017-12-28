@@ -9,9 +9,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 SharedPreferences pref;
+ImageButton play;
 Button btn_exit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,17 @@ Button btn_exit;
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        play=(ImageButton)findViewById(R.id.playbutton);
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Loading.class);
+                startActivity(intent);
+
+            }
+        });
 
 
             btn_exit = (Button) findViewById(R.id.button5);
