@@ -39,7 +39,7 @@ public class login extends AppCompatActivity {
     EditText name,password;
     TextView register,forget;
     String username,password1;
-    String url="http://192.168.1.124:9090/rlg/api/login";
+    String url=Constant.APIURL+"login";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +109,7 @@ public class login extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        Log.e("server",url);
         RequestQueue requestQueue= Volley.newRequestQueue(login.this);
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(
                 Request.Method.POST, url, jsonobject_one,
