@@ -135,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:padding="10dp"
-                    android:text="1"
+                    android:text="No"
                     android:id="@+id/water"
                     android:layout_alignParentRight="true"
                     />
@@ -178,7 +178,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:padding="10dp"
-                    android:text="1"
+                    android:text="No"
                     android:id="@+id/medicalcaretext"
                     android:layout_alignParentRight="true"
                    />
@@ -222,7 +222,7 @@
                     android:textColor="@color/white"
                     android:padding="10dp"
                     android:id="@+id/sanitation"
-                    android:text="2"
+                    android:text="No"
                     android:layout_alignParentRight="true"
                     />
 
@@ -351,7 +351,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:padding="10dp"
-                    android:text="3"
+                    android:text="No"
                     android:id="@+id/internettext"
                     android:layout_alignParentRight="true"
                     />
