@@ -72,7 +72,7 @@ public class Loading extends AppCompatActivity {
         pref=getApplication().getSharedPreferences("Options",MODE_PRIVATE);
         username=pref.getString("username","");
         Log.e("username",username);
-        String url="http://192.168.1.124:9090/rlg/game/createlife/"+username+"/false/false";
+        String url=Constant.GAMEURL+"createlife/"+username+"/false/false";
         final JSONObject jsonobject_one = new JSONObject();
         try {
             jsonobject_one.put("age","1");
@@ -94,7 +94,6 @@ public class Loading extends AppCompatActivity {
 
                 ID=error.toString().split(" ")[3];
                 Log.e("ID",ID);
-                start=1;
                 Intent intent = new Intent(Loading.this, StartLife.class);
                 intent.putExtra("ID",ID);
                 Log.e("In loading",ID);

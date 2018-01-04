@@ -1,5 +1,8 @@
 package com.example.anuja.reall;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -152,6 +155,24 @@ public class register extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 try {
                     Toast.makeText(register.this,response.getString("status"),Toast.LENGTH_SHORT).show();
+                    if(response.getString("status").equals("ok"))
+                    {
+                        AlertDialog.Builder builder=new AlertDialog.Builder(register.this);
+
+                        builder.setMessage("Registered Successfully!");
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent i=new Intent(register.this,login.class);
+                                startActivity(i);
+                            }
+                        });
+
+                        AlertDialog dialog=builder.create();
+                        dialog.show();
+                    }
+
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

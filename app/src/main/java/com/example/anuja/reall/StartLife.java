@@ -1,5 +1,7 @@
 package com.example.anuja.reall;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -42,7 +44,7 @@ public class StartLife extends AppCompatActivity {
         i =getIntent();
         ID= i.getStringExtra("ID");
         Log.e("In start:", String.valueOf(ID));
-        url="http://192.168.1.124:9090/rlg/game/get_person/"+ID;
+        url=Constant.GAMEURL+"get_person/"+ID;
         start_life=(Button)findViewById(R.id.start_life);
         name=(TextView)findViewById(R.id.Name);
         gender=(TextView)findViewById(R.id.start_life_gender);
@@ -96,7 +98,28 @@ public class StartLife extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(StartLife.this);
 
+        builder.setTitle("Start Life");
+        builder.setMessage("Do you want to go back?");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent i=new Intent(StartLife.this,MainActivity.class);
+                startActivity(i);
+            }
+        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog=builder.create();
+        dialog.show();
+    }
 
     private void get_life_info() {
         final JSONObject jsonobject_one = new JSONObject();
@@ -127,7 +150,7 @@ public class StartLife extends AppCompatActivity {
                             access_elect.setText(object1.getString("eletricityConsumption"));
                             happiness_index.setText(object1.getString("happinessScore"));
                             ppp.setText(object1.getString("ppp"));
-                            sdg.setText(object1.getString("sdgiScore"));
+                            sdg.setText(object1.getString("sdgiScore").substring(0,6));
                             gini.setText(object1.getString("gini"));
                             currency.setText(object1.getString("currencyName"));
                             goiter.setText(object1.getString("goitre"));
@@ -160,7 +183,7 @@ public class StartLife extends AppCompatActivity {
                             reg_access_elect.setText(object_r1.getString("eletricityConsumption"));
                             reg_happiness_index.setText(object_r1.getString("happinessScore"));
                             reg_ppp.setText(object_r1.getString("ppp"));
-                            reg_sdg.setText(object_r1.getString("sdgiScore"));
+                            reg_sdg.setText(object_r1.getString("sdgiScore").substring(0,6));
                             reg_gini.setText(object_r1.getString("gini"));
                             reg_currency.setText(object_r1.getString("currencyName"));
                             reg_goiter.setText(object_r1.getString("goitre"));

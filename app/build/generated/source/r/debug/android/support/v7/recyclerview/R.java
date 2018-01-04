@@ -95,16 +95,16 @@ public final class R {
         public static final int item_touch_helper_previous_elevation = 0x7f08015a;
         public static final int line1 = 0x7f080161;
         public static final int line3 = 0x7f080162;
-        public static final int normal = 0x7f080192;
-        public static final int notification_background = 0x7f080193;
-        public static final int notification_main_column = 0x7f080194;
-        public static final int notification_main_column_container = 0x7f080195;
-        public static final int right_icon = 0x7f0801e3;
-        public static final int right_side = 0x7f0801e4;
-        public static final int text = 0x7f08026b;
-        public static final int text2 = 0x7f08026c;
-        public static final int time = 0x7f08027e;
-        public static final int title = 0x7f08027f;
+        public static final int normal = 0x7f080193;
+        public static final int notification_background = 0x7f080194;
+        public static final int notification_main_column = 0x7f080195;
+        public static final int notification_main_column_container = 0x7f080196;
+        public static final int right_icon = 0x7f0801e4;
+        public static final int right_side = 0x7f0801e5;
+        public static final int text = 0x7f08026c;
+        public static final int text2 = 0x7f08026d;
+        public static final int time = 0x7f08027f;
+        public static final int title = 0x7f080280;
     }
     public static final class integer {
         public static final int status_bar_notification_info_maxnum = 0x7f090009;

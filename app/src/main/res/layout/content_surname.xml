@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C355B"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.anuja.reall.ActivitySurname"
+    tools:showIn="@layout/content_first_name">
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativelayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/heximage"
+        android:padding="10dp"
+        android:orientation="vertical"
+        >
+
+
+        <TextView
+            android:id="@+id/selectac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selectlastname"
+            android:layout_margin="2dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/nameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="ENTER NAME OF YOUR CHOICE"
+            android:layout_below="@+id/selectac"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorPureWhite"
+            android:textColorHint="@color/colorPureWhite"
+            android:backgroundTint="@color/colorPureWhite"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="43dp" />
+
+
+        <Button
+            android:id="@+id/selectfirstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/playlifebutton"
+            android:background="@drawable/buttonstyle"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:text="@string/selectname"
+            android:onClick="toSelectFirstName"/>
+
+        <Button
+            android:id="@+id/playlifebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/buttonstyle"
+            android:textColor="@color/white"
+            android:text="@string/play_life"
+            android:onClick="tostartlife"
+            />
+
+
+        <ScrollView
+            android:id="@+id/scrollview_choices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:layout_below="@id/nameText"
+            android:layout_above="@id/playlifebutton"
+            >
+
+            <RadioGroup
+                android:id="@+id/choices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <ProgressBar
+                    android:id="@+id/load"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                </ProgressBar>
+
+
+
+            </RadioGroup>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
