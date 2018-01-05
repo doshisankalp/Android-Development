@@ -25,14 +25,7 @@
             android:orientation="horizontal"
             android:background="@drawable/heximage">
 
-            <ImageButton
-                android:id="@+id/Backbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:padding="0dp"
-                android:src="@drawable/backnavigation"
-                />
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -61,147 +54,20 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="220dp"
+            android:id="@+id/sv"
+            >
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/linear"
                 android:orientation="horizontal"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp">
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                >
 
 
-
-                <LinearLayout
-                    android:layout_width="196dp"
-                    android:layout_height="196dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/layout_bg"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/man_small" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:text="Brother \nRajesh, 55"
-                            android:textAllCaps="true"
-                            android:textColor="#000000" />
-
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@android:color/darker_gray" />
-
-                    <TextView
-                        android:id="@+id/occupation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Handicraft Worker"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/health"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Health : 44 Health"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/problems"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Problems : Wasting, Grunting"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/income"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Income : 4500"
-                        android:textColor="#000000" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="196dp"
-                    android:layout_height="196dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/layout_bg"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/man_small" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:text="Brother \nRajesh, 55"
-                            android:textAllCaps="true"
-                            android:textColor="#000000" />
-
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@android:color/darker_gray" />
-
-
-                    <TextView
-                        android:id="@+id/test0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Handicraft Worker"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/test1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Health : 44 Health"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/test2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Problems : Wasting, Grunting"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/test3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Income : 4500"
-                        android:textColor="#000000" />
-                </LinearLayout>
             </LinearLayout>
 
         </HorizontalScrollView>
@@ -225,7 +91,6 @@
                     android:id="@+id/netWorthYourFamily"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="27,870 (INR)"
                     android:textSize="24sp" />
 
                 <View
@@ -244,7 +109,6 @@
                     android:id="@+id/incomeYourFamily"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="27,870 (INR)"
                     android:textSize="24sp" />
 
                 <View
@@ -263,47 +127,45 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/avg_world_income1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:text="Average World Income :  21861 (INR)" />
+                    />
 
                 <ProgressBar
                     android:id="@+id/averageWorldIncomeBar"
                     style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="18dp"
-                    android:progress="100"
                     android:progressBackgroundTint="#000000"
                     android:progressTint="@android:color/holo_green_light" />
 
                 <TextView
+                    android:id="@+id/avg_world_income2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="Average World Income :  7870 (INR)" />
+                    android:layout_marginTop="24dp" />
 
                 <ProgressBar
                     android:id="@+id/yourIncomeBar"
                     style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="18dp"
-                    android:progress="33"
                     android:progressBackgroundTint="#000000"
                     android:progressTint="@android:color/holo_green_light" />
 
                 <TextView
+                    android:id="@+id/avg_world_income3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="Average World Income :  21861 (INR)" />
+                    android:layout_marginTop="24dp" />
 
                 <ProgressBar
                     android:id="@+id/averageNationalIncomeBar"
                     style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="18dp"
-                    android:progress="15"
                     android:progressBackgroundTint="#000000"
                     android:progressTint="@android:color/holo_green_light" />
             </LinearLayout>

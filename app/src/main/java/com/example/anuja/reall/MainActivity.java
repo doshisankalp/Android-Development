@@ -53,9 +53,11 @@ Button btn_exit;
     }
 
 
-
-
-
+    @Override
+    public void onBackPressed() {
+        Intent i=new Intent(MainActivity.this,login.class);
+        startActivity(i);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

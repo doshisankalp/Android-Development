@@ -1,8 +1,10 @@
 package com.example.anuja.reall;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -42,7 +44,7 @@ public class StartLife extends AppCompatActivity {
         i =getIntent();
         ID= i.getStringExtra("ID");
         Log.e("In start:", String.valueOf(ID));
-        url="http://192.168.1.124:9090/rlg/game/get_person/"+ID;
+        url=Constant.GAMEURL+"get_person/"+ID;
         start_life=(Button)findViewById(R.id.start_life);
         name=(TextView)findViewById(R.id.Name);
         gender=(TextView)findViewById(R.id.start_life_gender);
@@ -95,6 +97,29 @@ public class StartLife extends AppCompatActivity {
         get_life_info();
     }
 
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(StartLife.this);
+
+        builder.setTitle("Start Life");
+        builder.setMessage("Do you want to go back?");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent i=new Intent(StartLife.this,MainActivity.class);
+                startActivity(i);
+            }
+        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog=builder.create();
+        dialog.show();
+    }
 
 
 

@@ -85,6 +85,10 @@
             android:label="WellBeingIndicators"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".register"
+            android:label="register"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".login"
             android:label="login"
             android:theme="@style/AppTheme.NoActionBar">
@@ -97,6 +101,15 @@
         <activity android:name=".ForgetPassword"
             android:label="forget password"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ActivityFirstName"
+            android:label="@string/title_activity_first_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ActivitySurname"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
     </application>
 
 </manifest>
