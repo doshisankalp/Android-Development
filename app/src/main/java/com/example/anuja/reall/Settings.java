@@ -492,7 +492,7 @@ public class Settings extends AppCompatActivity {
         username=pref.getString("username","");
         Log.e("username",username);
 
-        String url="http://192.168.1.124:9090/rlg/game/gamesettings/"+username+"?";
+        String url=Constant.GAMEURL+"gamesettings/"+username+"?";
         Log.e("url",url);
         RequestQueue requestQueue= Volley.newRequestQueue(Settings.this);
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(
@@ -962,7 +962,7 @@ public String data(boolean flag)
         pref=getApplication().getSharedPreferences("Options", MODE_PRIVATE);
         username=pref.getString("username","");
         Log.e("username",username);
-        String url1="http://192.168.1.124:9090/rlg/game/gamesettings/"+username;
+        String url1=Constant.GAMEURL+"gamesettings/"+username;
         final JSONObject jsonobject_one = new JSONObject();
 
         try {

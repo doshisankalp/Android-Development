@@ -2,9 +2,11 @@ package com.example.anuja.reall;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -39,7 +41,7 @@ public class login extends AppCompatActivity {
     EditText name,password;
     TextView register,forget;
     String username,password1;
-    String url="http://192.168.1.124:9090/rlg/api/login";
+    String url=Constant.APIURL+"login";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,8 +84,8 @@ public class login extends AppCompatActivity {
 
         register.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                //Intent intent = new Intent(login.this, register.class);
-                //startActivity(intent);
+                Intent intent = new Intent(login.this, register.class);
+                startActivity(intent);
             }
         });
 
@@ -109,6 +111,7 @@ public class login extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        Log.e("server",url);
         RequestQueue requestQueue= Volley.newRequestQueue(login.this);
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(
                 Request.Method.POST, url, jsonobject_one,
@@ -209,6 +212,29 @@ public class login extends AppCompatActivity {
         ConnectivityManager connectivityManager=(ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetInfo=connectivityManager.getActiveNetworkInfo();
         return activeNetInfo!=null && activeNetInfo.isConnected();
+    }
+
+
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(login.this);
+
+        builder.setMessage("Do you want to Exit?");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                System.exit(0);
+            }
+        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog=builder.create();
+        dialog.show();
     }
 
 

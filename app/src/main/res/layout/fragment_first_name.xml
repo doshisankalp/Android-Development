@@ -1,71 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/firstname_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.anuja.reall.CompletedLives"
-    tools:showIn="@layout/activity_completed_lives">
+    android:background="@color/backblue"
+    tools:context=".PersonalityFragment">
 
     <RelativeLayout
         android:id="@+id/relativelayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/heximage"
-        android:padding="10dp"
         android:orientation="vertical"
-        >
-
+        android:padding="10dp">
 
         <Button
-            android:id="@+id/cancelbutton"
+            android:id="@+id/Backbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/showlifebutton"
-            android:background="@drawable/buttonstyle"
             android:layout_margin="5dp"
-            android:textColor="@color/white"
-            android:text="@string/cancel"
-            android:onClick="tomainactivity"/>
+            android:layout_toLeftOf="@+id/playlifebutton"
+            android:background="@drawable/buttonstyle"
+            android:onClick="toselectcity"
+            android:text="@string/back"
+            android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/showlifebutton"
+            android:id="@+id/playlifebutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_margin="5dp"
             android:background="@drawable/buttonstyle"
-            android:textColor="@color/white"
-            android:text="@string/show_life"
-           />
+            android:text="@string/play_life"
+            android:textColor="@color/white" />
 
 
         <ScrollView
             android:id="@+id/scrollview_choices"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/Backbutton"
+            android:layout_below="@id/selectacity"
             android:fillViewport="true"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:layout_above="@id/cancelbutton"
-            >
-
+            android:scrollbarAlwaysDrawVerticalTrack="true">
 
             <RadioGroup
                 android:id="@+id/choices"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:orientation="vertical"
+                android:orientation="vertical">
 
-                >
             </RadioGroup>
-
         </ScrollView>
 
     </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
