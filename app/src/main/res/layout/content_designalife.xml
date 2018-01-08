@@ -44,7 +44,7 @@
             android:background="@drawable/buttonstyle"
             android:layout_margin="5dp"
             android:textColor="@color/white"
-            android:text="@string/play_life"
+            android:text="@string/back"
             android:onClick="tomainactivity"/>
 
         <Button
@@ -60,27 +60,14 @@
             android:onClick="goto_selectcity"/>
 
 
-        <ScrollView
-            android:id="@+id/scrollview_choices"
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fillViewport="true"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:layout_below="@id/selectac"
-            android:layout_above="@id/playlifebutton"
-            >
 
-            <RadioGroup
-                android:id="@+id/choices"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-
-                >
-
-            </RadioGroup>
-        </ScrollView>
+            android:layout_above="@id/selectcitybutton"
+            android:layout_below="@+id/selectac"
+            android:id="@+id/recycler_designlife"
+            android:scrollbars="vertical"/>
 
     </RelativeLayout>
 

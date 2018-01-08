@@ -94,7 +94,6 @@ public class Loading extends AppCompatActivity {
 
                 ID=error.toString().split(" ")[3];
                 Log.e("ID",ID);
-                start=1;
                 Intent intent = new Intent(Loading.this, StartLife.class);
                 intent.putExtra("ID",ID);
                 Log.e("In loading",ID);

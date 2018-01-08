@@ -59,7 +59,7 @@ public class Loadlife extends AppCompatActivity {
     SharedPreferences pref;
     Loadlives selected_life=new Loadlives();
     private LoadlivesAdapter mAdapter;
-    String url = "http://192.168.1.124:9090/rlg/game/getAllSavedGamesInfoList/";
+    String url = Constant.GAMEURL+"getAllSavedGamesInfoList/";
 
 
 
@@ -87,13 +87,13 @@ public class Loadlife extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Loadlife.this,Loading.class);
+                Intent intent=new Intent(Loadlife.this,StartLife.class);
                 startActivity(intent);
-//                selected_life=(mAdapter.get_selected_life());
-//                System.out.println("selected id : "+selected_life.getReallivesGameId());
-//                int id=selected_life.getReallivesGameId();
-//                intent.putExtra("ID",Integer.toString(id));
-//                startActivity(intent);
+                selected_life=(mAdapter.get_selected_life());
+                System.out.println("selected id : "+selected_life.getReallivesGameId());
+                int id=selected_life.getReallivesGameId();
+                intent.putExtra("ID",Integer.toString(id));
+                startActivity(intent);
 //
 //
 //
@@ -156,8 +156,11 @@ public class Loadlife extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<>();
+                pref=getApplication().getSharedPreferences("Options", MODE_PRIVATE);
+                String token=pref.getString("token","");
+                Log.e("token",token);
                 headers.put("Content-Type", "application/json");
-                headers.put("x-auth-token", "eyJ1c2VyUm9sZUlkIjowLCJ1c2VySWQiOjMsInJvbGVDb2RlIjpudWxsLCJkZXNjIjpudWxsLCJnYW1lU2V0dGluZ3MiOm51bGwsImZ1bGxOYW1lIjpudWxsLCJlbWFpbElkIjpudWxsLCJhY3RpdmUiOnRydWUsImNvdW50cnkiOm51bGwsImNvZGUiOm51bGwsInB1cmNoYXNlRmFsZyI6bnVsbCwiY3VycmVudERhdGUiOm51bGwsImJpcnRoRGF0ZSI6bnVsbCwiZ2VuZGVyIjpudWxsLCJ1c2VybmFtZSI6ImthcnVuYWRhbmRlMTEzIiwiYWNjb3VudEV4cGlyZWQiOmZhbHNlLCJhY2NvdW50TG9ja2VkIjpmYWxzZSwiY3JlZGVudGlhbHNFeHBpcmVkIjpmYWxzZSwiYWNjb3VudERpc2FibGVkIjpmYWxzZSwiYXV0aG9yaXRpZXMiOlt7InVzZXJJZCI6MywiYXV0aG9yaXR5IjoiUk9MRV9HQU1FVVNFUiJ9XSwiZXhwaXJlcyI6MTUxNTIyMDc1ODQ5MSwiZm9yZ2V0UGFzc3dvcmRGbGFnIjpmYWxzZX0=.DVinc87hjvMlgBWbaVq4+zcX5ufrsltBfYi1sRNYWNI=");
+                headers.put("x-auth-token",token);
                 return headers;
             }
 
