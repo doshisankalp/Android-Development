@@ -3,11 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/homebackground"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
     android:id="@+id/showdescriptioncontenttitle"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true">
 
     <ImageView
         android:id="@+id/rl"
@@ -19,73 +21,81 @@
 
     <ImageButton
         android:id="@+id/playbutton"
-        android:background="@drawable/playbtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="tolivealife"/>
+        android:layout_below="@+id/rl"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/playbtn"
+        android:onClick="tolivealife"
+        />
+
+
+<RelativeLayout
+
+    android:layout_width="wrap_content"
+    android:id="@+id/content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/playbutton"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true">
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#07000000"
-        android:textColor="#FFFF"
-        android:text="@string/DAL"
-        android:layout_marginTop="210dp"
-        android:layout_below="@+id/rl"
         android:layout_centerHorizontal="true"
+        android:background="#07000000"
         android:onClick="loadlife"
-        />
+        android:text="@string/DAL"
+        android:textColor="#FFFF" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFFF"
-        android:layout_centerHorizontal="true"
-        android:padding="1dp"
-        android:text="@string/LL"
         android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
         android:background="#07000000"
         android:onClick="sendMessage"
-        />
+        android:padding="1dp"
+        android:text="@string/LL"
+        android:textColor="#FFFF" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#07000000"
-        android:textColor="#FFFF"
-        android:layout_centerHorizontal="true"
-        android:text="@string/CL"
         android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:background="#07000000"
         android:onClick="tocompletedlives"
-        />
+        android:text="@string/CL"
+        android:textColor="#FFFF" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFFF"
-        android:gravity="center"
-        android:background="#07000000"
-        android:text="@string/S"
+
         android:layout_below="@+id/button3"
         android:layout_centerHorizontal="true"
-        android:onClick="tosettings"/>
+        android:background="#07000000"
+        android:gravity="center"
+        android:onClick="tosettings"
 
+        android:text="@string/S"
+        android:textColor="#FFFF" />
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFFF"
-        android:background="#07000000"
-        android:text="@string/E"
         android:layout_below="@+id/button4"
         android:layout_centerHorizontal="true"
-        />
+        android:background="#07000000"
+
+        android:text="@string/E"
+        android:textColor="#FFFF" />
+</RelativeLayout>
 </RelativeLayout>
 
 

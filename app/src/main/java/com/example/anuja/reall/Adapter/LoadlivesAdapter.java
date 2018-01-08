@@ -1,7 +1,7 @@
 package com.example.anuja.reall.Adapter;
 
 /**
- * Created by ANUJA on 07/Jun/2017.
+ * Created by Anshi on 07/Jun/2017.
  */
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -68,8 +68,16 @@ public class LoadlivesAdapter extends RecyclerView.Adapter<LoadlivesAdapter.MyVi
         System.out.println("bind");
         final Loadlives movie =livesList.get(position);
         holder.name.setText(movie.getName());
-        holder.age.setText(String.valueOf(movie.getAge()));
-        holder.gender.setText(movie.getGender());
+        holder.age.setText(String.valueOf("Age "+movie.getAge())+"    - ");
+        if(movie.getGender().equals("M"))
+        {
+            holder.gender.setText("Male    - ");
+        }
+        else
+        {
+            holder.gender.setText("Female    - ");
+        }
+
         holder.country.setText(movie.getCountry());
         holder.mRadio.setChecked(position == mSelectedItem);
 

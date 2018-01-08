@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backblue"
     tools:context="com.example.anuja.reall.CompletedLives">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/appbar"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -17,7 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/backblue"
-            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:weightSum="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,20 +37,23 @@
                     android:id="@+id/toolbar_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+
                     android:layout_weight="0.32"
-                    android:padding="20dp"
-                    android:text="@string/compelted_lives"
+                    android:padding="15dp"
+                    android:text="COMPLETED LIVES"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
             </LinearLayout>
-            </android.support.v7.widget.Toolbar>
 
+
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_completed_lives" />
+    <include layout="@layout/content_completed_lives"
+        android:id="@+id/include2" />
 
 
 
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

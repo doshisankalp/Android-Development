@@ -12,8 +12,7 @@
     android:backgroundTint="@color/backblue"
     android:clickable="true"
     android:background="?android:attr/selectableItemBackground"
-    android:orientation="vertical"
-   >
+    android:orientation="vertical">
 
 
 
@@ -24,14 +23,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        app:cardBackgroundColor="@color/transparent"
-        android:layout_below="@+id/nameText">
+        app:cardBackgroundColor="@color/transparent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,7 +54,42 @@
                     android:textSize="16dp"
                     android:textStyle="bold" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
 
+                    android:id="@+id/age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:layout_marginLeft="32dp"
+                    android:paddingTop="200dp"
+                    android:textColor="@color/sides"/>
+                    
+
+                <TextView
+                    android:id="@+id/gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:textColor="@color/sides" />
+                />
+
+                  
+
+                <TextView
+                    android:id="@+id/country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:padding="6dp"
+                    android:textColor="@color/sides"
+                    android:paddingTop="30dp"
+
+                    />
+
+            </LinearLayout>
         </LinearLayout>
 
     </android.support.v7.widget.CardView>

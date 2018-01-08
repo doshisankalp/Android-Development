@@ -90,11 +90,11 @@ public class Loadlife extends AppCompatActivity {
                 Intent intent=new Intent(Loadlife.this,StartLife.class);
                 startActivity(intent);
                 selected_life=(mAdapter.get_selected_life());
-               System.out.println("selected id : "+selected_life.getReallivesGameId());
+                System.out.println("selected id : "+selected_life.getReallivesGameId());
                 int id=selected_life.getReallivesGameId();
                 intent.putExtra("ID",Integer.toString(id));
-               startActivity(intent);
-
+                startActivity(intent);
+//
 //
 //
 //
@@ -161,7 +161,7 @@ public class Loadlife extends AppCompatActivity {
                 Log.e("token",token);
                 headers.put("Content-Type", "application/json");
                 headers.put("x-auth-token",token);
-               return headers;
+                return headers;
             }
 
         };
