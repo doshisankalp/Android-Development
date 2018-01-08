@@ -118,10 +118,10 @@
                     android:layout_below="@id/familyheading">
 
                     <TextView
+                        android:id="@+id/familymembers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="11 Members . 5M . 6F"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
@@ -160,10 +160,10 @@
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/countryname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="China"
                         android:textColor="@color/white" />
                 </LinearLayout>
 

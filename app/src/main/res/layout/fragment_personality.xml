@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/backblue"
+    android:id="@+id/person_fragment"
+    android:layout_width="match_parent"
 
+    android:layout_height="match_parent"
+    android:background="@color/backblue"
     tools:context=".PersonalityFragment">
 
     <ScrollView
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:background="@drawable/heximage"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:background="@drawable/heximage"
         android:fillViewport="true"
         android:scrollbarAlwaysDrawVerticalTrack="true">
+
         <RelativeLayout
+            android:id="@+id/mylayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
 
 
             <TextView
@@ -25,84 +27,99 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/gender"
-                android:textColor="@color/white"
-                />
-            <RadioButton
-                android:id="@+id/male"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Male"
-                android:shadowColor="@color/white"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:layout_margin="5dp"
-                android:padding="5dp"
-                android:layout_below="@+id/txtgender"
-                />
+                android:textColor="@color/white" />
 
-            <RadioButton
-                android:id="@+id/female"
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Female"
-                android:shadowColor="@color/white"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:layout_margin="5dp"
-                android:padding="5dp"
-                android:layout_below="@+id/txtgender"
-                android:layout_toRightOf="@id/male"
-                />
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:id="@+id/radiogroup1"
+                >
+
+                <RadioButton
+                    android:id="@+id/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtgender"
+                    android:layout_margin="5dp"
+                    android:buttonTint="@color/colorRadioButton"
+                    android:padding="5dp"
+                    android:shadowColor="@color/white"
+                    android:text="Male"
+                    android:textColor="@color/white" />
+
+
+
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtgender"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@id/male"
+                    android:buttonTint="@color/colorRadioButton"
+                    android:padding="5dp"
+                    android:shadowColor="@color/white"
+                    android:text="Female"
+                    android:textColor="@color/white" />
+
+            </RadioGroup>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
 
-                android:layout_below="@id/female"
+                android:layout_below="@id/radiogroup1"
                 android:background="@android:color/darker_gray" />
 
             <TextView
                 android:id="@+id/txtlocale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/male"
+                android:layout_below="@id/radiogroup1"
                 android:layout_marginTop="20dp"
                 android:padding="5dp"
                 android:text="@string/locale"
-                android:textColor="@color/white"
-                />
+                android:textColor="@color/white" />
 
-            <RadioButton
-                android:id="@+id/urban"
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/urban"
-                android:shadowColor="@color/white"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:layout_margin="5dp"
-                android:padding="5dp"
+                android:id="@+id/radiogroup2"
                 android:layout_below="@+id/txtlocale"
-                />
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/urban"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtlocale"
+                    android:layout_margin="5dp"
+                    android:buttonTint="@color/colorRadioButton"
+                    android:padding="5dp"
+                    android:shadowColor="@color/white"
+                    android:text="@string/urban"
+                    android:textColor="@color/white" />
 
-            <RadioButton
-                android:id="@+id/rural"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rural"
-                android:shadowColor="@color/white"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:layout_margin="5dp"
-                android:padding="5dp"
-                android:layout_below="@+id/txtlocale"
-                android:layout_toRightOf="@id/urban"
-                />
+                <RadioButton
+                    android:id="@+id/rural"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtlocale"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@id/urban"
+                    android:buttonTint="@color/colorRadioButton"
+                    android:padding="5dp"
+                    android:shadowColor="@color/white"
+                    android:text="Rural"
+                    android:textColor="@color/white" />
+            </RadioGroup>
+
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/rural"
+                android:layout_below="@id/radiogroup2"
                 android:background="@android:color/darker_gray" />
 
 
@@ -110,14 +127,12 @@
                 android:id="@+id/txtpotentialA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/urban"
-                android:layout_marginTop="20dp"
+                android:layout_below="@id/radiogroup2"
                 android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
                 android:padding="5dp"
                 android:text="@string/potential_attributes"
-                android:textColor="@color/white"
-                />
-
+                android:textColor="@color/white" />
 
 
             <TableLayout
@@ -133,78 +148,79 @@
                         android:id="@+id/health"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_margin="10dp"
-                        android:text="@string/health"/>
+                        android:text="@string/health"
+                        android:textColor="@color/white" />
 
                     <SeekBar
                         android:id="@+id/SeekBar1"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_margin="10dp"
+                        android:layout_weight="1"
 
                         />
                 </TableRow>
 
 
                 <TableRow>
+
                     <TextView
                         android:id="@+id/resïstance"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_margin="10dp"
-                        android:text="@string/resistance"/>
+                        android:text="@string/resistance"
+                        android:textColor="@color/white" />
 
                     <SeekBar
                         android:id="@+id/SeekBar2"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
                 </TableRow>
 
 
                 <TableRow>
+
                     <TextView
                         android:id="@+id/happiness"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_margin="10dp"
-                        android:text="@string/happiness"/>
+                        android:text="@string/happiness"
+                        android:textColor="@color/white" />
 
                     <SeekBar
                         android:id="@+id/SeekBar3"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
                 </TableRow>
 
                 <TableRow>
+
                     <TextView
                         android:id="@+id/intelligence"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_margin="10dp"
-                        android:text="@string/intelligence"/>
+                        android:text="@string/intelligence"
+                        android:textColor="@color/white" />
 
                     <SeekBar
                         android:id="@+id/SeekBar4"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
                 </TableRow>
 
 
                 <TableRow>
+
                     <TextView
                         android:id="@+id/artistic"
                         android:layout_width="wrap_content"
@@ -212,6 +228,7 @@
                         android:layout_margin="10dp"
                         android:text="@string/artistic"
                         android:textColor="@color/white" />
+
                     <SeekBar
                         android:id="@+id/SeekBar5"
                         android:layout_width="fill_parent"
@@ -224,112 +241,115 @@
 
 
                 <TableRow>
+
                     <TextView
                         android:id="@+id/musical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_margin="10dp"
-                        android:text="@string/musical"/>
+                        android:text="@string/musical"
+                        android:textColor="@color/white" />
 
                     <SeekBar
                         android:id="@+id/SeekBar6"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                      android:layout_weight="1"
+                        android:layout_weight="1"
 
                         />
                 </TableRow>
+
                 <TableRow>
+
                     <TextView
                         android:id="@+id/athletic"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_margin="10dp"
-                        android:text="@string/athletic"/>
+                        android:text="@string/athletic"
+                        android:textColor="@color/white" />
 
                     <SeekBar
                         android:id="@+id/SeekBar7"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
 
                 </TableRow>
 
                 <TableRow>
+
                     <TextView
                         android:id="@+id/strength"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_margin="10dp"
-                        android:text="@string/strength"/>
+                        android:text="@string/strength"
+                        android:textColor="@color/white" />
 
                     <SeekBar
                         android:id="@+id/SeekBar8"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
 
                 </TableRow>
 
                 <TableRow>
+
                     <TextView
                         android:id="@+id/physical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_margin="10dp"
-                        android:text="@string/phys_endurance"/>
+                        android:text="@string/phys_endurance"
+                        android:textColor="@color/white" />
 
                     <SeekBar
                         android:id="@+id/SeekBar9"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
                 </TableRow>
 
                 <TableRow>
+
                     <TextView
                         android:id="@+id/spiritual"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_margin="10dp"
-                        android:text="@string/spiritual"/>
+                        android:text="@string/spiritual"
+                        android:textColor="@color/white" />
 
                     <SeekBar
                         android:id="@+id/SeekBar10"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
                 </TableRow>
+
                 <TableRow>
+
                     <TextView
-                        android:id="@+id/wisdom"
+                        android:id="@+id/goodlooks"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_margin="10dp"
-                        android:text="@string/wisdom"/>
+                        android:text="@string/goodlooks"
+                        android:textColor="@color/white" />
 
                     <SeekBar
                         android:id="@+id/SeekBar11"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
                 </TableRow>
 
 
@@ -342,26 +362,24 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/table"
-                android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp"
                 android:background="#87CEEB"
-                android:textColor="@color/white"
                 android:text="@string/play_life"
-               />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/Backbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:background="#87CEEB"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/white"
-                android:text="@string/back"
                 android:layout_toLeftOf="@id/playlifebutton1"
+                android:background="#87CEEB"
                 android:onClick="toselectcity"
-               />
+                android:text="@string/back"
+                android:textColor="@color/white" />
 
 
         </RelativeLayout>
