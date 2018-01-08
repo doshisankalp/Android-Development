@@ -129,21 +129,23 @@
 
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_column="1"
                         android:layout_marginRight="8dp"
                         android:layout_marginTop="16dp"
                         android:layout_weight="0.33"
-                        android:src="@drawable/china_flag_64" />
+
+                        android:id="@+id/country_flag"/>
 
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_column="2"
                         android:layout_marginRight="8dp"
                         android:layout_marginTop="16dp"
                         android:layout_weight="0.33"
-                        android:src="@drawable/china_flag_64" />
+
+                        android:id="@+id/reg_country_flag"/>
                 </TableRow>
 
 

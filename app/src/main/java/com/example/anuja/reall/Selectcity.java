@@ -115,14 +115,13 @@ public class Selectcity extends AppCompatActivity {
                     new int[] {
 
                             Color.BLACK //disabled
-                            ,Color.CYAN //enabled
+                            , Color.CYAN //enabled
 
                     }
             );
 
 
-            //radio.setButtonTintList(colorStateList);//set the color tint list
-            //radio.invalidate(); //could not be necessary
+
         }
 
         RequestQueue que= Volley.newRequestQueue(Selectcity.this);
@@ -138,8 +137,6 @@ public class Selectcity extends AppCompatActivity {
                         for(int i=0;i<response.length();i++)
                         {
                             try {
-                                //myarray.add(((JSONObject) response.get(i)).getString("countryName"));
-
                                 obj=(JSONObject) response.get(i);
                                 cityObject[i]=obj;
                                 Log.e("DATA",obj.getString("cityName"));
@@ -151,7 +148,6 @@ public class Selectcity extends AppCompatActivity {
                                 rb.setText(obj.getString("cityName"));
                                 ll.addView(tv);
                                 ll.addView(rb);
-
                                 rb.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
@@ -159,12 +155,6 @@ public class Selectcity extends AppCompatActivity {
                                         cityname=rb.getText().toString();
                                     }
                                 });
-
-
-                                //Log.d("DATA",myarray.get(i));
-
-
-
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
