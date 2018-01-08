@@ -1,11 +1,13 @@
 package com.example.anuja.reall;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
@@ -14,6 +16,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -218,13 +221,16 @@ public class login extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder=new AlertDialog.Builder(login.this);
-Log.e("hi","hello");
-        builder.setMessage("Do you want to Exit?");
-        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(login.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_quit, null);
+
+        mBuilder.setView(dialogView);
+
+
+        mBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                System.exit(0);
+               finish();
             }
         }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override
@@ -233,8 +239,12 @@ Log.e("hi","hello");
             }
         });
 
-        AlertDialog dialog=builder.create();
-        dialog.show();
+        Dialog d = mBuilder.create();
+        d.setContentView(dialogView);
+        d.getWindow().setGravity(Gravity.CENTER);
+        d.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(login.this, R.drawable.layout_bgnocorners));
+
+        d.show();
     }
 
 

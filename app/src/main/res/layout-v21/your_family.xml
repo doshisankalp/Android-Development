@@ -33,6 +33,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
+                android:textColor="@color/colorPureWhite"
                 android:text="Your Family"
                 android:textAllCaps="true" />
 
@@ -50,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Family Members"
+            android:textColor="@color/colorPureWhite"
             android:textAllCaps="true" />
 
         <HorizontalScrollView
@@ -85,10 +87,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:textColor="@color/colorPureWhite"
                     android:text="Net Worth" />
 
                 <TextView
                     android:id="@+id/netWorthYourFamily"
+                    android:textColor="@color/colorPureWhite"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="24sp" />
@@ -103,11 +107,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:textColor="@color/colorPureWhite"
                     android:text="Income/Month" />
 
                 <TextView
                     android:id="@+id/incomeYourFamily"
                     android:layout_width="match_parent"
+                    android:textColor="@color/colorPureWhite"
                     android:layout_height="wrap_content"
                     android:textSize="24sp" />
 
@@ -123,6 +129,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:text="Income comparison"
+                    android:textColor="@color/colorPureWhite"
                     android:textAllCaps="true"
                     android:textSize="16sp" />
 
@@ -130,6 +137,7 @@
                     android:id="@+id/avg_world_income1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorPureWhite"
                     android:layout_marginTop="24dp"
                     />
 
@@ -145,6 +153,7 @@
                     android:id="@+id/avg_world_income2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorPureWhite"
                     android:layout_marginTop="24dp" />
 
                 <ProgressBar
@@ -159,6 +168,7 @@
                     android:id="@+id/avg_world_income3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorPureWhite"
                     android:layout_marginTop="24dp" />
 
                 <ProgressBar

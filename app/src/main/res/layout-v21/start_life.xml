@@ -46,7 +46,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:textColor="@color/colorPureWhite"
                     android:layout_centerVertical="true"
                     android:text="You Are Born as"
                     android:textAllCaps="true" />
@@ -67,6 +67,7 @@
                 <TextView
                     android:id="@+id/start_life_gender"
                     android:layout_width="wrap_content"
+                    android:textColor="@color/colorPureWhite"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/Name"
                     android:layout_marginTop="16dp" />
@@ -74,6 +75,7 @@
                 <TextView
                     android:id="@+id/start_life_location"
                     android:layout_width="wrap_content"
+                    android:textColor="@color/colorPureWhite"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/start_life_gender"
                     android:layout_marginTop="4dp" />
@@ -82,6 +84,7 @@
                     android:id="@+id/start_life_language"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorPureWhite"
                     android:layout_below="@+id/start_life_location"
                     android:layout_marginTop="4dp" />
 
@@ -89,6 +92,7 @@
                     android:id="@+id/start_life_religion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorPureWhite"
                     android:layout_below="@+id/start_life_language"
                     android:layout_marginTop="4dp" />
 

@@ -1,12 +1,16 @@
 package com.example.anuja.reall;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
@@ -30,6 +34,7 @@ public class LiveALife extends AppCompatActivity {
     Button btn_relation;
     Button btn_leisure;
     Button btn_residence;
+    Button yes;
     TextView name,age_gender,countryname,familymember;
 
     @Override
@@ -46,6 +51,10 @@ public class LiveALife extends AppCompatActivity {
         age_gender=(TextView)findViewById(R.id.age_gender);
         countryname=(TextView)findViewById(R.id.countryname);
         familymember=(TextView)findViewById(R.id.familymembers);
+        yes=(Button)findViewById(R.id.parents_dialog_moveout);
+
+
+
 
         i =getIntent();
         final String responce_string= i.getStringExtra("responce_object");
@@ -188,7 +197,7 @@ public class LiveALife extends AppCompatActivity {
 
 
     public void onBackPressed() {
-        AlertDialog.Builder builder=new AlertDialog.Builder(LiveALife.this);
+        /*AlertDialog.Builder builder=new AlertDialog.Builder(LiveALife.this);
 
         builder.setTitle("Live A Life");
         builder.setMessage("Do you want to quit playing current life?");
@@ -206,7 +215,35 @@ public class LiveALife extends AppCompatActivity {
         });
 
         AlertDialog dialog=builder.create();
-        dialog.show();
+        dialog.show();*/
+
+
+
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(LiveALife.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_quit, null);
+
+        mBuilder.setView(dialogView);
+
+
+        mBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent i=new Intent(LiveALife.this,MainActivity.class);
+                startActivity(i);
+            }
+        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        Dialog d = mBuilder.create();
+        d.setContentView(dialogView);
+        d.getWindow().setGravity(Gravity.CENTER);
+        d.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(LiveALife.this, R.drawable.layout_bgnocorners));
+
+        d.show();
     }
 
 
@@ -233,6 +270,10 @@ public class LiveALife extends AppCompatActivity {
         Intent intent = new Intent(LiveALife.this, ActionActivity.class);
         intent.putExtra("default",position);
         startActivity(intent);
+    }
+    public void quit(View view){
+        Intent i=new Intent(LiveALife.this,MainActivity.class);
+        startActivity(i);
     }
 
 }

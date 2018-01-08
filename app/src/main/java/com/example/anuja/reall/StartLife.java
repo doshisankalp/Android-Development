@@ -1,12 +1,15 @@
 package com.example.anuja.reall;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -100,7 +103,7 @@ public class StartLife extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder=new AlertDialog.Builder(StartLife.this);
+       /* AlertDialog.Builder builder=new AlertDialog.Builder(StartLife.this);
 
         builder.setTitle("Start Life");
         builder.setMessage("Do you want to go back?");
@@ -118,7 +121,36 @@ public class StartLife extends AppCompatActivity {
         });
 
         AlertDialog dialog=builder.create();
-        dialog.show();
+        dialog.show();*/
+
+
+
+
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(StartLife.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_quit, null);
+
+        mBuilder.setView(dialogView);
+
+
+        mBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent i=new Intent(StartLife.this,MainActivity.class);
+                startActivity(i);
+            }
+        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        Dialog d = mBuilder.create();
+        d.setContentView(dialogView);
+        d.getWindow().setGravity(Gravity.CENTER);
+        d.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(StartLife.this, R.drawable.layout_bgnocorners));
+
+        d.show();
     }
 
 
@@ -139,7 +171,16 @@ public class StartLife extends AppCompatActivity {
                             responce_object=response;
                             JSONObject object = response.getJSONObject("SELF");
                             name.setText(object.getString("fullName"));
-                            gender.setText( object.getString("sex"));
+
+                            String gender1= object.getString("sex");
+                            if(gender1.equals("F")){
+                                gender.setText("Female");
+                            }
+                            else
+                            {
+                                gender.setText("Male");
+                            }
+
                             JSONObject object5=object.getJSONObject("traits");
                             happiness_index.setText(object5.getString("happiness"));
                             JSONObject object1=object.getJSONObject("country");

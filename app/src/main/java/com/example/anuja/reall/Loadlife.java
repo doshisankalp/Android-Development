@@ -59,7 +59,7 @@ public class Loadlife extends AppCompatActivity {
     SharedPreferences pref;
     Loadlives selected_life=new Loadlives();
     private LoadlivesAdapter mAdapter;
-    String url = "http://192.168.1.124:9090/rlg/game/getAllSavedGamesInfoList/";
+    String url = Constant.GAMEURL+"getAllSavedGamesInfoList/";
 
 
 
