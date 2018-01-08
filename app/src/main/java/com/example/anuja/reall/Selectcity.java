@@ -7,6 +7,9 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +27,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.anuja.reall.Adapter.DesignLifeAdapter;
+import com.example.anuja.reall.Adapter.SelectCityAdapter;
+import com.example.anuja.reall.Model.DesignLifeModel;
+import com.example.anuja.reall.Model.SelectCityModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,6 +38,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Selectcity extends AppCompatActivity {
@@ -42,6 +50,13 @@ public class Selectcity extends AppCompatActivity {
     public static String cityname;
     public static JSONObject cityObject[]=new JSONObject[350];
     ColorStateList colorStateList = null;
+
+
+     List<SelectCityModel> myarray=new ArrayList<>();
+
+    public static SelectCityModel selected_city=new SelectCityModel();
+    private SelectCityAdapter scadapter;
+    private RecyclerView recyclerView;
 
     String url=Constant.GAMEURL+"characterDesign/";
 
@@ -62,6 +77,12 @@ public class Selectcity extends AppCompatActivity {
         }
 
 
+
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_selectcity);
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(Selectcity.this);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         getCities();
 
 
@@ -93,37 +114,16 @@ public class Selectcity extends AppCompatActivity {
     }
 
 
+    public void getCityName(String s)
+    {
+        cityname=s;
+        System.out.println("citynameinselectcity"+cityname);
+
+    }
+
+
     void getCities()
     {
-
-
-        final ArrayList<String> myarray=new ArrayList<String>();
-        final RadioButton rb[];
-        final RadioGroup ll = new RadioGroup(Selectcity.this);
-        ll.setOrientation(LinearLayout.VERTICAL);
-
-
-        if(Build.VERSION.SDK_INT>=21)
-        {
-
-            colorStateList = new ColorStateList(
-                    new int[][]{
-
-                            new int[]{-android.R.attr.state_enabled}, //disabled
-                            new int[]{android.R.attr.state_enabled} //enabled
-                    },
-                    new int[] {
-
-                            Color.BLACK //disabled
-                            ,Color.CYAN //enabled
-
-                    }
-            );
-
-
-            //radio.setButtonTintList(colorStateList);//set the color tint list
-            //radio.invalidate(); //could not be necessary
-        }
 
         RequestQueue que= Volley.newRequestQueue(Selectcity.this);
         JsonArrayRequest req = new JsonArrayRequest(url,
@@ -143,27 +143,9 @@ public class Selectcity extends AppCompatActivity {
                                 obj=(JSONObject) response.get(i);
                                 cityObject[i]=obj;
                                 Log.e("DATA",obj.getString("cityName"));
-                                final RadioButton rb=new RadioButton(Selectcity.this);
-                                final TextView tv=new TextView(Selectcity.this);
-                                rb.setTextColor(Color.WHITE);
-                                rb.setTextSize(20f);
-                                rb.setButtonTintList(colorStateList);
-                                rb.setText(obj.getString("cityName"));
-                                ll.addView(tv);
-                                ll.addView(rb);
 
-                                rb.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        Log.e("Value",rb.getText().toString());
-                                        cityname=rb.getText().toString();
-                                    }
-                                });
-
-
-                                //Log.d("DATA",myarray.get(i));
-
-
+                                SelectCityModel cityName=new SelectCityModel(obj.getString("cityName"));
+                                myarray.add(cityName);
 
 
                             } catch (JSONException e) {
@@ -172,7 +154,9 @@ public class Selectcity extends AppCompatActivity {
 
 
                         }
-                        ((ViewGroup)findViewById(R.id.choices)).addView(ll);
+
+                        SelectCityAdapter scadapter=new SelectCityAdapter(myarray);
+                        recyclerView.setAdapter(scadapter);
 
                     }
 

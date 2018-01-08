@@ -53,27 +53,14 @@
             android:text="@string/selectattr"
             android:onClick="toselectattr"/>
 
-
-        <ScrollView
-            android:id="@+id/scrollview_choices"
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fillViewport="true"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:layout_below="@id/selectacity"
-            android:layout_above="@id/Backbutton"
-            >
 
-            <RadioGroup
-                android:id="@+id/choices"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                >
-
-            </RadioGroup>
-        </ScrollView>
+            android:layout_above="@id/selectattrbutton"
+            android:layout_below="@+id/selectacity"
+            android:id="@+id/recycler_selectcity"
+            android:scrollbars="vertical"/>
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

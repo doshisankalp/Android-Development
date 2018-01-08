@@ -7,6 +7,9 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,12 +28,18 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.anuja.reall.Adapter.FirstNameAdapter;
+import com.example.anuja.reall.Adapter.SurnameAdapter;
+import com.example.anuja.reall.Model.FirstName;
+import com.example.anuja.reall.Model.SurnameModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ActivitySurname extends AppCompatActivity {
@@ -38,16 +47,31 @@ public class ActivitySurname extends AppCompatActivity {
     public static JSONObject cityObject;
     public static JSONObject traitsObject;
     public static  JSONObject finalobj=new JSONObject();
-    String gender, locale, countryid, firstname,lastname,ID;
-     EditText surnameText;
+
+    public static SurnameModel selected_surname=new SurnameModel();
+    private SurnameAdapter snadapter;
+
+    List<SurnameModel> surnameList=new ArrayList<>();
+
+    private RecyclerView recyclerView;
+
+
+    String gender, locale, countryid, firstname,ID;
+    static String lastname;
+     static EditText surnameText;
     ProgressBar load;
     ColorStateList colorStateList;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_surname);
         load=(ProgressBar)findViewById(R.id.load);
         load.setVisibility(View.GONE);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_surname);
 
         Intent i = getIntent();
         try {
@@ -58,7 +82,7 @@ public class ActivitySurname extends AppCompatActivity {
             locale = i.getStringExtra("locale");
             countryid = countryObject.getString("countryid").toString();
             firstname=i.getStringExtra("firstName");
-            surnameText=(EditText)findViewById(R.id.nameText);
+            surnameText=(EditText)findViewById(R.id.nameTextSur);
 
 
 
@@ -74,8 +98,20 @@ public class ActivitySurname extends AppCompatActivity {
         Log.e("firstNameinAS",firstname);
 
 
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(ActivitySurname.this);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
 
         generate();
+    }
+
+
+    public void setName(String s)
+    {
+        lastname=s;
+        System.out.println("lastnameinas"+lastname);
+        surnameText.setText(s);
     }
 
 
@@ -84,31 +120,6 @@ public class ActivitySurname extends AppCompatActivity {
     void generate() {
 
             String url =Constant.GAMEURL+"characterDesign/maleNameList/" + countryid + "/N/L";
-            final RadioButton rb[];
-            final RadioGroup ll = new RadioGroup(ActivitySurname.this);
-            ll.setOrientation(LinearLayout.VERTICAL);
-
-
-            if (Build.VERSION.SDK_INT >= 21) {
-
-                colorStateList = new ColorStateList(
-                        new int[][]{
-
-                                new int[]{-android.R.attr.state_enabled}, //disabled
-                                new int[]{android.R.attr.state_enabled} //enabled
-                        },
-                        new int[]{
-
-                                Color.BLACK //disabled
-                                , Color.CYAN //enabled
-
-                        }
-                );
-
-
-                //radio.setButtonTintList(colorStateList);//set the color tint list
-                //radio.invalidate(); //could not be necessary
-            }
 
             RequestQueue que = Volley.newRequestQueue(ActivitySurname.this);
             JsonArrayRequest req = new JsonArrayRequest(url,
@@ -126,24 +137,9 @@ public class ActivitySurname extends AppCompatActivity {
 
                                     obj = (JSONObject) response.get(i);
                                     Log.e("DATA", obj.getString("name"));
-                                    final RadioButton rb = new RadioButton(ActivitySurname.this);
-                                    rb.setTextColor(Color.WHITE);
-                                    rb.setTextSize(20f);
-                                    rb.setButtonTintList(colorStateList);
-                                    rb.setText(obj.getString("name"));
-                                    ll.addView(rb);
 
-                                    rb.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Log.e("Value", rb.getText().toString());
-                                            lastname = rb.getText().toString();
-                                            surnameText.setText(lastname);
-                                        }
-                                    });
-
-
-                                    //Log.d("DATA",myarray.get(i));
+                                    SurnameModel surname=new SurnameModel(obj.getString("name"));
+                                    surnameList.add(surname);
 
 
                                 } catch (JSONException e) {
@@ -152,7 +148,11 @@ public class ActivitySurname extends AppCompatActivity {
 
 
                             }
-                            ((ViewGroup) findViewById(R.id.choices)).addView(ll);
+
+                            SurnameAdapter snadapter=new SurnameAdapter(surnameList);
+                            recyclerView.setAdapter(snadapter);
+
+
 
                         }
 

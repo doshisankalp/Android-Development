@@ -7,6 +7,9 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,23 +24,46 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.anuja.reall.Adapter.FirstNameAdapter;
+import com.example.anuja.reall.Adapter.LoadlivesAdapter;
+import com.example.anuja.reall.Model.FirstName;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ActivityFirstName extends AppCompatActivity {
+
 
     public static JSONObject countryObject;
     public static JSONObject cityObject;
     public static JSONObject traitsObject;
     String gender, locale, countryid, firstname;
 
-    EditText nameText;
+    static String fname;
+
+   public static FirstName selected_name=new FirstName();
+    private FirstNameAdapter fnadapter;
+
+    public List<FirstName> nameList=new ArrayList<>();
+    private RecyclerView recyclerView;
+
+    static EditText nameText;
     ColorStateList colorStateList;
+
+
+    public void setName(String name)
+    {
+        fname=name;
+        System.out.println("name in"+fname);
+        nameText.setText(name);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +71,8 @@ public class ActivityFirstName extends AppCompatActivity {
         setContentView(R.layout.activity_first_name);
 
         nameText=(EditText)findViewById(R.id.nameText);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_firstname);
 
 
         Intent i = getIntent();
@@ -60,14 +88,16 @@ public class ActivityFirstName extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        /*Log.e("countryinAFN", countryObject.toString());
-        Log.e("cityInAFN", cityObject.toString());
-        Log.e("traitsinAFN", traitsObject.toString());
-        Log.e("genderinAFN", gender);
-        Log.e("localeinAFN", locale);*/
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(ActivityFirstName.this);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
         generate();
+
+
+
     }
 
 
@@ -75,31 +105,7 @@ public class ActivityFirstName extends AppCompatActivity {
 
         if (gender.equals("M")) {
             String url = Constant.GAMEURL+"characterDesign/maleNameList/" + countryid + "/M/F";
-            final RadioButton rb[];
-            final RadioGroup ll = new RadioGroup(ActivityFirstName.this);
-            ll.setOrientation(LinearLayout.VERTICAL);
 
-
-            if (Build.VERSION.SDK_INT >= 21) {
-
-                colorStateList = new ColorStateList(
-                        new int[][]{
-
-                                new int[]{-android.R.attr.state_enabled}, //disabled
-                                new int[]{android.R.attr.state_enabled} //enabled
-                        },
-                        new int[]{
-
-                                Color.BLACK //disabled
-                                , Color.CYAN //enabled
-
-                        }
-                );
-
-
-                //radio.setButtonTintList(colorStateList);//set the color tint list
-                //radio.invalidate(); //could not be necessary
-            }
 
             RequestQueue que = Volley.newRequestQueue(ActivityFirstName.this);
             JsonArrayRequest req = new JsonArrayRequest(url,
@@ -113,28 +119,14 @@ public class ActivityFirstName extends AppCompatActivity {
 
                             for (int i = 0; i < response.length(); i++) {
                                 try {
-                                    //myarray.add(((JSONObject) response.get(i)).getString("countryName"));
+
 
                                     obj = (JSONObject) response.get(i);
                                     Log.e("DATA", obj.getString("name"));
-                                    final RadioButton rb = new RadioButton(ActivityFirstName.this);
-                                    rb.setTextColor(Color.WHITE);
-                                    rb.setTextSize(20f);
-                                    rb.setButtonTintList(colorStateList);
-                                    rb.setText(obj.getString("name"));
-                                    ll.addView(rb);
 
-                                    rb.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Log.e("Value", rb.getText().toString());
-                                            firstname = rb.getText().toString();
-                                            nameText.setText(firstname);
-                                        }
-                                    });
+                                    FirstName name=new FirstName(obj.getString("name"));
+                                    nameList.add(name);
 
-
-                                    //Log.d("DATA",myarray.get(i));
 
 
                                 } catch (JSONException e) {
@@ -143,7 +135,9 @@ public class ActivityFirstName extends AppCompatActivity {
 
 
                             }
-                            ((ViewGroup) findViewById(R.id.choices)).addView(ll);
+
+                            FirstNameAdapter fnadapter=new FirstNameAdapter(nameList);
+                            recyclerView.setAdapter(fnadapter);
 
                         }
 
@@ -177,32 +171,6 @@ public class ActivityFirstName extends AppCompatActivity {
         } else if (gender.equals("F")) {
 
             String url = Constant.GAMEURL+"characterDesign/maleNameList/" + countryid + "/F/F";
-            final RadioButton rb[];
-            final RadioGroup ll = new RadioGroup(ActivityFirstName.this);
-            ll.setOrientation(LinearLayout.VERTICAL);
-
-
-            if (Build.VERSION.SDK_INT >= 21) {
-
-                colorStateList = new ColorStateList(
-                        new int[][]{
-
-                                new int[]{-android.R.attr.state_enabled}, //disabled
-                                new int[]{android.R.attr.state_enabled} //enabled
-                        },
-                        new int[]{
-
-                                Color.BLACK //disabled
-                                , Color.CYAN //enabled
-
-                        }
-                );
-
-
-                //radio.setButtonTintList(colorStateList);//set the color tint list
-                //radio.invalidate(); //could not be necessary
-            }
-
             RequestQueue que = Volley.newRequestQueue(ActivityFirstName.this);
             JsonArrayRequest req = new JsonArrayRequest(url,
                     new Response.Listener<JSONArray>() {
@@ -215,30 +183,13 @@ public class ActivityFirstName extends AppCompatActivity {
 
                             for (int i = 0; i < response.length(); i++) {
                                 try {
-                                    //myarray.add(((JSONObject) response.get(i)).getString("countryName"));
+
 
                                     obj = (JSONObject) response.get(i);
                                     Log.e("DATA", obj.getString("name"));
-                                    final RadioButton rb = new RadioButton(ActivityFirstName.this);
-                                    rb.setTextColor(Color.WHITE);
-                                    rb.setTextSize(20f);
-                                    rb.setButtonTintList(colorStateList);
-                                    rb.setText(obj.getString("name"));
-                                    ll.addView(rb);
 
-                                    rb.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Log.e("Value", rb.getText().toString());
-                                            firstname = rb.getText().toString();
-                                            nameText.setText(firstname);
-
-
-                                        }
-                                    });
-
-
-                                    //Log.d("DATA",myarray.get(i));
+                                    FirstName name=new FirstName(obj.getString("name"));
+                                    nameList.add(name);
 
 
                                 } catch (JSONException e) {
@@ -247,7 +198,9 @@ public class ActivityFirstName extends AppCompatActivity {
 
 
                             }
-                            ((ViewGroup) findViewById(R.id.choices)).addView(ll);
+
+                            FirstNameAdapter fnadapter=new FirstNameAdapter(nameList);
+                            recyclerView.setAdapter(fnadapter);
 
                         }
 
@@ -275,7 +228,6 @@ public class ActivityFirstName extends AppCompatActivity {
 
 
             };
-
 
             que.add(req);
         }
