@@ -42,7 +42,7 @@ public class StartLife extends AppCompatActivity {
         i =getIntent();
         ID= i.getStringExtra("ID");
         Log.e("In start:", String.valueOf(ID));
-        url="http://192.168.1.124:9090/rlg/game/get_person/"+ID;
+        url=Constant.GAMEURL+"get_person/"+ID;
         start_life=(Button)findViewById(R.id.start_life);
         name=(TextView)findViewById(R.id.Name);
         gender=(TextView)findViewById(R.id.start_life_gender);

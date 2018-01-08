@@ -39,9 +39,9 @@
     <string name="strength">Strength</string>
     <string name="phys_endurance">Physical\nEndurance</string>
     <string name="spiritual">Spiritual</string>
-    <string name="wisdom">Wisdom</string>
+    <string name="goodlooks">Good Looks</string>
     <string name="utilities">UTILITIES</string>
-    <string name="event">Life event at Age 12 \n In Norway breakfasts are often...hgccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</string>
+    <string name="event">Life event at Age 12 \n In Norway breakfasts are often...</string>
     <string name="subtitle">3 years completed.\nYearly Salary:1234 INR \nTotal earnings yet:2344 INR</string>
     <string name="inf">Art dealers buy art and sell art.Some art dealers represent a single painter.</string>
     <string name="loan_info">0 years completed.\nTotal Initial Loan: 1234 INR\nInterest Rate: 5%\n<b>Total Balance: 1234 INR</b></string>
@@ -105,7 +105,9 @@
     <string name="sex_ratio">Sex Ratio</string>
     <string name="birth_rate">Birth Rate</string>
     <string name="death_rate">Death Rate</string>
-    <string name="infant_mortality">Infant Mortality</string>
+    <string name="infant_mortality">Infant Mortality Rate</string>
+    <string name="female_smokers">Female Smokers(%)</string>
+    <string name="male_smokers">Male smokers(%)</string>
 
     <!--Per Capita-->
     <string name="primary_school_enrollment">Primary School Enrollment</string>
@@ -129,5 +131,5 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="Settings">Settings</string>>
+    <string name="Settings" />
 </resources>

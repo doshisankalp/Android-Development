@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,10 +19,28 @@ import android.webkit.WebViewClient;
 public class CountryWikipediaFragment extends Fragment {
 
     WebView myWebView;
+    static String country;
+    static JSONObject jsonObject=new JSONObject();
 
 
     public CountryWikipediaFragment() {
         // Required empty public constructor
+    }
+
+    void setCountry(String country_name){
+
+        country=country_name;
+
+
+//        this.jsonObject=jsonObject;
+//
+//        try {
+//            JSONObject coun = jsonObject.getJSONObject("country");
+//            System.out.print("");
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+
     }
 
     @Override
@@ -36,7 +57,7 @@ public class CountryWikipediaFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.your_country_2_wikipedia_tab, container, false);
         myWebView = (WebView) v.findViewById(R.id.webview);
-        myWebView.loadUrl("https://en.wikipedia.org/wiki/China");
+        myWebView.loadUrl("https://en.wikipedia.org/wiki/"+country);
         myWebView.setWebViewClient(new WebViewClient());
         myWebView.setHorizontalScrollBarEnabled(false);
 

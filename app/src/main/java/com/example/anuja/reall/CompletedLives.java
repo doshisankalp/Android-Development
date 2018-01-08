@@ -68,8 +68,9 @@ public class CompletedLives extends AppCompatActivity {
 showlife.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-          Intent intent = new Intent(CompletedLives.this, Loading.class);
-           intent.putExtra("ID",countryid);
+          Intent intent = new Intent(CompletedLives.this, StartLife.class);
+           intent.putExtra("ID",String.valueOf(countryid));
+           Log.e("hi", String.valueOf(countryid));
          startActivity(intent);
     }
 });
@@ -99,7 +100,7 @@ showlife.setOnClickListener(new View.OnClickListener() {
         username=pref.getString("username","");
         Log.e("username",username);
 
-        String url=" http://192.168.1.124:9090/rlg/game/getAllSavedGamesInfoList/"+username;
+        String url=Constant.GAMEURL+"getAllSavedGamesInfoList/"+username;
         final ArrayList<String> myarray=new ArrayList<String>();
         final RadioButton rb[];
         final TextView blank[];

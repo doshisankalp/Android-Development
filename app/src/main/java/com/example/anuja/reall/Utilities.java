@@ -1,5 +1,6 @@
 package com.example.anuja.reall;
 
+import android.app.job.JobInfo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -20,9 +21,11 @@ Intent i;
     static JSONObject dietObject=new JSONObject();
     static JSONObject expenseObject=new JSONObject();
     static JSONObject shelterObject=new JSONObject();
-String Diet,shelter;
+    static JSONObject amenitiesObject = new JSONObject();
+String Diet,shelter,safewater,medical,sanitation,refrigerators,computers,internet,cellphones,cars,telephones,radios,television;
 
-TextView diet,shelterText;
+TextView diet,shelterText,safewaterText,MedicalText,sanitationText,refrigeratorText,computerText,internetText,cellphonetext,carstext,telephonesText,radioText,televisionText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +36,22 @@ TextView diet,shelterText;
 
         diet=(TextView)findViewById(R.id.dietText);
         shelterText=(TextView)findViewById(R.id.shelterText);
+        safewaterText=(TextView)findViewById(R.id.water);
+        MedicalText=(TextView)findViewById(R.id.medicalcaretext);
+        sanitationText=(TextView)findViewById(R.id.sanitation);
+        refrigeratorText=(TextView)findViewById(R.id.refrigerator);
+        computerText=(TextView)findViewById(R.id.computers);
+        internetText=(TextView)findViewById(R.id.internettext);
+        cellphonetext=(TextView)findViewById(R.id.cellphonetext);
+        carstext=(TextView)findViewById(R.id.carstext);
+        telephonesText=(TextView)findViewById(R.id.telephonestext) ;
+        radioText=(TextView)findViewById(R.id.radios);
+        televisionText=(TextView)findViewById(R.id.television);
+
 
         diet();
         shelter();
+        safewater();
 
 
 
@@ -118,7 +134,7 @@ TextView diet,shelterText;
             shelterObject=expenseObject.getJSONObject("shelter");
             Log.e("shelter", String.valueOf(shelterObject));
             shelter=shelterObject.getString("shelterIndex");
-            Log.e("shelter3",Diet);
+            Log.e("shelter3",shelter);
 
             if(shelter.equals("1"))
             {
@@ -156,6 +172,67 @@ TextView diet,shelterText;
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+    }
+
+    public void safewater(){
+        try
+        {
+        amenitiesObject=selfObject.getJSONObject("amenities");
+        Log.e("shelter", String.valueOf(amenitiesObject));
+        safewater=amenitiesObject.getString("safeWater");
+        Log.e("safe",safewater);
+        medical=amenitiesObject.getString("healthServices");
+        Log.e("medical",medical);
+        sanitation=amenitiesObject.getString("basicSanitation");
+        Log.e("sanitation",sanitation);
+        refrigerators=amenitiesObject.getString("refrigerators");
+        Log.e("refri",refrigerators);
+        computers=amenitiesObject.getString("computers");
+        Log.e("comp",computers);
+        internet=amenitiesObject.getString("internet");
+        Log.e("internet",internet);
+        cellphones=amenitiesObject.getString("mobiles");
+        Log.e("mobiles",cellphones);
+            cars=amenitiesObject.getString("vehicles");
+            Log.e("cars",cars);
+            telephones=amenitiesObject.getString("telephones");
+            Log.e("telephone",telephones);
+            radios=amenitiesObject.getString("radios");
+            Log.e("radio",radios);
+            television=amenitiesObject.getString("televisions");
+            Log.e("television",television );
+
+
+        if(safewater.equals("true"))
+        {
+            safewaterText.setText("Yes");
+        }
+        if(medical.equals("true")){
+            MedicalText.setText("Yes");
+        }
+        if(sanitation.equals("true")){
+            sanitationText.setText("Yes");
+        }
+        if(internet.equals("true")){
+            internetText.setText("Yes");
+        }
+
+        refrigeratorText.setText(refrigerators);
+        computerText.setText(computers);
+        cellphonetext.setText(cellphones);
+        carstext.setText(cars);
+        telephonesText.setText(telephones);
+        radioText.setText(radios);
+        televisionText.setText(television);
+
+
+
+
+    } catch (JSONException e) {
+        e.printStackTrace();
+    }
+
 
     }
 

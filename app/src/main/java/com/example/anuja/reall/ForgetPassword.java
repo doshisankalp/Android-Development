@@ -95,7 +95,7 @@ public class ForgetPassword extends AppCompatActivity {
         load.setVisibility(View.VISIBLE);
 
 
-        String url = "http://192.168.1.124:9090/rlg/api/forgetPassword";
+        String url =Constant.APIURL+"forgetPassword";
         RequestQueue que = Volley.newRequestQueue(ForgetPassword.this);
 
         JSONObject obj = new JSONObject();

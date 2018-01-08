@@ -54,6 +54,8 @@ public class LiveALife extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LiveALife.this, YourCountry.class);
+                intent.putExtra("responce_object", String.valueOf(responce_object));
+                Log.e("Send  yourcountry", String.valueOf(responce_object));
                 startActivity(intent);
                 finish();
             }
