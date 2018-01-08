@@ -65,6 +65,7 @@
 
                 <CheckBox
                     android:id="@+id/CB1"
+                    android:checked="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -93,6 +94,7 @@
 
                     <CheckBox
                         android:id="@+id/CB2"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -149,6 +151,7 @@
 
                     <CheckBox
                         android:id="@+id/CB4"
+                        android:enabled="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
