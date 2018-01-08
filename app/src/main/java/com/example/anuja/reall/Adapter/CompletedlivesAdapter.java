@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.example.anuja.reall.Model.Completedlives;
 import com.example.anuja.reall.Model.Loadlives;
 import com.example.anuja.reall.R;
 
@@ -17,11 +18,11 @@ import java.util.List;
 
 
 
-public class LoadlivesAdapter extends RecyclerView.Adapter<LoadlivesAdapter.MyViewHolder> {
+public class CompletedlivesAdapter extends RecyclerView.Adapter<CompletedlivesAdapter.MyViewHolder> {
 
     public int mSelectedItem = -1;
-    static Loadlives selected_loadLife=new Loadlives();
-    private List<Loadlives> livesList;
+    static Completedlives selected_complete_Life=new Completedlives();
+    private List<Completedlives> completeList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {//implements View.OnClickListener {
         public TextView name, age, gender, country;
@@ -40,8 +41,8 @@ public class LoadlivesAdapter extends RecyclerView.Adapter<LoadlivesAdapter.MyVi
                 @Override
                 public void onClick(View view) {
                     mSelectedItem=getAdapterPosition();
-                    selected_loadLife=(livesList.get(getAdapterPosition()));
-                    System.out.println("life : "+selected_loadLife.getReallivesGameId());
+                    selected_complete_Life=(completeList.get(getAdapterPosition()));
+                    System.out.println("life : "+selected_complete_Life.getReallivesGameId());
                     notifyDataSetChanged();
                 }
             });
@@ -52,30 +53,30 @@ public class LoadlivesAdapter extends RecyclerView.Adapter<LoadlivesAdapter.MyVi
     }
 
 
-    public LoadlivesAdapter(List<Loadlives> livesList) {
-        this.livesList = livesList;
+    public CompletedlivesAdapter(List<Completedlives> completeList) {
+        this.completeList = completeList;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.loadlife, parent, false);
+                .inflate(R.layout.completelife, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         System.out.println("bind");
-        final Loadlives movie =livesList.get(position);
+        final Completedlives movie =completeList.get(position);
         holder.name.setText(movie.getName());
-        holder.age.setText(String.valueOf("Age "+movie.getAge())+"    - ");
+        holder.age.setText(String.valueOf("Age "+movie.getAge())+"   - ");
         if(movie.getGender().equals("M"))
         {
-            holder.gender.setText("Male    - ");
+            holder.gender.setText("Male   - ");
         }
         else
         {
-            holder.gender.setText("Female    - ");
+            holder.gender.setText("Female   - ");
         }
 
         holder.country.setText(movie.getCountry());
@@ -86,12 +87,12 @@ public class LoadlivesAdapter extends RecyclerView.Adapter<LoadlivesAdapter.MyVi
 
     @Override
     public int getItemCount() {
-        return this.livesList.size();
+        return this.completeList.size();
     }
 
-    public Loadlives get_selected_life(){
-        System.out.println("from get : "+selected_loadLife.getReallivesGameId());
-        return this.selected_loadLife;
+    public Completedlives get_selected_life(){
+        System.out.println("from get : "+selected_complete_Life.getReallivesGameId());
+        return this.selected_complete_Life;
     }
 
 }

@@ -1,19 +1,18 @@
 package com.example.anuja.reall;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.support.v7.widget.CardView;
+import android.view.View;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -22,242 +21,161 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.example.anuja.reall.Adapter.CompletedlivesAdapter;
+import com.example.anuja.reall.Adapter.LoadlivesAdapter;
+import com.example.anuja.reall.Model.Completedlives;
+import com.example.anuja.reall.Model.Loadlives;
+import com.android.volley.RequestQueue;
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.os.Build;
 
-import java.security.AccessController;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import static java.security.AccessController.getContext;
 
 public class CompletedLives extends AppCompatActivity {
-    int length;
+    private List<Completedlives> completeList = new ArrayList<>();
+    private RecyclerView recyclerView;
+    String username = null;
     SharedPreferences pref;
-    Button showlife;
-    ColorStateList colorStateList = null;
-    public static int countryid;
-    HashMap<String,Integer> id=new HashMap<>();
+    Completedlives selected_life=new Completedlives();
+    private CompletedlivesAdapter mAdapter;
+    String url = "http://192.168.1.124:9090/rlg/game/getAllSavedGamesInfoList/";
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Log.e("url1",url);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_completed_lives);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        pref = getApplication().getSharedPreferences("Options", MODE_PRIVATE);
+        username = pref.getString("username", "");
+        Log.e("fromcompletedlife :", username);
+        prepareCompletedLifeData();
 
-        showlife=(Button)findViewById(R.id.showlifebutton);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+
+        mAdapter = new CompletedlivesAdapter(completeList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+
+        Button button=(Button)findViewById(R.id.completedlifebutton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(CompletedLives.this,StartLife.class);
+                startActivity(intent);
+                selected_life=(mAdapter.get_selected_life());
+                System.out.println("selected id : "+selected_life.getReallivesGameId());
+                int id=selected_life.getReallivesGameId();
+                intent.putExtra("ID",Integer.toString(id));
+                startActivity(intent);
+//
+//
+//
+//
+//                System.out.println("hey from clcikded");
+            }
+        });
 
 
-        getCountries();
-
-        Log.e("id",String.valueOf(countryid));
-
-showlife.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-          Intent intent = new Intent(CompletedLives.this, StartLife.class);
-           intent.putExtra("ID",String.valueOf(countryid));
-           Log.e("hi", String.valueOf(countryid));
-         startActivity(intent);
     }
-});
-    }
-   // public void tomainactivity(View view) {
-       // Intent intent = new Intent(CompletedLives.this, MainActivity.class);
-      //  startActivity(intent);
-    //}
 
-    public void goto_selectcity(View view) {
-      //  Intent intent = new Intent(DesignALife.this, Selectcity.class);
-     //   intent.putExtra("countryId",countryid);
-       // startActivity(intent);
+    private void prepareCompletedLifeData() {
+
+        url = url.concat(username);
+        Log.e("url:", url);
+
+        // mAdapter.notifyDataSetChanged();
 
 
-    }
-
-
-
-
-
-    @SuppressLint("WrongConstant")
-    void getCountries()
-    {
-        String username;
-        pref=getApplication().getSharedPreferences("Options", MODE_PRIVATE);
-        username=pref.getString("username","");
-        Log.e("username",username);
-
-        String url=Constant.GAMEURL+"getAllSavedGamesInfoList/"+username;
-        final ArrayList<String> myarray=new ArrayList<String>();
-        final RadioButton rb[];
-        final TextView blank[];
-        final RadioGroup ll = new RadioGroup(CompletedLives.this);
-        ll.setOrientation(LinearLayout.VERTICAL);
-       /* final CardView card = new CardView(CompletedLives.this);
-
-        // Set the CardView layoutParams
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
-        card.setLayoutParams(params);
-
-        card.setCardBackgroundColor(Color.TRANSPARENT);*/
-        if(Build.VERSION.SDK_INT>=21)
-        {
-
-            colorStateList = new ColorStateList(
-                    new int[][]{
-
-                            new int[]{-android.R.attr.state_enabled }, //disabled
-                            new int[]{android.R.attr.state_enabled} //enabled
-                    },
-                    new int[] {
-
-                            Color.BLACK //disabled
-                            ,Color.CYAN //enabled
-
-                    }
-            );
-
-
-            //radio.setButtonTintList(colorStateList);//set the color tint list
-            //radio.invalidate(); //could not be necessary
-        }
-
-        RequestQueue que= Volley.newRequestQueue(CompletedLives.this);
-        JsonArrayRequest req = new JsonArrayRequest(url,
-                new Response.Listener<JSONArray>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                url,
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(final JSONArray response) {
+                    public void onResponse(String response) {
+                        try {
+                            Log.e("enterd:", "into onresp");
+                            JSONObject jsonObject;
+                            String status=null;
 
-                        length=response.length();
-                        JSONObject obj = null;
+                            JSONArray jsonArray = new JSONArray(response);
+                            jsonObject = jsonArray.getJSONObject(1);
 
+                            Log.e("jsonobj:", jsonObject.getString("status"));
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                jsonObject = jsonArray.getJSONObject(i);
+                                status=jsonObject.getString("status");
 
-
-                        for(int i=0;i<response.length();i++)
-                        {
-                            try {
-                                //myarray.add(((JSONObject) response.get(i)).getString("countryName"));
-
-
-                                obj=(JSONObject) response.get(i);
-
-                                if(obj.getString("status").equals("END_GAME")) {
-
-
-                                    Log.e("DATA", obj.getString("status"));
-                                    id.put(obj.getString("name"), obj.getInt("reallivesGameId"));
-
-
-
-                                    final RadioButton rb = new RadioButton(CompletedLives.this);
-                                    final TextView tv=new TextView(CompletedLives.this);
-                                    rb.setTextColor(Color.WHITE);
-                                    rb.setTextSize(20f);
-                                    rb.setButtonTintList(colorStateList);
-                                    rb.setText(obj.getString("name"));
-                                    ll.addView(rb);
-                                    ll.addView(tv);
-
-                                    rb.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Log.e("Value", rb.getText().toString());
-                                            countryid = id.get(rb.getText().toString());
-                                            Log.e("Value", String.valueOf(countryid));
-
-
-
-
-                                        }
-                                    });
+                                if(status.equals("END_GAME")){
+                                    Completedlives life = new Completedlives(jsonObject.getString("name"),jsonObject.getInt("age"),jsonObject.getString("sex"),jsonObject.getString("countryName"),jsonObject.getInt("reallivesGameId"));
+                                    completeList.add(life);
                                 }
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
 
+
+                            }
+                            CompletedlivesAdapter mAdapter=new CompletedlivesAdapter(completeList);
+                            recyclerView.setAdapter(mAdapter);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
 
                         }
-
-
-
-                        ((LinearLayout)findViewById(R.id.choices)).addView(ll);
-
                     }
-
-
-
-
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
+                System.out.println(error);
+                Log.e("enterd:", "into onresp");
             }
-        })
-        {
+        }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                SharedPreferences pref = getApplicationContext().getSharedPreferences("Options", MODE_PRIVATE); // 0 - for private mode
-                SharedPreferences.Editor editor = pref.edit();
-                String token=pref.getString("token",null);
-                Log.e("x-auth-token",token);
-
-                HashMap<String,String> headers=new HashMap<>();
-                headers.put("Content-Type","application/json");
+                HashMap<String, String> headers = new HashMap<>();
+                pref=getApplication().getSharedPreferences("Options", MODE_PRIVATE);
+                String token=pref.getString("token","");
+                Log.e("token",token);
+                headers.put("Content-Type", "application/json");
                 headers.put("x-auth-token",token);
                 return headers;
             }
 
-
         };
 
-        req.setRetryPolicy(new RetryPolicy() {
-            @Override
-            public int getCurrentTimeout() {
-                return  20000;
-            }
-
-            @Override
-            public int getCurrentRetryCount() {
-                return 20000;
-            }
-
-            @Override
-            public void retry(VolleyError error) throws VolleyError {
-
-            }
-        });
-
-        que.add(req);
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
 
     }
 
-
-
-
-
-
-
-    public void     tomainactivity(View view) {
-
+    public void tomainactivity(View view) {
         Intent intent = new Intent(CompletedLives.this, MainActivity.class);
         startActivity(intent);
     }
-
 }
+
