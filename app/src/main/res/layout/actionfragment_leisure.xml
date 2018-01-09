@@ -65,6 +65,7 @@
 
                 <CheckBox
                     android:id="@+id/CB1"
+                    android:onClick="count123"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -94,7 +95,7 @@
 
                     <CheckBox
                         android:id="@+id/CB2"
-
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -123,6 +124,7 @@
 
                     <CheckBox
                         android:id="@+id/CB3"
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -152,6 +154,7 @@
                     <CheckBox
                         android:id="@+id/CB4"
                         android:enabled="false"
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -180,6 +183,7 @@
 
                     <CheckBox
                         android:id="@+id/CB5"
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -208,6 +212,7 @@
 
                     <CheckBox
                         android:id="@+id/CB6"
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -236,6 +241,7 @@
 
                     <CheckBox
                         android:id="@+id/CB7"
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -264,6 +270,7 @@
 
                     <CheckBox
                         android:id="@+id/CB8"
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -292,6 +299,7 @@
 
                     <CheckBox
                         android:id="@+id/CB9"
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -320,6 +328,7 @@
 
                     <CheckBox
                         android:id="@+id/CB10"
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -348,6 +357,7 @@
 
                     <CheckBox
                         android:id="@+id/CB11"
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -376,6 +386,7 @@
 
                     <CheckBox
                         android:id="@+id/CB12"
+                        android:onClick="count123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
