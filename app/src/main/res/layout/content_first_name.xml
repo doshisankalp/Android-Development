@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -74,30 +74,17 @@
 
 
 
-        <ScrollView
-            android:id="@+id/scrollview_choices"
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:layout_above="@id/selectlastname"
-            android:layout_below="@id/nameText"
-            android:fillViewport="true"
-
-            android:scrollbarAlwaysDrawVerticalTrack="true">
-
-            <RadioGroup
-                android:id="@+id/choices"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-
-                >
-
-            </RadioGroup>
-        </ScrollView>
+            android:layout_below="@+id/nameText"
+            android:id="@+id/recycler_firstname"
+            android:scrollbars="vertical"/>
 
     </RelativeLayout>
 
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

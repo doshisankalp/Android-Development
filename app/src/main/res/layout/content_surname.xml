@@ -35,7 +35,7 @@
             android:padding="12dp" />
 
         <EditText
-            android:id="@+id/nameText"
+            android:id="@+id/nameTextSur"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -76,24 +76,7 @@
             />
 
 
-        <ScrollView
-            android:id="@+id/scrollview_choices"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fillViewport="true"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:layout_below="@id/nameText"
-            android:layout_above="@id/playlifebutton"
-            >
 
-            <RadioGroup
-                android:id="@+id/choices"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-
-                >
 
                 <ProgressBar
                     android:id="@+id/load"
@@ -101,8 +84,17 @@
                     android:layout_width="match_parent">
                 </ProgressBar>
 
-            </RadioGroup>
-        </ScrollView>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_above="@id/playlifebutton"
+            android:layout_below="@+id/nameTextSur"
+            android:id="@+id/recycler_surname"
+            android:scrollbars="vertical"/>
+
+
 
     </RelativeLayout>
 

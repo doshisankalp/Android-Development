@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -58,6 +59,10 @@ public class LiveALife extends AppCompatActivity {
 
         i =getIntent();
         final String responce_string= i.getStringExtra("responce_object");
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("Options", MODE_PRIVATE); // 0 - for private mode
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("whole_object",responce_string);
+        editor.commit();
         //Log.e("responce string:", responce_string);
         try {
             responce_object=new JSONObject(responce_string);

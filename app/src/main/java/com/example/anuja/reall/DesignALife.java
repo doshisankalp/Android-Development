@@ -9,6 +9,9 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +30,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.anuja.reall.Adapter.DesignLifeAdapter;
+import com.example.anuja.reall.Adapter.FirstNameAdapter;
+import com.example.anuja.reall.Model.DesignLifeModel;
+import com.example.anuja.reall.Model.FirstName;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,6 +42,7 @@ import org.json.JSONObject;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class DesignALife extends AppCompatActivity {
@@ -49,6 +57,13 @@ public class DesignALife extends AppCompatActivity {
 
     String url=Constant.ACTIONURL+"/residence/country";
 
+    public static DesignLifeModel selected_country=new DesignLifeModel();
+    private DesignLifeAdapter dladapter;
+    private RecyclerView recyclerView;
+
+     public List<DesignLifeModel> myarray=new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +71,11 @@ public class DesignALife extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_designlife);
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(DesignALife.this);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         getCountries();
 
@@ -63,10 +83,18 @@ public class DesignALife extends AppCompatActivity {
 
 
     }
+
+    public void setCount(String s)
+    {
+       countryname=s;
+       System.out.println("countindesign"+countryname);
+    }
     public void tomainactivity(View view) {
         Intent intent = new Intent(DesignALife.this, MainActivity.class);
         startActivity(intent);
     }
+
+
 
     public void goto_selectcity(View view) {
 
@@ -95,34 +123,6 @@ public class DesignALife extends AppCompatActivity {
     {
 
 
-        final ArrayList<String> myarray=new ArrayList<String>();
-        final RadioButton rb[];
-        final RadioGroup ll = new RadioGroup(DesignALife.this);
-        ll.setOrientation(LinearLayout.VERTICAL);
-
-
-        if(Build.VERSION.SDK_INT>=21)
-        {
-
-            colorStateList = new ColorStateList(
-                    new int[][]{
-
-                            new int[]{-android.R.attr.state_enabled}, //disabled
-                            new int[]{android.R.attr.state_enabled} //enabled
-                    },
-                    new int[] {
-
-                            Color.BLACK //disabled
-                            ,Color.CYAN //enabled
-
-                    }
-            );
-
-
-            //radio.setButtonTintList(colorStateList);//set the color tint list
-            //radio.invalidate(); //could not be necessary
-        }
-
         RequestQueue que= Volley.newRequestQueue(DesignALife.this);
         JsonArrayRequest req = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
@@ -142,22 +142,13 @@ public class DesignALife extends AppCompatActivity {
                                 obj=(JSONObject) response.get(i);
                                 countryobj[i]=obj;
                                 Log.e("DATA",obj.getString("countryName"));
-                                details.put(obj.getString("countryName"),obj.getInt("countryid"));
-                                final RadioButton rb=new RadioButton(DesignALife.this);
-                                rb.setTextColor(Color.WHITE);
-                                rb.setTextSize(20f);
-                                rb.setButtonTintList(colorStateList);
-                                rb.setText(obj.getString("countryName"));
-                                ll.addView(rb);
-                                rb.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        Log.e("Value",rb.getText().toString());
-                                        countryname=rb.getText().toString();
 
 
-                                    }
-                                });
+                                DesignLifeModel countryName=new DesignLifeModel(obj.getString("countryName"));
+                                myarray.add(countryName);
+                                ;
+                                //details.put(obj.getString("countryName"),obj.getInt("countryid"));
+
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -166,9 +157,9 @@ public class DesignALife extends AppCompatActivity {
 
                         }
 
+                        DesignLifeAdapter dladapter=new DesignLifeAdapter(myarray);
+                        recyclerView.setAdapter(dladapter);
 
-
-                        ((ViewGroup)findViewById(R.id.choices)).addView(ll);
 
                     }
 

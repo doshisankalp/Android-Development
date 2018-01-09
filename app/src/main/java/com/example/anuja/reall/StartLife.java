@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -50,6 +51,7 @@ public class StartLife extends AppCompatActivity {
         start_life=(Button)findViewById(R.id.start_life);
         name=(TextView)findViewById(R.id.Name);
         gender=(TextView)findViewById(R.id.start_life_gender);
+
         location=(TextView)findViewById(R.id.start_life_location);
         language=(TextView)findViewById(R.id.start_life_language);
         capital=(TextView)findViewById(R.id.capital);
@@ -118,11 +120,19 @@ public class StartLife extends AppCompatActivity {
                             responce_object=response;
                             JSONObject object = response.getJSONObject("SELF");
                             name.setText(object.getString("fullName"));
-                            gender.setText( object.getString("sex"));
+                            String gender1=object.getString("sex");
+                            if(gender1.equals("F")){
+                                gender.setText("Female");
+                            }
+                            else
+                            {
+                                gender.setText("Male");
+                            }
+
                             JSONObject object5=object.getJSONObject("traits");
                             happiness_index.setText(object5.getString("happiness"));
                             JSONObject object1=object.getJSONObject("country");
-                            String country_code=object1.getString("code");
+                            String country_code=object1.getString("code").toUpperCase();
                             Log.e("code",country_code);
 
                             if(country_code.equals("AD"))
@@ -577,7 +587,7 @@ public class StartLife extends AppCompatActivity {
                             JSONObject object_r5=object_r.getJSONObject("traits");
                             reg_happiness_index.setText(object_r5.getString("happiness"));
                             JSONObject object_r1=object_r.getJSONObject("registerCoutry");
-                            String reg_country_code=object_r1.getString("code");
+                            String reg_country_code=object_r1.getString("code").toUpperCase();
                             Log.e("code",reg_country_code);
                             if(reg_country_code.equals("AD"))
                                 reg_country.setImageResource(R.raw.ad);
