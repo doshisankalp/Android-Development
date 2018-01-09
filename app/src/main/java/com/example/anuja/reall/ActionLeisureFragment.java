@@ -82,14 +82,32 @@ RequestQueue requestQueue;
 
         try {
             whole_object = new JSONObject(object);
-            self=whole_object.getJSONObject("SELF_SIBLING");
+            Log.e("whole",String.valueOf(whole_object));
+            self=whole_object.getJSONObject("SELF");
             String time=self.getString("leisureTimeAvailable");
+            String age=self.getString("age");
+            Log.e("age",age);
             Log.e("time",time);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
+       leisure();
+
+
+
+
+
+
+        return v;
+
+
+
+
+    }
+
+    public void leisure(){
         requestQueue=Volley.newRequestQueue(getActivity());
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,"http://192.168.1.124:9090/rlg/game/actionbar/leisure/102",null,
                 new Response.Listener<JSONObject>() {
@@ -99,10 +117,13 @@ RequestQueue requestQueue;
                         Log.e("response",String.valueOf(response));
                         try {
                             leisure=response.getJSONArray("leisure");
+
                             artobject=leisure.getJSONObject(0);
                             arts.setChecked(Boolean.parseBoolean(artobject.getString("selected")));
+
                             musicobject=leisure.getJSONObject(1);
                             music.setChecked(Boolean.parseBoolean(musicobject.getString("selected")));
+
                             studyobject=leisure.getJSONObject(2);
                             study.setChecked(Boolean.parseBoolean(studyobject.getString("selected")));
 
@@ -111,18 +132,25 @@ RequestQueue requestQueue;
 
                             teleisionobject=leisure.getJSONObject(4);
                             television.setChecked(Boolean.parseBoolean(teleisionobject.getString("selected")));
+
                             sportsobject=leisure.getJSONObject(5);
                             sports.setChecked(Boolean.parseBoolean(sportsobject.getString("selected")));
+
                             outdoorobject=leisure.getJSONObject(6);
                             outdoor.setChecked(Boolean.parseBoolean(outdoorobject.getString("selected")));
+
                             volunteerobject=leisure.getJSONObject(7);
                             volunteer.setChecked(Boolean.parseBoolean(volunteerobject.getString("selected")));
+
                             religiousobject=leisure.getJSONObject(8);
                             religious.setChecked(Boolean.parseBoolean(religiousobject.getString("selected")));
+
                             socialobject=leisure.getJSONObject(9);
                             social.setChecked(Boolean.parseBoolean(socialobject.getString("selected")));
+
                             enduranceobject=leisure.getJSONObject(10);
                             endurance.setChecked(Boolean.parseBoolean(enduranceobject.getString("selected")));
+
                             playobject=leisure.getJSONObject(11);
                             play.setChecked(Boolean.parseBoolean(playobject.getString("selected")));
 
@@ -142,7 +170,7 @@ RequestQueue requestQueue;
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
 
-                         }
+                    }
                 }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
@@ -158,17 +186,6 @@ RequestQueue requestQueue;
 
 
         requestQueue.add(request);
-
-
-
-
-
-
-
-
-        return v;
-
-
 
 
     }
