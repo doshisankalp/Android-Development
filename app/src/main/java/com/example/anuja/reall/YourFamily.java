@@ -14,6 +14,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import android.widget.*;
 
+import java.text.DecimalFormat;
+
 import static java.lang.Character.isDigit;
 
 public class YourFamily extends AppCompatActivity {
@@ -57,11 +59,18 @@ public class YourFamily extends AppCompatActivity {
         try {
             JSONObject self = responce_object.getJSONObject("SELF");
             JSONObject expenses = self.getJSONObject("expense");
+            JSONObject country =self.getJSONObject("country");
             net_worh.setText(expenses.getString("householdNetWorth"));
-            income.setText(expenses.getString("householdIncome"));
+            String income2=expenses.getString("householdIncome");
+
+
+            double income1= Double.parseDouble(income2);
+            DecimalFormat df = new DecimalFormat("#.##");
+
+            income.setText(df.format(income1)+" "+country.getString("currencyName"));
             averageWorldIncomeBar.setProgress(10000);
             avg_world_income1.setText(String.format("Average World Income:%d", 10000));
-            JSONObject country = self.getJSONObject("country");
+
             Double exchange_rate = country.getDouble("exchangeRate");
             int hoseholdincome = (int) expenses.getDouble("householdIncome");
             int yourIncomebar = (int) ((hoseholdincome * 12) / exchange_rate);
