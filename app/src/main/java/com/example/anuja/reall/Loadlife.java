@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -57,6 +58,7 @@ public class Loadlife extends AppCompatActivity {
     private RecyclerView recyclerView;
     String username = null;
     SharedPreferences pref;
+    private ProgressBar progressBar;
     Loadlives selected_life=new Loadlives();
     private LoadlivesAdapter mAdapter;
     String url = Constant.GAMEURL+"getAllSavedGamesInfoList/";
@@ -68,8 +70,11 @@ public class Loadlife extends AppCompatActivity {
         // Log.e("url1",url);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loadlife);
+        progressBar=(ProgressBar) findViewById(R.id.loadlifeprogress);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         pref = getApplication().getSharedPreferences("Options", MODE_PRIVATE);
         username = pref.getString("username", "");
         Log.e("fromloadlife :", username);
@@ -77,12 +82,14 @@ public class Loadlife extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
+
         mAdapter = new LoadlivesAdapter(livesList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
+        progressBar.setVisibility(View.GONE);
         Button button=(Button)findViewById(R.id.loadlifebutton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
