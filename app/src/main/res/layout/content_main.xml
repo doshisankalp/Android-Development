@@ -27,6 +27,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/playbtn"
         android:onClick="tolivealife"
+        android:layout_marginTop="-15dp"
         />
 
 
@@ -47,7 +48,11 @@
         android:background="#07000000"
         android:onClick="loadlife"
         android:text="@string/DAL"
-        android:textColor="#FFFF" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorLightBlue"
+        android:layout_marginTop="15dp"
+        />
 
     <Button
         android:id="@+id/button2"
@@ -59,7 +64,11 @@
         android:onClick="sendMessage"
         android:padding="1dp"
         android:text="@string/LL"
-        android:textColor="#FFFF" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorLightBlue"
+        android:layout_marginTop="-5dp"
+        />
 
     <Button
         android:id="@+id/button3"
@@ -70,7 +79,11 @@
         android:background="#07000000"
         android:onClick="tocompletedlives"
         android:text="@string/CL"
-        android:textColor="#FFFF" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorLightBlue"
+        android:layout_marginTop="-5dp"
+        />
 
     <Button
         android:id="@+id/button4"
@@ -84,7 +97,11 @@
         android:onClick="tosettings"
 
         android:text="@string/S"
-        android:textColor="#FFFF" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorLightBlue"
+        android:layout_marginTop="-5dp"
+        />
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
@@ -94,7 +111,11 @@
         android:background="#07000000"
 
         android:text="@string/E"
-        android:textColor="#FFFF" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorLightBlue"
+        android:layout_marginTop="-5dp"
+        />
 </RelativeLayout>
 </RelativeLayout>
 
