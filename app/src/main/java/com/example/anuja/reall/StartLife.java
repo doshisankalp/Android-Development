@@ -550,11 +550,74 @@ public class StartLife extends AppCompatActivity {
 
 
 
+                            int rem3=object1.getString("primaryStudents").length()%3;
+
+                            Log.e("rem3",String.valueOf(rem3));
+                            if(rem3==1)
+                            {
+                                String pri_en="";
+                                pri_en+=object1.getString("primaryStudents").charAt(0)+".";
+                                pri_en+=object1.getString("primaryStudents").charAt(1);
+                                if (object1.getString("primaryStudents").length()>9)
+                                    pri_en+=" Billion";
+                                else if(object1.getString("primaryStudents").length()>6)
+                                    pri_en+=" Million";
+                                else if(object1.getString("primaryStudents").length()>3)
+                                {
+                                    pri_en+=" Thousand";
+                                }
+                                primary_enrol.setText(pri_en);
+                            }
+
+                            else if(rem3==2)
+                            {
+                                //System.out.println(object1.getString("primaryStudents"));
+                                System.out.println(object1.getString("primaryStudents").charAt(0));
+                                System.out.println(object1.getString("primaryStudents").charAt(1));
+                                System.out.println(object1.getString("primaryStudents").charAt(2));
+                                String pri_en="";
+                                pri_en+=object1.getString("primaryStudents").charAt(0);
+                                pri_en+=object1.getString("primaryStudents").charAt(1)+".";
+                                pri_en+=object1.getString("primaryStudents").charAt(2);
+                                if (object1.getString("primaryStudents").length()>9)
+                                    pri_en+=" Billion";
+                                else if(object1.getString("primaryStudents").length()>6)
+                                    pri_en+=" Million";
+                                else if(object1.getString("primaryStudents").length()>3)
+                                {
+                                    pri_en+=" Thousand";
+                                }
+                                primary_enrol.setText(pri_en);
+                            }
+
+                            else if(rem3==0)
+                            {
+                                String pri_en="";
+                                pri_en+=object1.getString("primaryStudents").charAt(0);
+                                pri_en+=object1.getString("primaryStudents").charAt(1);
+                                pri_en+=object1.getString("primaryStudents").charAt(2)+".";
+                                pri_en+=object1.getString("primaryStudents").charAt(3);
+                                if (object1.getString("primaryStudents").length()>9)
+                                    pri_en+=" Billion";
+                                else if(object1.getString("primaryStudents").length()>6)
+                                    pri_en+=" Million";
+                                else if(object1.getString("primaryStudents").length()>3)
+                                {
+                                    pri_en+=" Thousand";
+                                }
+                                primary_enrol.setText(pri_en);
+                            }
 
 
 
 
-                            primary_enrol.setText(object1.getString("primaryStudents"));
+
+
+
+
+
+
+                            //primary_enrol.setText(object1.getString("primaryStudents"));
                             primary_school.setText(object1.getString("primarySchool"));
                             industry.setText(object1.getString("industry"));
                             services.setText(object1.getString("services"));
@@ -563,7 +626,10 @@ public class StartLife extends AppCompatActivity {
                             access_elect.setText(object1.getString("eletricityConsumption"));
                             happiness_index.setText(object1.getString("happinessScore"));
                             ppp.setText(object1.getString("ppp"));
-                            sdg.setText(object1.getString("sdgiScore"));
+
+                            int indexsdg=object1.getString("sdgiScore").indexOf('.');
+
+                            sdg.setText(object1.getString("sdgiScore").substring(0,(indexsdg+1))+object1.getString("sdgiScore").substring(indexsdg+1,indexsdg+3));
                             gini.setText(object1.getString("gini"));
                             currency.setText(object1.getString("currencyName"));
                             goiter.setText(object1.getString("goitre"));
@@ -573,7 +639,70 @@ public class StartLife extends AppCompatActivity {
                             birth_rate.setText(object1.getString("birthRate"));
                             death_rate.setText(object1.getString("deathRate"));
                             unemployment_rate.setText(object1.getString("unEmploymentRate"));
-                            population.setText(object1.getString("population"));
+
+
+
+
+
+
+                            int rem=object1.getString("population").length()%3;
+
+                            if(rem==1)
+                            {
+                                String pop="";
+                                pop=object1.getString("population").charAt(0)+".";
+                                pop+=object1.getString("population").charAt(1);
+                                if(object1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                population.setText(pop);
+                            }
+
+                            else if(rem==2)
+                            {
+                                String pop="";
+                                pop+=object1.getString("population").charAt(0);
+                                pop+=object1.getString("population").charAt(1)+".";
+                                pop+=object1.getString("population").charAt(2);
+                                if(object1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                population.setText(pop);
+                            }
+
+                            else if(rem==0)
+                            {
+                                String pop="";
+                                pop+=object1.getString("population").charAt(0);
+                                pop+=object1.getString("population").charAt(1);
+                                pop+=object1.getString("population").charAt(2)+".";
+                                pop+=object1.getString("population").charAt(3);
+                                if(object1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                population.setText(pop);
+                            }
+
+
+
+
+
+                            //population.setText(object1.getString("population"));
                             JSONObject object2=object.getJSONObject("region");
                             location.setText(object2.getString("regionName")+","+object1.getString("countryName"));
                             JSONObject object3=object.getJSONObject("language");
@@ -1004,8 +1133,60 @@ public class StartLife extends AppCompatActivity {
 
 
 
+                            int remfour=object_r1.getString("primaryStudents").length()%3;
 
-                            reg_primary_enrol.setText(object_r1.getString("primaryStudents"));
+                            if(remfour==1)
+                            {
+                                String primstu="";
+                                primstu+=object_r1.getString("primaryStudents").charAt(0)+".";
+                                primstu+=object_r1.getString("primaryStudents").charAt(1);
+                                if(object_r1.getString("primaryStudents").length()>9)
+                                    primstu+=" Billion";
+                                else if(object_r1.getString("primaryStudents").length()>6)
+                                    primstu+=" Million";
+                                else if(object_r1.getString("primaryStudents").length()>3)
+                                {
+                                    primstu+=" Thousand";
+                                }
+                                reg_primary_enrol.setText(primstu);
+                            }
+
+                            else if(remfour==2)
+                            {
+                                String primstu="";
+                                primstu+=object_r1.getString("primaryStudents").charAt(0);
+                                primstu+=object_r1.getString("primaryStudents").charAt(1)+".";
+                                        primstu+=object_r1.getString("primaryStudents").charAt(2);
+                                if(object_r1.getString("primaryStudents").length()>9)
+                                    primstu+=" Billion";
+                                else if(object_r1.getString("primaryStudents").length()>6)
+                                    primstu+=" Million";
+                                else if(object_r1.getString("primaryStudents").length()>3)
+                                {
+                                    primstu+=" Thousand";
+                                }
+                                reg_primary_enrol.setText(primstu);
+                            }
+
+                            else if(remfour==0)
+                            {
+                                String primstu="";
+                                primstu+=object_r1.getString("primaryStudents").charAt(0);
+                                primstu+=object_r1.getString("primaryStudents").charAt(1);
+                                primstu+=object_r1.getString("primaryStudents").charAt(2)+".";
+                                primstu+=object_r1.getString("primaryStudents").charAt(3);
+                                if(object_r1.getString("primaryStudents").length()>9)
+                                    primstu+=" Billion";
+                                else if(object_r1.getString("primaryStudents").length()>6)
+                                    primstu+=" Million";
+                                else if(object_r1.getString("primaryStudents").length()>3)
+                                {
+                                    primstu+=" Thousand";
+                                }
+                                reg_primary_enrol.setText(primstu);
+                            }
+
+                            //reg_primary_enrol.setText(object_r1.getString("primaryStudents"));
                             reg_primary_school.setText(object_r1.getString("primarySchool"));
                             reg_industry.setText(object_r1.getString("industry"));
                             reg_services.setText(object_r1.getString("services"));
@@ -1014,7 +1195,11 @@ public class StartLife extends AppCompatActivity {
                             reg_access_elect.setText(object_r1.getString("eletricityConsumption"));
                             reg_happiness_index.setText(object_r1.getString("happinessScore"));
                             reg_ppp.setText(object_r1.getString("ppp"));
-                            reg_sdg.setText(object_r1.getString("sdgiScore"));
+
+                            int indexsdg1=object_r1.getString("sdgiScore").indexOf('.');
+
+                            reg_sdg.setText(object_r1.getString("sdgiScore").substring(0,(indexsdg+1))+object_r1.getString("sdgiScore").substring(indexsdg+1,indexsdg+3));
+                            //reg_sdg.setText(object_r1.getString("sdgiScore"));
                             reg_gini.setText(object_r1.getString("gini"));
                             reg_currency.setText(object_r1.getString("currencyName"));
                             reg_goiter.setText(object_r1.getString("goitre"));
@@ -1024,7 +1209,61 @@ public class StartLife extends AppCompatActivity {
                             reg_birth_rate.setText(object_r1.getString("birthRate"));
                             reg_death_rate.setText(object_r1.getString("deathRate"));
                             reg_unemployment_rate.setText(object_r1.getString("unEmploymentRate"));
-                            reg_population.setText(object_r1.getString("population"));
+
+                            int rem2=object_r1.getString("population").length()%3;
+
+                            if(rem2==1)
+                            {
+                                String pop="";
+                                pop+=object_r1.getString("population").charAt(0)+".";
+                                        pop+=object_r1.getString("population").charAt(1);
+                                if(object_r1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object_r1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object_r1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                reg_population.setText(pop);
+                            }
+
+                            else if(rem2==2)
+                            {
+                                String pop="";
+                                pop+=object_r1.getString("population").charAt(0);
+                                pop+=object_r1.getString("population").charAt(1)+".";
+                                pop+=object_r1.getString("population").charAt(2);
+                                if(object_r1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object_r1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object_r1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                reg_population.setText(pop);
+                            }
+
+                            else if(rem2==0)
+                            {
+                                String pop="";
+                                pop+=object_r1.getString("population").charAt(0);
+                                pop+=object_r1.getString("population").charAt(1);
+                                pop+=object_r1.getString("population").charAt(2)+".";
+                                pop+=object_r1.getString("population").charAt(3);
+                                if(object_r1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object_r1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object_r1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                reg_population.setText(pop);
+                            }
+
+                            //reg_population.setText(object_r1.getString("population"));
                             reg_capital.setText(object_r1.getString("capital"));
 
                         } catch (JSONException e) {

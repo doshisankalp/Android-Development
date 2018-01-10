@@ -128,24 +128,22 @@
                         android:textColor="#404141" />
 
                     <ImageView
+                        android:id="@+id/country_flag"
                         android:layout_width="0dp"
                         android:layout_height="30dp"
                         android:layout_column="1"
-                        android:id="@+id/country_flag"
                         android:layout_marginRight="8dp"
                         android:layout_marginTop="16dp"
-                        android:layout_weight="0.33"
-                       />
+                        android:layout_weight="0.33" />
 
                     <ImageView
+                        android:id="@+id/reg_country_flag"
                         android:layout_width="0dp"
                         android:layout_height="30dp"
                         android:layout_column="2"
-                        android:id="@+id/reg_country_flag"
                         android:layout_marginRight="8dp"
                         android:layout_marginTop="16dp"
-                        android:layout_weight="0.33"
-                        />
+                        android:layout_weight="0.33" />
                 </TableRow>
 
 
