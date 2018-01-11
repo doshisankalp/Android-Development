@@ -15,7 +15,41 @@
             android:background="#ECF9FF"
             android:paddingBottom="16dp">
 
-+s
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:textColor="#404141" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_column="1"
+                    android:id="@+id/countryFlag"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="0.33"
+                    />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_column="2"
+                    android:id="@+id/registerCountryFlag"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="0.33"
+                    />
+            </TableRow>
+
+
             <!--Country Details-->
             <TextView
                 android:padding="16dp"
@@ -47,20 +81,24 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_span="2"
+                    android:layout_column="0"
                     android:layout_weight="0.33"
-                    android:text="Beijing"
+                    android:text="default"
+                    android:paddingLeft="16dp"
                     android:textColor="#404141"
                     android:textSize="18sp"
-                    android:paddingLeft="16dp"/>
+                    android:id="@+id/CountryCapital"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_column="2"
+                    android:layout_column="0"
                     android:layout_weight="0.33"
-                    android:textColor="#404141" />
+                    android:text="default"
+                    android:paddingLeft="16dp"
+                    android:textColor="#404141"
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryCapital"/>
             </TableRow>
 
             <TableRow
@@ -86,7 +124,8 @@
                     android:text="Yuan"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryCurrency"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -96,7 +135,8 @@
                     android:text="Indian Rupee"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryCurrency"/>
             </TableRow>
 
             <TableRow
@@ -122,7 +162,8 @@
                     android:text="87%"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryPrimarySchool"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -132,8 +173,48 @@
                     android:text="93%"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryPrimarySchool"/>
             </TableRow>
+
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:text="@string/infant_mortality"
+                    android:textColor="#404141" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:text="default"
+                    android:paddingLeft="16dp"
+                    android:textColor="#404141"
+                    android:textSize="18sp"
+                    android:id="@+id/CountryInfantMortality"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:text="default"
+                    android:paddingLeft="16dp"
+                    android:textColor="#404141"
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryInfantMortality"/>
+            </TableRow>
+
 
             <!--Prevalent Parameters-->
             <TextView
@@ -172,7 +253,8 @@
                     android:text="1.4 billion"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryPopulation"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -183,7 +265,8 @@
                     android:text="1.3 billion"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryPopulation"/>
             </TableRow>
 
             <TableRow
@@ -199,7 +282,8 @@
                     android:layout_column="0"
                     android:layout_weight="0.33"
                     android:text="@string/sex_ratio"
-                    android:textColor="#404141" />
+                    android:textColor="#404141"
+                    />
 
                 <TextView
                     android:paddingLeft="16dp"
@@ -210,7 +294,8 @@
                     android:text="1.15"
 
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountrySexRatio"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -220,7 +305,8 @@
                     android:text="1.12"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisteredCountrySexRatio"/>
             </TableRow>
 
             <TableRow
@@ -246,7 +332,8 @@
                     android:text="12.17"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryBirthRate"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -256,7 +343,8 @@
                     android:text="19.89"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryBirthRate"/>
             </TableRow>
 
             <TableRow
@@ -282,7 +370,8 @@
                     android:text="7.7"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryDeathRate"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -292,8 +381,86 @@
                     android:text="7.3"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryDeathRate"/>
             </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:text="@string/female_smokers"
+                    android:textColor="#404141" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:text="7.7"
+                    android:paddingLeft="16dp"
+                    android:textColor="#404141"
+                    android:textSize="18sp"
+                    android:id="@+id/CountryFemaleSmokers"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:text="7.3"
+                    android:paddingLeft="16dp"
+                    android:textColor="#404141"
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryFemaleSmokers"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:text="@string/male_smokers"
+                    android:textColor="#404141" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:text="7.7"
+                    android:paddingLeft="16dp"
+                    android:textColor="#404141"
+                    android:textSize="18sp"
+                    android:id="@+id/CountryMaleSmokers"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:text="7.3"
+                    android:paddingLeft="16dp"
+                    android:textColor="#404141"
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryMaleSmokers"/>
+            </TableRow>
+
 
             <!--Per Capita-->
             <TextView
@@ -321,7 +488,8 @@
                     android:layout_column="0"
                     android:layout_weight="0.33"
                     android:text="@string/primary_school_enrollment"
-                    android:textColor="#404141" />
+                    android:textColor="#404141"
+                    />
 
                 <TextView
                     android:layout_width="0dp"
@@ -332,7 +500,8 @@
                     android:text="87%"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryPrimarySchoolEnroll"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -343,7 +512,8 @@
                     android:text="1.3 billion"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryPrimarySchoolEnroll"/>
             </TableRow>
 
             <TableRow
@@ -370,7 +540,8 @@
                     android:text="1.15"
 
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryUnemployment"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -380,7 +551,8 @@
                     android:text="1.12"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryUnemployment"/>
             </TableRow>
 
             <TableRow
@@ -396,7 +568,8 @@
                     android:layout_column="0"
                     android:layout_weight="0.33"
                     android:text="@string/health_exp_per_capita"
-                    android:textColor="#404141" />
+                    android:textColor="#404141"
+                   />
 
                 <TextView
                     android:layout_width="0dp"
@@ -406,7 +579,8 @@
                     android:text="12.17"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryHealth"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -416,7 +590,9 @@
                     android:text="19.89"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryHealth"
+                    />
             </TableRow>
 
             <TableRow
@@ -442,7 +618,8 @@
                     android:text="7.7"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryElectricity"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -452,7 +629,8 @@
                     android:text="7.3"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryElectricity"/>
             </TableRow>
             <!--Labour Force By Occupation-->
             <TextView
@@ -480,7 +658,8 @@
                     android:layout_column="0"
                     android:layout_weight="0.33"
                     android:text="@string/agriculture"
-                    android:textColor="#404141" />
+                    android:textColor="#404141"
+                    />
 
                 <TextView
                     android:layout_width="0dp"
@@ -491,7 +670,9 @@
                     android:text="87%"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryAgriculture"
+                    />
 
                 <TextView
                     android:layout_width="0dp"
@@ -502,7 +683,8 @@
                     android:text="1.3 billion"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryAgriculture"/>
             </TableRow>
 
             <TableRow
@@ -529,7 +711,8 @@
                     android:text="1.15"
 
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryServices"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -539,7 +722,8 @@
                     android:text="1.12"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryServices"/>
             </TableRow>
 
             <TableRow
@@ -565,7 +749,8 @@
                     android:text="12.17"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryIndustry"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -575,7 +760,8 @@
                     android:text="19.89"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryIndustry"/>
             </TableRow>
 
             <TextView
@@ -614,7 +800,8 @@
                     android:text="87%"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryPPP"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -625,7 +812,8 @@
                     android:text="1.3 billion"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryPPP"/>
             </TableRow>
 
             <TableRow
@@ -652,7 +840,8 @@
                     android:text="1.15"
 
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryGini"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -662,7 +851,8 @@
                     android:text="1.12"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryGini"/>
             </TableRow>
 
             <TableRow
@@ -688,7 +878,8 @@
                     android:text="12.17"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountrySDG"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -698,7 +889,8 @@
                     android:text="19.89"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountrySDG"/>
             </TableRow>
 
             <TableRow
@@ -714,7 +906,8 @@
                     android:layout_column="0"
                     android:layout_weight="0.33"
                     android:text="@string/happiness_index"
-                    android:textColor="#404141" />
+                    android:textColor="#404141"
+                    />
 
                 <TextView
                     android:layout_width="0dp"
@@ -724,7 +917,8 @@
                     android:text="12.17"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryHappiness"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -734,7 +928,8 @@
                     android:text="19.89"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryHappiness"/>
             </TableRow>
 
             <TableRow
@@ -760,7 +955,8 @@
                     android:text="12.17"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryHDI"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -770,7 +966,8 @@
                     android:text="19.89"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryHDI"/>
             </TableRow>
 
             <TableRow
@@ -796,7 +993,8 @@
                     android:text="12.17"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/CountryCorruption"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -806,44 +1004,11 @@
                     android:text="19.89"
                     android:paddingLeft="16dp"
                     android:textColor="#404141"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:id="@+id/RegisterCountryCorruption"/>
             </TableRow>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginTop="16dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_weight="0.33"
-                    android:text="@string/goitre"
-                    android:textColor="#404141" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_weight="0.33"
-                    android:text="12.17"
-                    android:paddingLeft="16dp"
-                    android:textColor="#404141"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_weight="0.33"
-                    android:text="19.89"
-                    android:paddingLeft="16dp"
-                    android:textColor="#404141"
-                    android:textSize="18sp" />
-            </TableRow>
 
 
 

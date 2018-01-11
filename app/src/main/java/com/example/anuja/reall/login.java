@@ -110,7 +110,6 @@ public class login extends AppCompatActivity {
 
             jsonobject_one.put("username",name.getText().toString());
             jsonobject_one.put("password",password.getText().toString());
-            Log.e("JSONObject",jsonobject_one.toString());
 
 
         } catch (JSONException e) {
@@ -135,7 +134,7 @@ public class login extends AppCompatActivity {
                 if (correct==false)
                 {
                     name.setError("please enter valid username or password!");
-                    Log.e("ERROR",error.toString());
+                    error.printStackTrace();
 
                 }
 
@@ -193,8 +192,6 @@ public class login extends AppCompatActivity {
 
             }
         };
-
-
         jsonObjReq.setRetryPolicy(new RetryPolicy() {
             @Override
             public int getCurrentTimeout() {

@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:background="@color/colorDarkBlue">
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -19,6 +20,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -30,7 +32,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:padding="0dp"
-                android:src="@drawable/backnavigation" />
+                android:src="@drawable/backnavigation"
+               />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -51,10 +54,14 @@
         android:padding="16dp">
 
         <ImageView
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_column="1"
             android:id="@+id/flag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/china_flag_64" />
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="0.33"
+            />
 
         <TextView
             android:id="@+id/countryName"
@@ -68,7 +75,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/Capital"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/countryName"
@@ -96,35 +103,17 @@
             android:orientation="horizontal"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/worldView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="16dp"
-                android:text="World View"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_alignParentLeft="true" />
-
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_gravity="center_horizontal" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="Country View"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-
-                android:layout_alignParentRight="true" />
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignEnd="@+id/textView4"
+                android:layout_alignParentTop="true" />
 
         </RelativeLayout>
+
+
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
