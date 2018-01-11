@@ -28,6 +28,7 @@ public class AttributesActivity extends AppCompatActivity{
     private TabLayout tabLayout;
     private ViewPager viewPager;
     Button mybutton;
+    Button next;
 
     public static JSONObject countryObject;
     public static JSONObject cityObject;
@@ -44,6 +45,7 @@ public class AttributesActivity extends AppCompatActivity{
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        next=(Button)findViewById(R.id.selectNameButton);
         rbmale=findViewById(R.id.male);
         rbfemale=findViewById(R.id.female);
         rburban=findViewById(R.id.urban);
@@ -106,13 +108,27 @@ public class AttributesActivity extends AppCompatActivity{
 
 
         calc();
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(AttributesActivity.this,ActivityFirstName.class);
+                intent.putExtra("countryObject",countryObject.toString());
+                intent.putExtra("cityObject",cityObject.toString());
+                intent.putExtra("gender",gender);
+                intent.putExtra("locale",locale);
+                   intent.putExtra("traitsObject",traits.toString());
+
+                startActivity(intent);
+            }
+        });
+
 
     }
 
 
 
     public void update() {
-        if (gender != null && locale != null && progart != 0 && progath != 0 && proglooks != 0 && proghappy != 0 && proghealth != 0 && progintel != 0 && progmusic != 0 && progphy != 0 && progresis != 0 && progspirit != 0 && progstren != 0) {
+        if (gender != null || locale != null || progart != 0 || progath != 0 || proglooks != 0 || proghappy != 0 || proghealth != 0 || progintel != 0 || progmusic != 0 || progphy != 0 || progresis != 0 || progspirit != 0 || progstren != 0) {
             try {
 
                 if (traits.has("artistic")) {
@@ -481,17 +497,9 @@ public class AttributesActivity extends AppCompatActivity{
         startActivity(intent);
     }
 
-    public void toFirstName(View view){
-        Intent intent=new Intent(AttributesActivity.this,ActivityFirstName.class);
-        intent.putExtra("countryObject",countryObject.toString());
-        intent.putExtra("cityObject",cityObject.toString());
-        intent.putExtra("gender",gender);
-        intent.putExtra("locale",locale);
-        intent.putExtra("traitsObject",traits.toString());
 
-        startActivity(intent);
 
-    }
+
 
 
 }

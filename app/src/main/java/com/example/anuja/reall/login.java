@@ -248,7 +248,7 @@ public class login extends AppCompatActivity {
         mBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-               finish();
+               System.exit(0);
             }
         }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override

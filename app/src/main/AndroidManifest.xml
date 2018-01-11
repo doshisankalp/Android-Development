@@ -95,6 +95,8 @@
             android:name=".WellBeingIndicators"
             android:label="WellBeingIndicators"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ActivitySurname"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".login"
             android:label="login"
@@ -105,6 +107,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ActivityFirstName"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ForgetPassword"
             android:label="forget password"
             android:theme="@style/AppTheme.NoActionBar"></activity>
