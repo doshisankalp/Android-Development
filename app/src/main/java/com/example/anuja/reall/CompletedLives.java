@@ -47,6 +47,7 @@ import org.json.JSONObject;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -90,12 +91,20 @@ public class CompletedLives extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(CompletedLives.this,StartLife.class);
-                startActivity(intent);
+
                 selected_life=(mAdapter.get_selected_life());
                 System.out.println("selected id : "+selected_life.getReallivesGameId());
-                int id=selected_life.getReallivesGameId();
-                intent.putExtra("ID",Integer.toString(id));
-                startActivity(intent);
+                int id=0;
+
+                id=selected_life.getReallivesGameId();
+                if(id==0)
+                {
+                    Toast.makeText(CompletedLives.this,"Please select from above!!!",Toast.LENGTH_LONG).show();
+                }
+                else {
+                    intent.putExtra("ID", Integer.toString(id));
+                    startActivity(intent);
+                }
 //
 //
 //
