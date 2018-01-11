@@ -39,7 +39,7 @@ import java.util.Map;
 import static com.example.anuja.reall.R.drawable.glob;
 
 
-public class register extends AppCompatActivity {
+public class  register extends AppCompatActivity {
     private EditText et_fname,et_lname,et_country,et_email,et_mobile_number,et_username,et_password,et_conf_password;
     private String fname,lname,country,email,mobile_number,username,password,conf_password,fullname;
     Button button1;

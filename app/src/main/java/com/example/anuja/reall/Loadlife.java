@@ -71,7 +71,7 @@ public class Loadlife extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loadlife);
         progressBar=(ProgressBar) findViewById(R.id.loadlifeprogress);
-
+        progressBar.setVisibility(View.VISIBLE);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -89,7 +89,7 @@ public class Loadlife extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
-        progressBar.setVisibility(View.GONE);
+
         Button button=(Button)findViewById(R.id.loadlifebutton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,6 +148,8 @@ public class Loadlife extends AppCompatActivity {
                             }
                             LoadlivesAdapter mAdapter=new LoadlivesAdapter(livesList);
                             recyclerView.setAdapter(mAdapter);
+
+                            progressBar.setVisibility(View.GONE);
                         } catch (JSONException e) {
                             e.printStackTrace();
 

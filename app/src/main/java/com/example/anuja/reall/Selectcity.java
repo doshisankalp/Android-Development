@@ -17,12 +17,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
@@ -54,9 +56,13 @@ public class Selectcity extends AppCompatActivity {
 
      List<SelectCityModel> myarray=new ArrayList<>();
 
+    public List<SelectCityModel> temparray=new ArrayList<>();
+
     public static SelectCityModel selected_city=new SelectCityModel();
     private SelectCityAdapter scadapter;
     private RecyclerView recyclerView;
+
+    private static SearchView searchCity;
 
     String url=Constant.GAMEURL+"characterDesign/";
 
@@ -66,10 +72,13 @@ public class Selectcity extends AppCompatActivity {
         setContentView(R.layout.activity_selectcity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        searchCity=(SearchView)findViewById(R.id.searchtext);
+        searchCity.setQueryHint("Search");
         Intent i=getIntent();
         try {
             countryObject=new JSONObject(i.getStringExtra("countryObject"));
-            //Log.e("CountryObject",countryObject.toString());
+            Log.e("CountryObject",countryObject.toString());
             url+=String.valueOf(countryObject.getString("countryid"));
 
         } catch (JSONException e) {
@@ -96,21 +105,28 @@ public class Selectcity extends AppCompatActivity {
         startActivity(intent);
     }
     public void toselectattr(View view) {
-        for(int i=0;i<length;i++)
-        {
-            try {
-                if(cityObject[i].getString("cityName").equals(cityname))
-                {
-                    retobj=cityObject[i];
+
+
+        if (cityname == null) {
+            Toast.makeText(this, "Select one city", Toast.LENGTH_SHORT).show();
+        } else {
+
+
+            for (int i = 0; i < length; i++) {
+                try {
+                    if (cityObject[i].getString("cityName").equals(cityname)) {
+                        retobj = cityObject[i];
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             }
+            Intent intent = new Intent(Selectcity.this, AttributesActivity.class);
+            intent.putExtra("countryObject", countryObject.toString());
+            intent.putExtra("cityObject", retobj.toString());
+            startActivity(intent);
         }
-        Intent intent = new Intent(Selectcity.this,AttributesActivity.class);
-        intent.putExtra("countryObject",countryObject.toString());
-        intent.putExtra("cityObject",retobj.toString());
-        startActivity(intent);
+
     }
 
 
@@ -158,6 +174,34 @@ public class Selectcity extends AppCompatActivity {
                         SelectCityAdapter scadapter=new SelectCityAdapter(myarray);
                         recyclerView.setAdapter(scadapter);
 
+
+                        searchCity.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                            @Override
+                            public boolean onQueryTextSubmit(String query) {
+
+                                return false;
+                            }
+
+                            @Override
+                            public boolean onQueryTextChange(String newText) {
+
+                                Log.e("character2",newText);
+                                temparray.clear();
+                                for(int i=0;i<myarray.size();i++)
+                                {
+                                    if(myarray.get(i).getCity().toLowerCase().contains(newText.toLowerCase()))
+                                    {
+                                        temparray.add(myarray.get(i));
+                                    }
+                                }
+
+                                SelectCityAdapter scadapter2=new SelectCityAdapter(temparray);
+                                recyclerView.setAdapter(scadapter2);
+                                return false;
+                            }
+                        });
+
+
                     }
 
 
@@ -187,6 +231,24 @@ public class Selectcity extends AppCompatActivity {
 
 
         };
+
+
+        req.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return  20000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 20000;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
 
         que.add(req);
 

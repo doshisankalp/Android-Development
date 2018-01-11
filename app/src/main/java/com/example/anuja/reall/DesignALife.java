@@ -14,11 +14,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -61,7 +63,12 @@ public class DesignALife extends AppCompatActivity {
     private DesignLifeAdapter dladapter;
     private RecyclerView recyclerView;
 
+
+    private static SearchView searchCountry;
+
      public List<DesignLifeModel> myarray=new ArrayList<>();
+
+    public List<DesignLifeModel> temparray=new ArrayList<>();
 
 
     @Override
@@ -69,7 +76,13 @@ public class DesignALife extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_designalife);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        countryname="";
         setSupportActionBar(toolbar);
+
+        searchCountry=(SearchView)findViewById(R.id.searchtext);
+
+        searchCountry.setQueryHint("Search");
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_designlife);
 
@@ -88,6 +101,9 @@ public class DesignALife extends AppCompatActivity {
     {
        countryname=s;
        System.out.println("countindesign"+countryname);
+
+       Log.e("countryinsetcnt",countryname);
+
     }
     public void tomainactivity(View view) {
         Intent intent = new Intent(DesignALife.this, MainActivity.class);
@@ -98,22 +114,27 @@ public class DesignALife extends AppCompatActivity {
 
     public void goto_selectcity(View view) {
 
-        for(int i=0;i<length;i++)
-        {
-            try {
-                if(countryobj[i].getString("countryName").equals(countryname))
-                {
-                    retobj=countryobj[i];
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        //Log.e("JSON Object",retobj);
-        Intent intent = new Intent(DesignALife.this, Selectcity.class);
-        intent.putExtra("countryObject",retobj.toString());
-        startActivity(intent);
+        if (countryname.equals("")) {
 
+            Toast.makeText(this, "Please select a country", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+
+            for (int i = 0; i < length; i++) {
+                try {
+                    if (countryobj[i].getString("countryName").equals(countryname)) {
+                        retobj = countryobj[i];
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            //Log.e("JSON Object",retobj);
+            Intent intent = new Intent(DesignALife.this, Selectcity.class);
+            intent.putExtra("countryObject", retobj.toString());
+            startActivity(intent);
+        }
 
     }
 
@@ -161,6 +182,37 @@ public class DesignALife extends AppCompatActivity {
                         recyclerView.setAdapter(dladapter);
 
 
+                        searchCountry.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                            @Override
+                            public boolean onQueryTextSubmit(String query) {
+
+                                return false;
+                            }
+
+                            @Override
+                            public boolean onQueryTextChange(String newText) {
+
+                                Log.e("character2",newText);
+                                temparray.clear();
+                                for(int i=0;i<myarray.size();i++)
+                                {
+                                    if(myarray.get(i).getCountry().toLowerCase().contains(newText.toLowerCase()))
+                                    {
+                                    temparray.add(myarray.get(i));
+                                }
+                                }
+
+                                DesignLifeAdapter dladapter2=new DesignLifeAdapter(temparray);
+                                recyclerView.setAdapter(dladapter2);
+                                return false;
+                            }
+                        });
+
+
+
+
+
+
                     }
 
 
@@ -169,7 +221,7 @@ public class DesignALife extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
+               Log.e("Error in dal",error.toString());
             }
         })
         {

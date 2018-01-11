@@ -627,9 +627,9 @@ public class StartLife extends AppCompatActivity {
                             happiness_index.setText(object1.getString("happinessScore"));
                             ppp.setText(object1.getString("ppp"));
 
-                            int indexsdg=object1.getString("sdgiScore").indexOf('.');
+                            //int indexsdg=object1.getString("sdgiScore").indexOf('.');
 
-                            sdg.setText(object1.getString("sdgiScore").substring(0,(indexsdg+1))+object1.getString("sdgiScore").substring(indexsdg+1,indexsdg+3));
+                            sdg.setText(object1.getString("sdgiScore"));
                             gini.setText(object1.getString("gini"));
                             currency.setText(object1.getString("currencyName"));
                             goiter.setText(object1.getString("goitre"));
@@ -1196,9 +1196,7 @@ public class StartLife extends AppCompatActivity {
                             reg_happiness_index.setText(object_r1.getString("happinessScore"));
                             reg_ppp.setText(object_r1.getString("ppp"));
 
-                            int indexsdg1=object_r1.getString("sdgiScore").indexOf('.');
-
-                            reg_sdg.setText(object_r1.getString("sdgiScore").substring(0,(indexsdg+1))+object_r1.getString("sdgiScore").substring(indexsdg+1,indexsdg+3));
+                            reg_sdg.setText(object_r1.getString("sdgiScore"));
                             //reg_sdg.setText(object_r1.getString("sdgiScore"));
                             reg_gini.setText(object_r1.getString("gini"));
                             reg_currency.setText(object_r1.getString("currencyName"));

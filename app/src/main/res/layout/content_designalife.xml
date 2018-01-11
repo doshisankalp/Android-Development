@@ -33,6 +33,13 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:padding="12dp" />
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchtext"
+            android:background="@drawable/layout_bg"
+            android:layout_below="@+id/selectac"
+            />
 
 
         <Button
@@ -65,7 +72,7 @@
             android:layout_height="wrap_content"
 
             android:layout_above="@id/selectcitybutton"
-            android:layout_below="@+id/selectac"
+            android:layout_below="@+id/searchtext"
             android:id="@+id/recycler_designlife"
             android:scrollbars="vertical"/>
 
