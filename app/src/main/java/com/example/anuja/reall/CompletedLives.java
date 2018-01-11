@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -28,6 +29,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.anuja.reall.Adapter.CompletedlivesAdapter;
 import com.example.anuja.reall.Adapter.LoadlivesAdapter;
+import com.example.anuja.reall.Adapter.SelectCityAdapter;
 import com.example.anuja.reall.Model.Completedlives;
 import com.example.anuja.reall.Model.Loadlives;
 import com.android.volley.RequestQueue;
@@ -41,6 +43,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.anuja.reall.Model.SelectCityModel;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -61,8 +65,12 @@ public class CompletedLives extends AppCompatActivity {
     SharedPreferences pref;
     Completedlives selected_life=new Completedlives();
     private CompletedlivesAdapter mAdapter;
-    String url = "http://192.168.1.124:9090/rlg/game/getAllSavedGamesInfoList/";
+    String url = Constant.GAMEURL+"getAllSavedGamesInfoList/";
 
+    private static SearchView searchCompLife;
+
+
+    public List<Completedlives> temparray=new ArrayList<>();
 
 
     @Override
@@ -72,6 +80,9 @@ public class CompletedLives extends AppCompatActivity {
         setContentView(R.layout.activity_completed_lives);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        searchCompLife=(SearchView)findViewById(R.id.searchtext);
+        searchCompLife.setQueryHint("Search");
         pref = getApplication().getSharedPreferences("Options", MODE_PRIVATE);
         username = pref.getString("username", "");
         Log.e("fromcompletedlife :", username);
@@ -143,6 +154,33 @@ public class CompletedLives extends AppCompatActivity {
                             }
                             CompletedlivesAdapter mAdapter=new CompletedlivesAdapter(completeList);
                             recyclerView.setAdapter(mAdapter);
+
+                            searchCompLife.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                                @Override
+                                public boolean onQueryTextSubmit(String query) {
+
+                                    return false;
+                                }
+
+                                @Override
+                                public boolean onQueryTextChange(String newText) {
+
+                                    Log.e("character2",newText);
+                                    temparray.clear();
+                                    for(int i=0;i<completeList.size();i++)
+                                    {
+                                        if(completeList.get(i).getName().toLowerCase().contains(newText.toLowerCase()))
+                                        {
+                                            temparray.add(completeList.get(i));
+                                        }
+                                    }
+
+                                    CompletedlivesAdapter scadapter2=new CompletedlivesAdapter(temparray);
+                                    recyclerView.setAdapter(scadapter2);
+                                    return false;
+                                }
+                            });
+
                         } catch (JSONException e) {
                             e.printStackTrace();
 

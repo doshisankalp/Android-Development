@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backblue"
     tools:context="com.example.anuja.reall.CompletedLives">
 
     <android.support.design.widget.AppBarLayout
@@ -46,14 +47,27 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchtext"
+        android:background="@drawable/layout_bg"
+        android:layout_below="@+id/appbar"
+        android:layout_margin="5dp"
 
+
+        />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/searchtext"
+    >
     <include layout="@layout/content_completed_lives"
         android:id="@+id/include2" />
-
+</RelativeLayout>
 
 
 </RelativeLayout>
