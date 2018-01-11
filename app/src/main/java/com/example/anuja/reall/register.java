@@ -165,7 +165,8 @@ public class register extends AppCompatActivity {
             obj.put("fullName",fullname);
             obj.put("emailId",email);
             obj.put("phoneNo",mobile_number);
-            countryname=spinner.getSelectedItem().toString();
+          //  countryname=spinner.getSelectedItem().toString();
+            countryname="India";
             Log.e("Country",countryname);
             obj.put("country",countryname);
             obj.put("code",id1.get(countryname));

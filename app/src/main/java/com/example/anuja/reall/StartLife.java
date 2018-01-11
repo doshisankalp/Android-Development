@@ -638,7 +638,11 @@ public class StartLife extends AppCompatActivity {
 
                             int indexsdg=object1.getString("sdgiScore").indexOf('.');
 
-                            sdg.setText(object1.getString("sdgiScore").substring(0,(indexsdg+1))+object1.getString("sdgiScore").substring(indexsdg+1,indexsdg+3));
+                            String sdg2=object1.getString("sdgiScore");
+                            double sdg1= Double.parseDouble(agri1);
+                            DecimalFormat df3 = new DecimalFormat("#.##");
+                            sdg.setText(df3.format(sdg1));
+
                             gini.setText(object1.getString("gini"));
                             currency.setText(object1.getString("currencyName"));
                             goiter.setText(object1.getString("goitre"));
@@ -712,8 +716,8 @@ public class StartLife extends AppCompatActivity {
 
 
                             //population.setText(object1.getString("population"));
-                            JSONObject object2=object.getJSONObject("region");
-                            location.setText(object2.getString("regionName")+","+object1.getString("countryName"));
+                            JSONObject object2=object.getJSONObject("city");
+                            location.setText(object2.getString("cityName")+","+object1.getString("countryName"));
                             JSONObject object3=object.getJSONObject("language");
                             language.setText("language:"+object3.getString("languageName"));
                             capital.setText(object1.getString("capital"));
