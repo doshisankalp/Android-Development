@@ -1008,43 +1008,7 @@
                     android:id="@+id/RegisterCountryCorruption"/>
             </TableRow>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginTop="16dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_weight="0.33"
-                    android:text="@string/goitre"
-                    android:textColor="#404141" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_weight="0.33"
-                    android:text="12.17"
-                    android:paddingLeft="16dp"
-                    android:textColor="#404141"
-                    android:textSize="18sp"
-                    android:id="@+id/CountryGoiter"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_weight="0.33"
-                    android:text="19.89"
-                    android:paddingLeft="16dp"
-                    android:textColor="#404141"
-                    android:textSize="18sp"
-                    android:id="@+id/RegisterCountryGoiter"/>
-            </TableRow>
 
 
 

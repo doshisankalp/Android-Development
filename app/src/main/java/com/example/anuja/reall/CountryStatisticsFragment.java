@@ -106,8 +106,8 @@ public class CountryStatisticsFragment extends Fragment {
         TextView registerCountryHDI=(TextView)view.findViewById(R.id.RegisterCountryHDI);
         TextView countryCorruption=(TextView)view.findViewById(R.id.CountryCorruption);
         TextView registerCountryCorruption=(TextView)view.findViewById(R.id.RegisterCountryCorruption);
-        TextView countryGoiter=(TextView)view.findViewById(R.id.CountryGoiter);
-        TextView registerCountryGoiter=(TextView)view.findViewById(R.id.RegisterCountryGoiter);
+       // TextView countryGoiter=(TextView)view.findViewById(R.id.CountryGoiter);
+        //TextView registerCountryGoiter=(TextView)view.findViewById(R.id.RegisterCountryGoiter);
         TextView countryFemaleSmokers=(TextView)view.findViewById(R.id.CountryFemaleSmokers);
         TextView registeredCountryFemaleSmokers=(TextView)view.findViewById(R.id.RegisterCountryFemaleSmokers);
         TextView countryMaleSmokers=(TextView)view.findViewById(R.id.CountryMaleSmokers);
@@ -559,7 +559,7 @@ public class CountryStatisticsFragment extends Fragment {
                 registerCountrySDG.setText(selfCountry.getString("sdgiRank"));
                 registerCountryHappiness.setText(selfCountry.getString("happinessRank"));
                 registerCountryCorruption.setText(selfCountry.getString("corruption"));
-                registerCountryGoiter.setText(selfCountry.getString("goiter"));
+               // registerCountryGoiter.setText(selfCountry.getString("goiter"));
                 registeredCountryFemaleSmokers.setText(selfCountry.getString("femaleSmoker"));
                 registerCountryMaleSmokers.setText(selfCountry.getString("maleSmoker"));
 
@@ -1003,7 +1003,7 @@ public class CountryStatisticsFragment extends Fragment {
                 countrySDG.setText(registerCountry.getString("sdgiRank"));
                 countryHappiness.setText(registerCountry.getString("happinessRank"));
                 countryCorruption.setText(registerCountry.getString("corruption"));
-                countryGoiter.setText(registerCountry.getString("goiter"));
+                //countryGoiter.setText(registerCountry.getString("goiter"));
                 countryFemaleSmokers.setText(registerCountry.getString("femaleSmoker"));
                 countryMaleSmokers.setText(registerCountry.getString("maleSmoker"));
 

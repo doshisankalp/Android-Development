@@ -106,6 +106,8 @@
     <string name="birth_rate">Birth Rate</string>
     <string name="death_rate">Death Rate</string>
     <string name="infant_mortality">Infant Mortality</string>
+    <string name="female_smokers">Female Smokers(%)</string>
+    <string name="male_smokers">Male smokers(%)</string>
 
     <!--Per Capita-->
     <string name="primary_school_enrollment">Primary School Enrollment</string>
