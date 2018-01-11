@@ -23,6 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -621,7 +622,15 @@ public class StartLife extends AppCompatActivity {
                             primary_school.setText(object1.getString("primarySchool"));
                             industry.setText(object1.getString("industry"));
                             services.setText(object1.getString("services"));
-                            agri.setText(object1.getString("agriculture"));
+
+
+
+                            String agri1=object1.getString("agriculture");
+
+                            double agri2= Double.parseDouble(agri1);
+                            DecimalFormat df = new DecimalFormat("#.##");
+
+                            agri.setText(df.format(agri2));
                             health_per_capita.setText(object1.getString("wealthPerCapita"));
                             access_elect.setText(object1.getString("eletricityConsumption"));
                             happiness_index.setText(object1.getString("happinessScore"));
@@ -1190,7 +1199,12 @@ public class StartLife extends AppCompatActivity {
                             reg_primary_school.setText(object_r1.getString("primarySchool"));
                             reg_industry.setText(object_r1.getString("industry"));
                             reg_services.setText(object_r1.getString("services"));
-                            reg_agri.setText(object_r1.getString("agriculture"));
+                            String reg_agri1=object_r1.getString("agriculture");
+
+                            double agri_reg= Double.parseDouble(reg_agri1);
+                            DecimalFormat df1 = new DecimalFormat("#.##");
+
+                            reg_agri.setText(df1.format(agri_reg));
                             reg_health_per_capita.setText(object_r1.getString("wealthPerCapita"));
                             reg_access_elect.setText(object_r1.getString("eletricityConsumption"));
                             reg_happiness_index.setText(object_r1.getString("happinessScore"));
