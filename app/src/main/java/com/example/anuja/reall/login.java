@@ -134,6 +134,7 @@ public class login extends AppCompatActivity {
                 if (correct==false)
                 {
                     name.setError("please enter valid username or password!");
+                    error.printStackTrace();
 
                 }
 
@@ -191,7 +192,6 @@ public class login extends AppCompatActivity {
 
             }
         };
-
         jsonObjReq.setRetryPolicy(new RetryPolicy() {
             @Override
             public int getCurrentTimeout() {
@@ -208,8 +208,6 @@ public class login extends AppCompatActivity {
 
             }
         });
-
-
         requestQueue.add(jsonObjReq);
 
 

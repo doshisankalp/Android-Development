@@ -1,15 +1,21 @@
 package com.example.anuja.reall;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
@@ -51,8 +57,12 @@ public class ActionLeisureFragment extends Fragment {
     String url=Constant.GAMEURL+"actionbar/leisure/";
     static String arts1, social1, religious1, volunteer1, outdoor1, television1, fashion1, play1, study1, endurance1, sports1, music1;
 
-    RequestQueue requestQueue;
+    RequestQueue requestQueue,requestQueue2;
 
+
+    Button send;
+
+    public static Context baseContext;
     public ActionLeisureFragment() {
         // Required empty public constructor
     }
@@ -60,6 +70,8 @@ public class ActionLeisureFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        baseContext = getActivity();
 
 
     }
@@ -70,6 +82,10 @@ public class ActionLeisureFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.actionfragment_leisure, container, false);
+count=0;
+
+
+
         arts = (CheckBox) v.findViewById(R.id.CB1);
         social = (CheckBox) v.findViewById(R.id.CB2);
         religious = (CheckBox) v.findViewById(R.id.CB3);
@@ -84,7 +100,7 @@ public class ActionLeisureFragment extends Fragment {
         music = (CheckBox) v.findViewById(R.id.CB12);
 
 
-
+        send=(Button)v.findViewById(R.id.savebutton);
 
 
 
@@ -92,6 +108,17 @@ public class ActionLeisureFragment extends Fragment {
 
 
         leisure();
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    sendleisure();
+                } catch (JSONException e) {
+                        e.printStackTrace();
+                }
+            }
+        });
+
 
 
 
@@ -108,48 +135,167 @@ public class ActionLeisureFragment extends Fragment {
 
     }
 
-    public static void statusen() {
 
-        if (!arts.isChecked()) {
-            arts.setEnabled(false);
-        }
-        if (!music.isChecked()) {
-            music.setEnabled(false);
-        }
-        if (!social.isChecked()) {
-            social.setEnabled(false);
-        }
-        if (!religious.isChecked()) {
-            religious.setEnabled(false);
-        }
-        if (!volunteer.isChecked()) {
-            volunteer.setEnabled(false);
-        }
-        if (!outdoor.isChecked()) {
-            outdoor.setEnabled(false);
-        }
-        if (!television.isChecked()) {
-            television.setEnabled(false);
-        }
-        if (!fashion.isChecked()) {
-            fashion.setEnabled(false);
-        }
-        if (!play.isChecked()) {
-            play.setEnabled(false);
-        }
-        if (!study.isChecked()) {
-            study.setEnabled(false);
-        }
-        if (!endurance.isChecked()) {
-            endurance.setEnabled(false);
-        }
-        if (!sports.isChecked()) {
-            sports.setEnabled(false);
-        }
+
+    public void sendleisure() throws JSONException {
+        requestQueue2=Volley.newRequestQueue(getActivity());
+
+
+
+        JSONArray arr = new JSONArray();
+        JSONObject art=new JSONObject();
+        JSONObject social2=new JSONObject();
+        JSONObject religious2=new JSONObject();
+        JSONObject volunteer2=new JSONObject();
+        JSONObject outdoor2=new JSONObject();
+        JSONObject televison2=new JSONObject();
+        JSONObject fashion2=new JSONObject();
+        JSONObject play2=new JSONObject();
+        JSONObject study2=new JSONObject();
+        JSONObject endurance2=new JSONObject();
+        JSONObject sports2=new JSONObject();
+        JSONObject music2=new JSONObject();
+
+
+        art.put( "leisure_code","ART");
+        art.put("leisure_name", "ART");
+        art.put("selected", arts.isChecked());
+        art.put("enabled",arts.isEnabled());
+
+
+        social2.put( "leisure_code","SOCIAL_OR_POLITICAL_ACTIVITIES");
+        social2.put("leisure_name", "SOCIAL_OR_POLITICAL_ACTIVITIES");
+        social2.put("selected", social.isChecked());
+        social2.put("enabled",social.isEnabled());
+
+        religious2.put( "leisure_code","RELIGIOUS_ACTIVITY");
+        religious2.put("leisure_name", "RELIGIOUS_ACTIVITY");
+        religious2.put("selected", religious.isChecked());
+        religious2.put("enabled",religious.isEnabled());
+
+        volunteer2.put( "leisure_code","VOLUNTEERING");
+        volunteer2.put("leisure_name", "VOLUNTEERING");
+        volunteer2.put("selected",volunteer.isChecked());
+        volunteer2.put("enabled",volunteer.isEnabled());
+
+        outdoor2.put( "leisure_code","OUTDOOR_ACTIVITIES");
+        outdoor2.put("leisure_name", "OUTDOOR_ACTIVITIES");
+        outdoor2.put("selected",outdoor.isChecked());
+        outdoor2.put("enabled",outdoor.isEnabled());
+
+        televison2.put( "leisure_code","TELEVISION_VIEWING");
+        televison2.put("leisure_name", "TELEVISION_VIEWING");
+        televison2.put("selected",television.isChecked());
+        televison2.put("enabled",television.isEnabled());
+
+        fashion2.put( "leisure_code","FASHION_CLOTHING_APPEARANCE");
+        fashion2.put("leisure_name", "FASHION_CLOTHING_APPEARANCE");
+        fashion2.put("selected",fashion.isChecked());
+        fashion2.put("enabled",fashion.isEnabled());
+
+        play2.put( "leisure_code","PLAY");
+        play2.put("leisure_name", "PLAY");
+        play2.put("selected",play.isChecked());
+        play2.put("enabled",play.isEnabled());
+
+        study2.put( "leisure_code","READING_STUDY");
+        study2.put("leisure_name", "READING_STUDY");
+        study2.put("selected",study.isChecked());
+        study2.put("enabled",study.isEnabled());
+
+        endurance2.put( "leisure_code","ENDURANCE");
+        endurance2.put("leisure_name", "ENDURANCE");
+        endurance2.put("selected",endurance.isChecked());
+        endurance2.put("enabled",endurance.isEnabled());
+
+        sports2.put( "leisure_code","SPORTS");
+        sports2.put("leisure_name", "SPORTS");
+        sports2.put("selected",sports.isChecked());
+        sports2.put("enabled",sports.isEnabled());
+
+        music2.put( "leisure_code","MUSIC");
+        music2.put("leisure_name", "MUSIC");
+        music2.put("selected",music.isChecked());
+        music2.put("enabled",music.isEnabled());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        arr.put(art);
+        arr.put(social2);
+        arr.put(religious2);
+        arr.put(volunteer2);
+        arr.put(outdoor2);
+        arr.put(televison2);
+        arr.put(fashion2);
+        arr.put(play2);
+        arr.put(study2);
+        arr.put(endurance2);
+        arr.put(sports2);
+        arr.put(music2);
+
+//...
+        Log.e("array",String.valueOf(arr));
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.PUT,Constant.GAMEURL+"actionbar/leisure/"+id,arr,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+
+                        Log.e("hi",String.valueOf(response));
+
+
+
+
+
+                    }
+
+
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+
+                    }
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                pref = getActivity().getSharedPreferences("Options", MODE_PRIVATE);
+                String token = pref.getString("token", "");
+                Log.e("token", token);
+                headers.put("Content-Type", "application/json");
+                headers.put("x-auth-token", token);
+                return headers;
+            }
+        };
+
+
+        requestQueue2.add(request);
+
+
+
+
+
     }
 
-
-    public static void statusdis() {
+    public static void statusen() {
 
         if (!arts.isChecked()) {
             arts.setEnabled(true);
@@ -188,6 +334,49 @@ public class ActionLeisureFragment extends Fragment {
             sports.setEnabled(true);
         }
     }
+
+
+    public static void statusdis() {
+
+        if (!arts.isChecked()) {
+            arts.setEnabled(false);
+        }
+        if (!music.isChecked()) {
+            music.setEnabled(false);
+        }
+        if (!social.isChecked()) {
+            social.setEnabled(false);
+        }
+        if (!religious.isChecked()) {
+            religious.setEnabled(false);
+        }
+        if (!volunteer.isChecked()) {
+            volunteer.setEnabled(false);
+        }
+        if (!outdoor.isChecked()) {
+            outdoor.setEnabled(false);
+        }
+        if (!television.isChecked()) {
+            television.setEnabled(false);
+        }
+        if (!fashion.isChecked()) {
+            fashion.setEnabled(false);
+        }
+        if (!play.isChecked()) {
+            play.setEnabled(false);
+        }
+        if (!study.isChecked()) {
+            study.setEnabled(false);
+        }
+        if (!endurance.isChecked()) {
+            endurance.setEnabled(false);
+        }
+        if (!sports.isChecked()) {
+            sports.setEnabled(false);
+        }
+
+
+    }
     public void leisure(){
         requestQueue=Volley.newRequestQueue(getActivity());
 
@@ -219,52 +408,101 @@ public class ActionLeisureFragment extends Fragment {
 
                             artobject=leisure.getJSONObject(0);
                             arts.setChecked(Boolean.parseBoolean(artobject.getString("selected")));
+                            if(Boolean.parseBoolean(artobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             arts1=artobject.getString("enabled");
+
 
 
                             musicobject=leisure.getJSONObject(1);
                             music.setChecked(Boolean.parseBoolean(musicobject.getString("selected")));
+                            if(Boolean.parseBoolean(musicobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             music1=musicobject.getString("enabled");
 
 
                             studyobject=leisure.getJSONObject(2);
                             study.setChecked(Boolean.parseBoolean(studyobject.getString("selected")));
+                            if(Boolean.parseBoolean(studyobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             study1=studyobject.getString("enabled");
 
                             fasionobject=leisure.getJSONObject(3);
                             fashion.setChecked(Boolean.parseBoolean(fasionobject.getString("selected")));
+                            if(Boolean.parseBoolean(fasionobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             fashion1=fasionobject.getString("enabled");
 
                             teleisionobject=leisure.getJSONObject(4);
                             television.setChecked(Boolean.parseBoolean(teleisionobject.getString("selected")));
+                            if(Boolean.parseBoolean(teleisionobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             television1=teleisionobject.getString("enabled");
 
                             sportsobject=leisure.getJSONObject(5);
                             sports.setChecked(Boolean.parseBoolean(sportsobject.getString("selected")));
+                            if(Boolean.parseBoolean(sportsobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             sports1=sportsobject.getString("enabled");
 
                             outdoorobject=leisure.getJSONObject(6);
                             outdoor.setChecked(Boolean.parseBoolean(outdoorobject.getString("selected")));
+                            if(Boolean.parseBoolean(outdoorobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             outdoor1=outdoorobject.getString("enabled");
 
                             volunteerobject=leisure.getJSONObject(7);
                             volunteer.setChecked(Boolean.parseBoolean(volunteerobject.getString("selected")));
+                            if(Boolean.parseBoolean(volunteerobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             volunteer1=volunteerobject.getString("enabled");
 
                             religiousobject=leisure.getJSONObject(8);
                             religious.setChecked(Boolean.parseBoolean(religiousobject.getString("selected")));
+                            if(Boolean.parseBoolean(religiousobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             religious1=religiousobject.getString("enabled");
 
                             socialobject=leisure.getJSONObject(9);
                             social.setChecked(Boolean.parseBoolean(socialobject.getString("selected")));
+                            if(Boolean.parseBoolean(socialobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             social1=socialobject.getString("enabled");
 
                             enduranceobject=leisure.getJSONObject(10);
                             endurance.setChecked(Boolean.parseBoolean(enduranceobject.getString("selected")));
+                            if(Boolean.parseBoolean(enduranceobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             endurance1=enduranceobject.getString("enabled");
 
                             playobject=leisure.getJSONObject(11);
                             play.setChecked(Boolean.parseBoolean(playobject.getString("selected")));
+                            if(Boolean.parseBoolean(playobject.getString("selected")))
+                            {
+                                count++;
+                            }
                             play1=playobject.getString("enabled");
 
 
@@ -416,6 +654,12 @@ public class ActionLeisureFragment extends Fragment {
            }
            else
            {
+
+
+
+                //\
+             //  ActionActivity.showToast(,"hi");
+
 
               statusdis();
            }
