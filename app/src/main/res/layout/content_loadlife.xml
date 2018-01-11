@@ -7,10 +7,20 @@
     android:layout_height="match_parent"
     android:background="#1C355B"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/loadlifeprogress"
+        android:visibility="visible"/>
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/heximage">
+
+
     <Button
         android:id="@+id/cancelbutton"
         android:layout_width="wrap_content"

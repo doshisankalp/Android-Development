@@ -23,6 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -137,433 +138,507 @@ public class StartLife extends AppCompatActivity {
 
                             if(country_code.equals("AD"))
                                 country.setImageResource(R.raw.ad);
-                            if(country_code.equals("AE"))
+                            else if(country_code.equals("AE"))
                                 country.setImageResource(R.raw.ae);
-                            if(country_code.equals("AF"))
+                            else if(country_code.equals("AF"))
                                 country.setImageResource(R.raw.af);
-                            if(country_code.equals("AG"))
+                            else if(country_code.equals("AG"))
                                 country.setImageResource(R.raw.ag);
-                            if(country_code.equals("AL"))
+                            else if(country_code.equals("AL"))
                                 country.setImageResource(R.raw.al);
-                            if(country_code.equals("AM"))
+                            else if(country_code.equals("AM"))
                                 country.setImageResource(R.raw.am);
-                            if(country_code.equals("AO"))
+                            else if(country_code.equals("AO"))
                                 country.setImageResource(R.raw.ao);
-                            if(country_code.equals("AR"))
+                            else if(country_code.equals("AR"))
                                 country.setImageResource(R.raw.ar);
-                            if(country_code.equals("AT"))
+                            else if(country_code.equals("AT"))
                                 country.setImageResource(R.raw.at);
-                            if(country_code.equals("AU"))
+                            else if(country_code.equals("AU"))
                                 country.setImageResource(R.raw.au);
-                            if(country_code.equals("AZ"))
+                            else if(country_code.equals("AZ"))
                                 country.setImageResource(R.raw.az);
-                            if(country_code.equals("BA"))
+                            else if(country_code.equals("BA"))
                                 country.setImageResource(R.raw.ba);
-                            if(country_code.equals("BB"))
+                            else if(country_code.equals("BB"))
                                 country.setImageResource(R.raw.bb);
-                            if(country_code.equals("BD"))
+                            else if(country_code.equals("BD"))
                                 country.setImageResource(R.raw.bd);
-                            if(country_code.equals("BE"))
+                            else if(country_code.equals("BE"))
                                 country.setImageResource(R.raw.be);
-                            if(country_code.equals("BF"))
+                            else if(country_code.equals("BF"))
                                 country.setImageResource(R.raw.bf);
-                            if(country_code.equals("BG"))
+                            else if(country_code.equals("BG"))
                                 country.setImageResource(R.raw.bg);
-                            if(country_code.equals("BH"))
+                            else if(country_code.equals("BH"))
                                 country.setImageResource(R.raw.bh);
-                            if(country_code.equals("BI"))
+                            else if(country_code.equals("BI"))
                                 country.setImageResource(R.raw.bi);
-                            if(country_code.equals("BJ"))
+                            else if(country_code.equals("BJ"))
                                 country.setImageResource(R.raw.bj);
-                            if(country_code.equals("BN"))
+                            else if(country_code.equals("BN"))
                                 country.setImageResource(R.raw.bn);
-                            if(country_code.equals("BO"))
+                            else if(country_code.equals("BO"))
                                 country.setImageResource(R.raw.bo);
-                            if(country_code.equals("BR"))
+                            else if(country_code.equals("BR"))
                                 country.setImageResource(R.raw.br);
-                            if(country_code.equals("BS"))
+                            else if(country_code.equals("BS"))
                                 country.setImageResource(R.raw.bs);
-                            if(country_code.equals("BT"))
+                            else if(country_code.equals("BT"))
                                 country.setImageResource(R.raw.bt);
-                            if(country_code.equals("BW"))
+                            else if(country_code.equals("BW"))
                                 country.setImageResource(R.raw.bw);
-                            if(country_code.equals("BY"))
+                            else if(country_code.equals("BY"))
                                 country.setImageResource(R.raw.by);
-                            if(country_code.equals("BZ"))
+                            else if(country_code.equals("BZ"))
                                 country.setImageResource(R.raw.bz);
-                            if(country_code.equals("CA"))
+                            else if(country_code.equals("CA"))
                                 country.setImageResource(R.raw.ca);
-                            if(country_code.equals("CD"))
+                            else if(country_code.equals("CD"))
                                 country.setImageResource(R.raw.cd);
-                            if(country_code.equals("CF"))
+                            else if(country_code.equals("CF"))
                                 country.setImageResource(R.raw.cf);
-                            if(country_code.equals("CG"))
+                            else if(country_code.equals("CG"))
                                 country.setImageResource(R.raw.cg);
-                            if(country_code.equals("CH"))
+                            else if(country_code.equals("CH"))
                                 country.setImageResource(R.raw.ch);
-                            if(country_code.equals("CI"))
+                            else if(country_code.equals("CI"))
                                 country.setImageResource(R.raw.ci);
-                            if(country_code.equals("CL"))
+                            else if(country_code.equals("CL"))
                                 country.setImageResource(R.raw.cl);
-                            if(country_code.equals("CM"))
+                            else if(country_code.equals("CM"))
                                 country.setImageResource(R.raw.cm);
-                            if(country_code.equals("CN"))
+                            else if(country_code.equals("CN"))
                                 country.setImageResource(R.raw.cn);
-                            if(country_code.equals("CO"))
+                            else if(country_code.equals("CO"))
                                 country.setImageResource(R.raw.co);
-                            if(country_code.equals("CR"))
+                            else if(country_code.equals("CR"))
                                 country.setImageResource(R.raw.cr);
-                            if(country_code.equals("CU"))
+                            else if(country_code.equals("CU"))
                                 country.setImageResource(R.raw.cu);
-                            if(country_code.equals("CV"))
+                            else if(country_code.equals("CV"))
                                 country.setImageResource(R.raw.cv);
-                            if(country_code.equals("CY"))
+                            else if(country_code.equals("CY"))
                                 country.setImageResource(R.raw.cy);
-                            if(country_code.equals("CZ"))
+                            else if(country_code.equals("CZ"))
                                 country.setImageResource(R.raw.cz);
-                            if(country_code.equals("DE"))
+                            else if(country_code.equals("DE"))
                                 country.setImageResource(R.raw.de);
-                            if(country_code.equals("DJ"))
+                            else if(country_code.equals("DJ"))
                                 country.setImageResource(R.raw.dj);
-                            if(country_code.equals("DK"))
+                            else if(country_code.equals("DK"))
                                 country.setImageResource(R.raw.dk);
-                            if(country_code.equals("DM"))
+                            else if(country_code.equals("DM"))
                                 country.setImageResource(R.raw.dm);
-                            if(country_code.equals("DO"))
+                            else if(country_code.equals("DO"))
                                 country.setImageResource(R.raw.do1);
-                            if(country_code.equals("DZ"))
+                            else if(country_code.equals("DZ"))
                                 country.setImageResource(R.raw.dz);
-                            if(country_code.equals("EC"))
+                            else if(country_code.equals("EC"))
                                 country.setImageResource(R.raw.ec);
-                            if(country_code.equals("EE"))
+                            else if(country_code.equals("EE"))
                                 country.setImageResource(R.raw.ee);
-                            if(country_code.equals("EG"))
+                            else if(country_code.equals("EG"))
                                 country.setImageResource(R.raw.eg);
-                            if(country_code.equals("EH"))
+                            else if(country_code.equals("EH"))
                                 country.setImageResource(R.raw.eh);
-                            if(country_code.equals("ER"))
+                            else if(country_code.equals("ER"))
                                 country.setImageResource(R.raw.er);
-                            if(country_code.equals("ES"))
+                            else if(country_code.equals("ES"))
                                 country.setImageResource(R.raw.es);
-                            if(country_code.equals("ET"))
+                            else if(country_code.equals("ET"))
                                 country.setImageResource(R.raw.et);
-                            if(country_code.equals("FI"))
+                            else if(country_code.equals("FI"))
                                 country.setImageResource(R.raw.fi);
-                            if(country_code.equals("FJ"))
+                            else if(country_code.equals("FJ"))
                                 country.setImageResource(R.raw.fj);
-                            if(country_code.equals("FM"))
+                            else if(country_code.equals("FM"))
                                 country.setImageResource(R.raw.fm);
-                            if(country_code.equals("FR"))
+                            else if(country_code.equals("FR"))
                                 country.setImageResource(R.raw.fr);
-                            if(country_code.equals("GA"))
+                            else if(country_code.equals("GA"))
                                 country.setImageResource(R.raw.ga);
-                            if(country_code.equals("GB"))
+                            else if(country_code.equals("GB"))
                                 country.setImageResource(R.raw.gb);
-                            if(country_code.equals("GD"))
+                            else if(country_code.equals("GD"))
                                 country.setImageResource(R.raw.gd);
-                            if(country_code.equals("GE"))
+                            else if(country_code.equals("GE"))
                                 country.setImageResource(R.raw.ge);
-                            if(country_code.equals("GF"))
+                            else if(country_code.equals("GF"))
                                 country.setImageResource(R.raw.gf);
-                            if(country_code.equals("GH"))
+                            else if(country_code.equals("GH"))
                                 country.setImageResource(R.raw.gh);
-                            if(country_code.equals("GM"))
+                            else if(country_code.equals("GM"))
                                 country.setImageResource(R.raw.gm);
-                            if(country_code.equals("GN"))
+                            else if(country_code.equals("GN"))
                                 country.setImageResource(R.raw.gn);
-                            if(country_code.equals("GP"))
+                            else if(country_code.equals("GP"))
                                 country.setImageResource(R.raw.gp);
-                            if(country_code.equals("GQ"))
+                            else if(country_code.equals("GQ"))
                                 country.setImageResource(R.raw.gq);
-                            if(country_code.equals("GR"))
+                            else if(country_code.equals("GR"))
                                 country.setImageResource(R.raw.gr);
-                            if(country_code.equals("GT"))
+                            else if(country_code.equals("GT"))
                                 country.setImageResource(R.raw.gt);
-                            if(country_code.equals("GU"))
+                            else if(country_code.equals("GU"))
                                 country.setImageResource(R.raw.gu);
-                            if(country_code.equals("GW"))
+                            else if(country_code.equals("GW"))
                                 country.setImageResource(R.raw.gw);
-                            if(country_code.equals("GY"))
+                            else if(country_code.equals("GY"))
                                 country.setImageResource(R.raw.gy);
-                            if(country_code.equals("HK"))
+                            else if(country_code.equals("HK"))
                                 country.setImageResource(R.raw.hk);
-                            if(country_code.equals("HN"))
+                            else if(country_code.equals("HN"))
                                 country.setImageResource(R.raw.hn);
-                            if(country_code.equals("HR"))
+                            else if(country_code.equals("HR"))
                                 country.setImageResource(R.raw.hr);
-                            if(country_code.equals("HT"))
+                            else if(country_code.equals("HT"))
                                 country.setImageResource(R.raw.ht);
-                            if(country_code.equals("HU"))
+                            else if(country_code.equals("HU"))
                                 country.setImageResource(R.raw.hu);
-                            if(country_code.equals("ID"))
+                            else if(country_code.equals("ID"))
                                 country.setImageResource(R.raw.id);
-                            if(country_code.equals("IE"))
+                            else if(country_code.equals("IE"))
                                 country.setImageResource(R.raw.ie);
-                            if(country_code.equals("IL"))
+                            else if(country_code.equals("IL"))
                                 country.setImageResource(R.raw.il);
-                            if(country_code.equals("IN"))
+                            else if(country_code.equals("IN"))
                                 country.setImageResource(R.raw.in);
-                            if(country_code.equals("IQ"))
+                            else if(country_code.equals("IQ"))
                                 country.setImageResource(R.raw.iq);
-                            if(country_code.equals("IR"))
+                            else if(country_code.equals("IR"))
                                 country.setImageResource(R.raw.ir);
-                            if(country_code.equals("IS"))
+                            else if(country_code.equals("IS"))
                                 country.setImageResource(R.raw.is);
-                            if(country_code.equals("IT"))
+                            else if(country_code.equals("IT"))
                                 country.setImageResource(R.raw.it);
-                            if(country_code.equals("JM"))
+                            else if(country_code.equals("JM"))
                                 country.setImageResource(R.raw.jm);
-                            if(country_code.equals("JO"))
+                            else if(country_code.equals("JO"))
                                 country.setImageResource(R.raw.jo);
-                            if(country_code.equals("JP"))
+                            else if(country_code.equals("JP"))
                                 country.setImageResource(R.raw.jp);
-                            if(country_code.equals("KE"))
+                            else if(country_code.equals("KE"))
                                 country.setImageResource(R.raw.ke);
-                            if(country_code.equals("KG"))
+                            else if(country_code.equals("KG"))
                                 country.setImageResource(R.raw.kg);
-                            if(country_code.equals("KH"))
+                            else if(country_code.equals("KH"))
                                 country.setImageResource(R.raw.kh);
-                            if(country_code.equals("KI"))
+                            else if(country_code.equals("KI"))
                                 country.setImageResource(R.raw.ki);
-                            if(country_code.equals("KM"))
+                            else if(country_code.equals("KM"))
                                 country.setImageResource(R.raw.km);
-                            if(country_code.equals("KN"))
+                            else if(country_code.equals("KN"))
                                 country.setImageResource(R.raw.kn);
-                            if(country_code.equals("KP"))
+                            else if(country_code.equals("KP"))
                                 country.setImageResource(R.raw.kp);
-                            if(country_code.equals("KR"))
+                            else if(country_code.equals("KR"))
                                 country.setImageResource(R.raw.kr);
-                            if(country_code.equals("KS"))
+                            else if(country_code.equals("KS"))
                                 country.setImageResource(R.raw.ks);
-                            if(country_code.equals("KW"))
+                            else if(country_code.equals("KW"))
                                 country.setImageResource(R.raw.kw);
-                            if(country_code.equals("KZ"))
+                            else if(country_code.equals("KZ"))
                                 country.setImageResource(R.raw.kz);
-                            if(country_code.equals("LA"))
+                            else if(country_code.equals("LA"))
                                 country.setImageResource(R.raw.la);
-                            if(country_code.equals("LB"))
+                            else if(country_code.equals("LB"))
                                 country.setImageResource(R.raw.lb);
-                            if(country_code.equals("LC"))
+                            else if(country_code.equals("LC"))
                                 country.setImageResource(R.raw.lc);
-                            if(country_code.equals("LI"))
+                            else if(country_code.equals("LI"))
                                 country.setImageResource(R.raw.li);
-                            if(country_code.equals("LK"))
+                            else if(country_code.equals("LK"))
                                 country.setImageResource(R.raw.lk);
-                            if(country_code.equals("LR"))
+                            else if(country_code.equals("LR"))
                                 country.setImageResource(R.raw.lr);
-                            if(country_code.equals("LS"))
+                            else if(country_code.equals("LS"))
                                 country.setImageResource(R.raw.ls);
-                            if(country_code.equals("LT"))
+                            else if(country_code.equals("LT"))
                                 country.setImageResource(R.raw.lt);
-                            if(country_code.equals("LU"))
+                            else if(country_code.equals("LU"))
                                 country.setImageResource(R.raw.lu);
-                            if(country_code.equals("LV"))
+                            else if(country_code.equals("LV"))
                                 country.setImageResource(R.raw.lv);
-                            if(country_code.equals("LY"))
+                            else if(country_code.equals("LY"))
                                 country.setImageResource(R.raw.ly);
-                            if(country_code.equals("MA"))
+                            else if(country_code.equals("MA"))
                                 country.setImageResource(R.raw.ma);
-                            if(country_code.equals("MC"))
+                            else if(country_code.equals("MC"))
                                 country.setImageResource(R.raw.mc);
-                            if(country_code.equals("MD"))
+                            else if(country_code.equals("MD"))
                                 country.setImageResource(R.raw.md);
-                            if(country_code.equals("ME"))
+                            else if(country_code.equals("ME"))
                                 country.setImageResource(R.raw.me);
-                            if(country_code.equals("MG"))
+                            else if(country_code.equals("MG"))
                                 country.setImageResource(R.raw.mg);
-                            if(country_code.equals("MH"))
+                            else if(country_code.equals("MH"))
                                 country.setImageResource(R.raw.mg);
-                            if(country_code.equals("MK"))
+                            else if(country_code.equals("MK"))
                                 country.setImageResource(R.raw.mk);
-                            if(country_code.equals("ML"))
+                            else if(country_code.equals("ML"))
                                 country.setImageResource(R.raw.ml);
-                            if(country_code.equals("MM"))
+                            else if(country_code.equals("MM"))
                                 country.setImageResource(R.raw.mm);
-                            if(country_code.equals("MN"))
+                            else if(country_code.equals("MN"))
                                 country.setImageResource(R.raw.mn);
-                            if(country_code.equals("MO"))
+                            else if(country_code.equals("MO"))
                                 country.setImageResource(R.raw.mo);
-                            if(country_code.equals("MQ"))
+                            else if(country_code.equals("MQ"))
                                 country.setImageResource(R.raw.mq);
-                            if(country_code.equals("MR"))
+                            else if(country_code.equals("MR"))
                                 country.setImageResource(R.raw.mr);
-                            if(country_code.equals("MT"))
+                            else if(country_code.equals("MT"))
                                 country.setImageResource(R.raw.mt);
-                            if(country_code.equals("MU"))
+                            else if(country_code.equals("MU"))
                                 country.setImageResource(R.raw.mu);
-                            if(country_code.equals("MV"))
+                            else if(country_code.equals("MV"))
                                 country.setImageResource(R.raw.mv);
-                            if(country_code.equals("MW"))
+                            else if(country_code.equals("MW"))
                                 country.setImageResource(R.raw.mw);
-                            if(country_code.equals("MX"))
+                            else if(country_code.equals("MX"))
                                 country.setImageResource(R.raw.mx);
-                            if(country_code.equals("MY"))
+                            else if(country_code.equals("MY"))
                                 country.setImageResource(R.raw.my);
-                            if(country_code.equals("MZ"))
+                            else if(country_code.equals("MZ"))
                                 country.setImageResource(R.raw.mz);
-                            if(country_code.equals("NA"))
+                            else if(country_code.equals("NA"))
                                 country.setImageResource(R.raw.na);
-                            if(country_code.equals("NC"))
+                            else if(country_code.equals("NC"))
                                 country.setImageResource(R.raw.nc);
-                            if(country_code.equals("NE"))
+                            else if(country_code.equals("NE"))
                                 country.setImageResource(R.raw.ne);
-                            if(country_code.equals("NG"))
+                            else if(country_code.equals("NG"))
                                 country.setImageResource(R.raw.ng);
-                            if(country_code.equals("NI"))
+                            else if(country_code.equals("NI"))
                                 country.setImageResource(R.raw.ni);
-                            if(country_code.equals("NL"))
+                            else if(country_code.equals("NL"))
                                 country.setImageResource(R.raw.nl);
-                            if(country_code.equals("NO"))
+                            else if(country_code.equals("NO"))
                                 country.setImageResource(R.raw.no);
-                            if(country_code.equals("NP"))
+                            else if(country_code.equals("NP"))
                                 country.setImageResource(R.raw.np);
-                            if(country_code.equals("NR"))
+                            else if(country_code.equals("NR"))
                                 country.setImageResource(R.raw.nr);
-                            if(country_code.equals("NZ"))
+                            else if(country_code.equals("NZ"))
                                 country.setImageResource(R.raw.nz);
-                            if(country_code.equals("OM"))
+                            else if(country_code.equals("OM"))
                                 country.setImageResource(R.raw.om);
-                            if(country_code.equals("PA"))
+                            else if(country_code.equals("PA"))
                                 country.setImageResource(R.raw.pa);
-                            if(country_code.equals("PE"))
+                            else if(country_code.equals("PE"))
                                 country.setImageResource(R.raw.pe);
-                            if(country_code.equals("PF"))
+                            else if(country_code.equals("PF"))
                                 country.setImageResource(R.raw.pf);
-                            if(country_code.equals("PG"))
+                            else if(country_code.equals("PG"))
                                 country.setImageResource(R.raw.pg);
-                            if(country_code.equals("PH"))
+                            else if(country_code.equals("PH"))
                                 country.setImageResource(R.raw.ph);
-                            if(country_code.equals("PK"))
+                            else if(country_code.equals("PK"))
                                 country.setImageResource(R.raw.pk);
-                            if(country_code.equals("PL"))
+                            else if(country_code.equals("PL"))
                                 country.setImageResource(R.raw.pl);
-                            if(country_code.equals("PR"))
+                            else if(country_code.equals("PR"))
                                 country.setImageResource(R.raw.pr);
-                            if(country_code.equals("PT"))
+                            else if(country_code.equals("PT"))
                                 country.setImageResource(R.raw.pt);
-                            if(country_code.equals("PW"))
+                            else if(country_code.equals("PW"))
                                 country.setImageResource(R.raw.pw);
-                            if(country_code.equals("PY"))
+                            else if(country_code.equals("PY"))
                                 country.setImageResource(R.raw.py);
-                            if(country_code.equals("QA"))
+                            else if(country_code.equals("QA"))
                                 country.setImageResource(R.raw.qa);
-                            if(country_code.equals("RE"))
+                            else if(country_code.equals("RE"))
                                 country.setImageResource(R.raw.re);
-                            if(country_code.equals("RO"))
+                            else if(country_code.equals("RO"))
                                 country.setImageResource(R.raw.ro);
-                            if(country_code.equals("RS"))
+                            else if(country_code.equals("RS"))
                                 country.setImageResource(R.raw.rs);
-                            if(country_code.equals("RU"))
+                            else if(country_code.equals("RU"))
                                 country.setImageResource(R.raw.ru);
-                            if(country_code.equals("RW"))
+                            else if(country_code.equals("RW"))
                                 country.setImageResource(R.raw.rw);
-                            if(country_code.equals("SA"))
+                            else if(country_code.equals("SA"))
                                 country.setImageResource(R.raw.sa);
-                            if(country_code.equals("SB"))
+                            else if(country_code.equals("SB"))
                                 country.setImageResource(R.raw.sb);
-                            if(country_code.equals("SC"))
+                            else if(country_code.equals("SC"))
                                 country.setImageResource(R.raw.sc);
-                            if(country_code.equals("SD"))
+                            else if(country_code.equals("SD"))
                                 country.setImageResource(R.raw.sd);
-                            if(country_code.equals("SE"))
+                            else if(country_code.equals("SE"))
                                 country.setImageResource(R.raw.se);
-                            if(country_code.equals("SG"))
+                            else if(country_code.equals("SG"))
                                 country.setImageResource(R.raw.sg);
-                            if(country_code.equals("SI"))
+                            else if(country_code.equals("SI"))
                                 country.setImageResource(R.raw.si);
-                            if(country_code.equals("SK"))
+                            else if(country_code.equals("SK"))
                                 country.setImageResource(R.raw.sk);
-                            if(country_code.equals("SL"))
+                            else if(country_code.equals("SL"))
                                 country.setImageResource(R.raw.sl);
-                            if(country_code.equals("SM"))
+                            else if(country_code.equals("SM"))
                                 country.setImageResource(R.raw.sm);
-                            if(country_code.equals("SN"))
+                            else if(country_code.equals("SN"))
                                 country.setImageResource(R.raw.sn);
-                            if(country_code.equals("SO"))
+                            else if(country_code.equals("SO"))
                                 country.setImageResource(R.raw.so);
-                            if(country_code.equals("SR"))
+                            else if(country_code.equals("SR"))
                                 country.setImageResource(R.raw.sr);
-                            if(country_code.equals("ST"))
+                            else if(country_code.equals("ST"))
                                 country.setImageResource(R.raw.st);
-                            if(country_code.equals("SV"))
+                            else if(country_code.equals("SV"))
                                 country.setImageResource(R.raw.sv);
-                            if(country_code.equals("SY"))
+                            else if(country_code.equals("SY"))
                                 country.setImageResource(R.raw.sy);
-                            if(country_code.equals("SZ"))
+                            else if(country_code.equals("SZ"))
                                 country.setImageResource(R.raw.sz);
-                            if(country_code.equals("TD"))
+                            else if(country_code.equals("TD"))
                                 country.setImageResource(R.raw.td);
-                            if(country_code.equals("TG"))
+                            else if(country_code.equals("TG"))
                                 country.setImageResource(R.raw.tg);
-                            if(country_code.equals("TH"))
+                            else if(country_code.equals("TH"))
                                 country.setImageResource(R.raw.th);
-                            if(country_code.equals("TJ"))
+                            else if(country_code.equals("TJ"))
                                 country.setImageResource(R.raw.tj);
-                            if(country_code.equals("TL"))
+                            else if(country_code.equals("TL"))
                                 country.setImageResource(R.raw.tl);
-                            if(country_code.equals("TM"))
+                            else if(country_code.equals("TM"))
                                 country.setImageResource(R.raw.tm);
-                            if(country_code.equals("TN"))
+                            else if(country_code.equals("TN"))
                                 country.setImageResource(R.raw.tn);
-                            if(country_code.equals("TO"))
+                            else if(country_code.equals("TO"))
                                 country.setImageResource(R.raw.to);
-                            if(country_code.equals("TR"))
+                            else if(country_code.equals("TR"))
                                 country.setImageResource(R.raw.tr);
-                            if(country_code.equals("TT"))
+                            else if(country_code.equals("TT"))
                                 country.setImageResource(R.raw.tt);
-                            if(country_code.equals("TV"))
+                            else if(country_code.equals("TV"))
                                 country.setImageResource(R.raw.tv);
-                            if(country_code.equals("TW"))
+                            else if(country_code.equals("TW"))
                                 country.setImageResource(R.raw.tw);
-                            if(country_code.equals("TZ"))
+                            else if(country_code.equals("TZ"))
                                 country.setImageResource(R.raw.tz);
-                            if(country_code.equals("UA"))
+                            else if(country_code.equals("UA"))
                                 country.setImageResource(R.raw.ua);
-                            if(country_code.equals("UG"))
+                            else if(country_code.equals("UG"))
                                 country.setImageResource(R.raw.ug);
-                            if(country_code.equals("US"))
+                            else if(country_code.equals("US"))
                                 country.setImageResource(R.raw.us);
-                            if(country_code.equals("UY"))
+                            else if(country_code.equals("UY"))
                                 country.setImageResource(R.raw.uy);
-                            if(country_code.equals("UZ"))
+                            else if(country_code.equals("UZ"))
                                 country.setImageResource(R.raw.uz);
-                            if(country_code.equals("VA"))
+                            else if(country_code.equals("VA"))
                                 country.setImageResource(R.raw.va);
-                            if(country_code.equals("VC"))
+                            else if(country_code.equals("VC"))
                                 country.setImageResource(R.raw.vc);
-                            if(country_code.equals("VE"))
+                            else if(country_code.equals("VE"))
                                 country.setImageResource(R.raw.ve);
-                            if(country_code.equals("VN"))
+                            else if(country_code.equals("VN"))
                                 country.setImageResource(R.raw.vn);
-                            if(country_code.equals("VU"))
+                            else if(country_code.equals("VU"))
                                 country.setImageResource(R.raw.vu);
-                            if(country_code.equals("WS"))
+                            else if(country_code.equals("WS"))
                                 country.setImageResource(R.raw.ws);
-                            if(country_code.equals("YE"))
+                            else if(country_code.equals("YE"))
                                 country.setImageResource(R.raw.ye);
-                            if(country_code.equals("ZA"))
+                            else if(country_code.equals("ZA"))
                                 country.setImageResource(R.raw.za);
-                            if(country_code.equals("ZM"))
+                            else if(country_code.equals("ZM"))
                                 country.setImageResource(R.raw.zm);
-                            if(country_code.equals("ZW"))
+                            else if(country_code.equals("ZW"))
                                 country.setImageResource(R.raw.zw);
 
 
 
+                            int rem3=object1.getString("primaryStudents").length()%3;
+
+                            Log.e("rem3",String.valueOf(rem3));
+                            if(rem3==1)
+                            {
+                                String pri_en="";
+                                pri_en+=object1.getString("primaryStudents").charAt(0)+".";
+                                pri_en+=object1.getString("primaryStudents").charAt(1);
+                                if (object1.getString("primaryStudents").length()>9)
+                                    pri_en+=" Billion";
+                                else if(object1.getString("primaryStudents").length()>6)
+                                    pri_en+=" Million";
+                                else if(object1.getString("primaryStudents").length()>3)
+                                {
+                                    pri_en+=" Thousand";
+                                }
+                                primary_enrol.setText(pri_en);
+                            }
+
+                            else if(rem3==2)
+                            {
+                                //System.out.println(object1.getString("primaryStudents"));
+                                System.out.println(object1.getString("primaryStudents").charAt(0));
+                                System.out.println(object1.getString("primaryStudents").charAt(1));
+                                System.out.println(object1.getString("primaryStudents").charAt(2));
+                                String pri_en="";
+                                pri_en+=object1.getString("primaryStudents").charAt(0);
+                                pri_en+=object1.getString("primaryStudents").charAt(1)+".";
+                                pri_en+=object1.getString("primaryStudents").charAt(2);
+                                if (object1.getString("primaryStudents").length()>9)
+                                    pri_en+=" Billion";
+                                else if(object1.getString("primaryStudents").length()>6)
+                                    pri_en+=" Million";
+                                else if(object1.getString("primaryStudents").length()>3)
+                                {
+                                    pri_en+=" Thousand";
+                                }
+                                primary_enrol.setText(pri_en);
+                            }
+
+                            else if(rem3==0)
+                            {
+                                String pri_en="";
+                                pri_en+=object1.getString("primaryStudents").charAt(0);
+                                pri_en+=object1.getString("primaryStudents").charAt(1);
+                                pri_en+=object1.getString("primaryStudents").charAt(2)+".";
+                                pri_en+=object1.getString("primaryStudents").charAt(3);
+                                if (object1.getString("primaryStudents").length()>9)
+                                    pri_en+=" Billion";
+                                else if(object1.getString("primaryStudents").length()>6)
+                                    pri_en+=" Million";
+                                else if(object1.getString("primaryStudents").length()>3)
+                                {
+                                    pri_en+=" Thousand";
+                                }
+                                primary_enrol.setText(pri_en);
+                            }
 
 
 
 
-                            primary_enrol.setText(object1.getString("primaryStudents"));
+
+
+
+
+
+
+                            //primary_enrol.setText(object1.getString("primaryStudents"));
                             primary_school.setText(object1.getString("primarySchool"));
                             industry.setText(object1.getString("industry"));
                             services.setText(object1.getString("services"));
-                            agri.setText(object1.getString("agriculture"));
+
+
+
+                            String agri1=object1.getString("agriculture");
+
+                            double agri2= Double.parseDouble(agri1);
+                            DecimalFormat df = new DecimalFormat("#.##");
+
+                            agri.setText(df.format(agri2));
                             health_per_capita.setText(object1.getString("wealthPerCapita"));
                             access_elect.setText(object1.getString("eletricityConsumption"));
                             happiness_index.setText(object1.getString("happinessScore"));
                             ppp.setText(object1.getString("ppp"));
-                            sdg.setText(object1.getString("sdgiScore"));
+
+                            int indexsdg=object1.getString("sdgiScore").indexOf('.');
+
+                            sdg.setText(object1.getString("sdgiScore").substring(0,(indexsdg+1))+object1.getString("sdgiScore").substring(indexsdg+1,indexsdg+3));
                             gini.setText(object1.getString("gini"));
                             currency.setText(object1.getString("currencyName"));
                             goiter.setText(object1.getString("goitre"));
@@ -573,7 +648,70 @@ public class StartLife extends AppCompatActivity {
                             birth_rate.setText(object1.getString("birthRate"));
                             death_rate.setText(object1.getString("deathRate"));
                             unemployment_rate.setText(object1.getString("unEmploymentRate"));
-                            population.setText(object1.getString("population"));
+
+
+
+
+
+
+                            int rem=object1.getString("population").length()%3;
+
+                            if(rem==1)
+                            {
+                                String pop="";
+                                pop=object1.getString("population").charAt(0)+".";
+                                pop+=object1.getString("population").charAt(1);
+                                if(object1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                population.setText(pop);
+                            }
+
+                            else if(rem==2)
+                            {
+                                String pop="";
+                                pop+=object1.getString("population").charAt(0);
+                                pop+=object1.getString("population").charAt(1)+".";
+                                pop+=object1.getString("population").charAt(2);
+                                if(object1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                population.setText(pop);
+                            }
+
+                            else if(rem==0)
+                            {
+                                String pop="";
+                                pop+=object1.getString("population").charAt(0);
+                                pop+=object1.getString("population").charAt(1);
+                                pop+=object1.getString("population").charAt(2)+".";
+                                pop+=object1.getString("population").charAt(3);
+                                if(object1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                population.setText(pop);
+                            }
+
+
+
+
+
+                            //population.setText(object1.getString("population"));
                             JSONObject object2=object.getJSONObject("region");
                             location.setText(object2.getString("regionName")+","+object1.getString("countryName"));
                             JSONObject object3=object.getJSONObject("language");
@@ -591,430 +729,491 @@ public class StartLife extends AppCompatActivity {
                             Log.e("code",reg_country_code);
                             if(reg_country_code.equals("AD"))
                                 reg_country.setImageResource(R.raw.ad);
-                            if(reg_country_code.equals("AE"))
+                            else if(reg_country_code.equals("AE"))
                                 reg_country.setImageResource(R.raw.ae);
-                            if(reg_country_code.equals("AF"))
+                            else if(reg_country_code.equals("AF"))
                                 reg_country.setImageResource(R.raw.af);
-                            if(reg_country_code.equals("AG"))
+                            else if(reg_country_code.equals("AG"))
                                 reg_country.setImageResource(R.raw.ag);
-                            if(reg_country_code.equals("AL"))
+                            else if(reg_country_code.equals("AL"))
                                 reg_country.setImageResource(R.raw.al);
-                            if(reg_country_code.equals("AM"))
+                            else if(reg_country_code.equals("AM"))
                                 reg_country.setImageResource(R.raw.am);
-                            if(reg_country_code.equals("AO"))
+                            else if(reg_country_code.equals("AO"))
                                 reg_country.setImageResource(R.raw.ao);
-                            if(reg_country_code.equals("AR"))
+                            else if(reg_country_code.equals("AR"))
                                 reg_country.setImageResource(R.raw.ar);
-                            if(reg_country_code.equals("AT"))
+                            else if(reg_country_code.equals("AT"))
                                 reg_country.setImageResource(R.raw.at);
-                            if(reg_country_code.equals("AU"))
+                            else if(reg_country_code.equals("AU"))
                                 reg_country.setImageResource(R.raw.au);
-                            if(reg_country_code.equals("AZ"))
+                            else if(reg_country_code.equals("AZ"))
                                 reg_country.setImageResource(R.raw.az);
-                            if(reg_country_code.equals("BA"))
+                            else if(reg_country_code.equals("BA"))
                                 reg_country.setImageResource(R.raw.ba);
-                            if(reg_country_code.equals("BB"))
+                            else if(reg_country_code.equals("BB"))
                                 reg_country.setImageResource(R.raw.bb);
-                            if(reg_country_code.equals("BD"))
+                            else if(reg_country_code.equals("BD"))
                                 reg_country.setImageResource(R.raw.bd);
-                            if(reg_country_code.equals("BE"))
+                            else if(reg_country_code.equals("BE"))
                                 reg_country.setImageResource(R.raw.be);
-                            if(reg_country_code.equals("BF"))
+                            else if(reg_country_code.equals("BF"))
                                 reg_country.setImageResource(R.raw.bf);
-                            if(reg_country_code.equals("BG"))
+                            else if(reg_country_code.equals("BG"))
                                 reg_country.setImageResource(R.raw.bg);
-                            if(reg_country_code.equals("BH"))
+                            else if(reg_country_code.equals("BH"))
                                 reg_country.setImageResource(R.raw.bh);
-                            if(reg_country_code.equals("BI"))
+                            else if(reg_country_code.equals("BI"))
                                 reg_country.setImageResource(R.raw.bi);
-                            if(reg_country_code.equals("BJ"))
+                            else if(reg_country_code.equals("BJ"))
                                 reg_country.setImageResource(R.raw.bj);
-                            if(reg_country_code.equals("BN"))
+                            else if(reg_country_code.equals("BN"))
                                 reg_country.setImageResource(R.raw.bn);
-                            if(reg_country_code.equals("BO"))
+                            else if(reg_country_code.equals("BO"))
                                 reg_country.setImageResource(R.raw.bo);
-                            if(reg_country_code.equals("BR"))
+                            else if(reg_country_code.equals("BR"))
                                 reg_country.setImageResource(R.raw.br);
-                            if(reg_country_code.equals("BS"))
+                            else if(reg_country_code.equals("BS"))
                                 reg_country.setImageResource(R.raw.bs);
-                            if(reg_country_code.equals("BT"))
+                            else if(reg_country_code.equals("BT"))
                                 reg_country.setImageResource(R.raw.bt);
-                            if(reg_country_code.equals("BW"))
+                            else if(reg_country_code.equals("BW"))
                                 reg_country.setImageResource(R.raw.bw);
-                            if(reg_country_code.equals("BY"))
+                            else if(reg_country_code.equals("BY"))
                                 reg_country.setImageResource(R.raw.by);
-                            if(reg_country_code.equals("BZ"))
+                            else if(reg_country_code.equals("BZ"))
                                 reg_country.setImageResource(R.raw.bz);
-                            if(reg_country_code.equals("CA"))
+                            else if(reg_country_code.equals("CA"))
                                 reg_country.setImageResource(R.raw.ca);
-                            if(reg_country_code.equals("CD"))
+                            else if(reg_country_code.equals("CD"))
                                 reg_country.setImageResource(R.raw.cd);
-                            if(reg_country_code.equals("CF"))
+                            else if(reg_country_code.equals("CF"))
                                 reg_country.setImageResource(R.raw.cf);
-                            if(reg_country_code.equals("CG"))
+                            else if(reg_country_code.equals("CG"))
                                 reg_country.setImageResource(R.raw.cg);
-                            if(reg_country_code.equals("CH"))
+                            else if(reg_country_code.equals("CH"))
                                 reg_country.setImageResource(R.raw.ch);
-                            if(reg_country_code.equals("CI"))
+                            else if(reg_country_code.equals("CI"))
                                 reg_country.setImageResource(R.raw.ci);
-                            if(reg_country_code.equals("CL"))
+                            else if(reg_country_code.equals("CL"))
                                 reg_country.setImageResource(R.raw.cl);
-                            if(reg_country_code.equals("CM"))
+                            else if(reg_country_code.equals("CM"))
                                 reg_country.setImageResource(R.raw.cm);
-                            if(reg_country_code.equals("CN"))
+                            else if(reg_country_code.equals("CN"))
                                 reg_country.setImageResource(R.raw.cn);
-                            if(reg_country_code.equals("CO"))
+                            else if(reg_country_code.equals("CO"))
                                 reg_country.setImageResource(R.raw.co);
-                            if(reg_country_code.equals("CR"))
+                            else if(reg_country_code.equals("CR"))
                                 reg_country.setImageResource(R.raw.cr);
-                            if(reg_country_code.equals("CU"))
+                            else if(reg_country_code.equals("CU"))
                                 reg_country.setImageResource(R.raw.cu);
-                            if(reg_country_code.equals("CV"))
+                            else if(reg_country_code.equals("CV"))
                                 reg_country.setImageResource(R.raw.cv);
-                            if(reg_country_code.equals("CY"))
+                            else if(reg_country_code.equals("CY"))
                                 reg_country.setImageResource(R.raw.cy);
-                            if(reg_country_code.equals("CZ"))
+                            else if(reg_country_code.equals("CZ"))
                                 reg_country.setImageResource(R.raw.cz);
-                            if(reg_country_code.equals("DE"))
+                            else if(reg_country_code.equals("DE"))
                                 reg_country.setImageResource(R.raw.de);
-                            if(reg_country_code.equals("DJ"))
+                            else if(reg_country_code.equals("DJ"))
                                 reg_country.setImageResource(R.raw.dj);
-                            if(reg_country_code.equals("DK"))
+                            else if(reg_country_code.equals("DK"))
                                 reg_country.setImageResource(R.raw.dk);
-                            if(reg_country_code.equals("DM"))
+                            else if(reg_country_code.equals("DM"))
                                 reg_country.setImageResource(R.raw.dm);
-                            if(reg_country_code.equals("DO"))
+                            else if(reg_country_code.equals("DO"))
                                 reg_country.setImageResource(R.raw.do1);
-                            if(reg_country_code.equals("DZ"))
+                            else if(reg_country_code.equals("DZ"))
                                 reg_country.setImageResource(R.raw.dz);
-                            if(reg_country_code.equals("EC"))
+                            else if(reg_country_code.equals("EC"))
                                 reg_country.setImageResource(R.raw.ec);
-                            if(reg_country_code.equals("EE"))
+                            else if(reg_country_code.equals("EE"))
                                 reg_country.setImageResource(R.raw.ee);
-                            if(reg_country_code.equals("EG"))
+                            else if(reg_country_code.equals("EG"))
                                 reg_country.setImageResource(R.raw.eg);
-                            if(reg_country_code.equals("EH"))
+                            else if(reg_country_code.equals("EH"))
                                 reg_country.setImageResource(R.raw.eh);
-                            if(reg_country_code.equals("ER"))
+                            else if(reg_country_code.equals("ER"))
                                 reg_country.setImageResource(R.raw.er);
-                            if(reg_country_code.equals("ES"))
+                            else if(reg_country_code.equals("ES"))
                                 reg_country.setImageResource(R.raw.es);
-                            if(reg_country_code.equals("ET"))
+                            else if(reg_country_code.equals("ET"))
                                 reg_country.setImageResource(R.raw.et);
-                            if(reg_country_code.equals("FI"))
+                            else if(reg_country_code.equals("FI"))
                                 reg_country.setImageResource(R.raw.fi);
-                            if(reg_country_code.equals("FJ"))
+                            else if(reg_country_code.equals("FJ"))
                                 reg_country.setImageResource(R.raw.fj);
-                            if(reg_country_code.equals("FM"))
+                            else if(reg_country_code.equals("FM"))
                                 reg_country.setImageResource(R.raw.fm);
-                            if(reg_country_code.equals("FR"))
+                            else if(reg_country_code.equals("FR"))
                                 reg_country.setImageResource(R.raw.fr);
-                            if(reg_country_code.equals("GA"))
+                            else if(reg_country_code.equals("GA"))
                                 reg_country.setImageResource(R.raw.ga);
-                            if(reg_country_code.equals("GB"))
+                            else if(reg_country_code.equals("GB"))
                                 reg_country.setImageResource(R.raw.gb);
-                            if(reg_country_code.equals("GD"))
+                            else if(reg_country_code.equals("GD"))
                                 reg_country.setImageResource(R.raw.gd);
-                            if(reg_country_code.equals("GE"))
+                            else if(reg_country_code.equals("GE"))
                                 reg_country.setImageResource(R.raw.ge);
-                            if(reg_country_code.equals("GF"))
+                            else if(reg_country_code.equals("GF"))
                                 reg_country.setImageResource(R.raw.gf);
-                            if(reg_country_code.equals("GH"))
+                            else if(reg_country_code.equals("GH"))
                                 reg_country.setImageResource(R.raw.gh);
-                            if(reg_country_code.equals("GM"))
+                            else if(reg_country_code.equals("GM"))
                                 reg_country.setImageResource(R.raw.gm);
-                            if(reg_country_code.equals("GN"))
+                            else if(reg_country_code.equals("GN"))
                                 reg_country.setImageResource(R.raw.gn);
-                            if(reg_country_code.equals("GP"))
+                            else if(reg_country_code.equals("GP"))
                                 reg_country.setImageResource(R.raw.gp);
-                            if(reg_country_code.equals("GQ"))
+                            else if(reg_country_code.equals("GQ"))
                                 reg_country.setImageResource(R.raw.gq);
-                            if(reg_country_code.equals("GR"))
+                            else if(reg_country_code.equals("GR"))
                                 reg_country.setImageResource(R.raw.gr);
-                            if(reg_country_code.equals("GT"))
+                            else if(reg_country_code.equals("GT"))
                                 reg_country.setImageResource(R.raw.gt);
-                            if(reg_country_code.equals("GU"))
+                            else if(reg_country_code.equals("GU"))
                                 reg_country.setImageResource(R.raw.gu);
-                            if(reg_country_code.equals("GW"))
+                            else if(reg_country_code.equals("GW"))
                                 reg_country.setImageResource(R.raw.gw);
-                            if(reg_country_code.equals("GY"))
+                            else if(reg_country_code.equals("GY"))
                                 reg_country.setImageResource(R.raw.gy);
-                            if(reg_country_code.equals("HK"))
+                            else if(reg_country_code.equals("HK"))
                                 reg_country.setImageResource(R.raw.hk);
-                            if(reg_country_code.equals("HN"))
+                            else if(reg_country_code.equals("HN"))
                                 reg_country.setImageResource(R.raw.hn);
-                            if(reg_country_code.equals("HR"))
+                            else if(reg_country_code.equals("HR"))
                                 reg_country.setImageResource(R.raw.hr);
-                            if(reg_country_code.equals("HT"))
+                            else if(reg_country_code.equals("HT"))
                                 reg_country.setImageResource(R.raw.ht);
-                            if(reg_country_code.equals("HU"))
+                            else if(reg_country_code.equals("HU"))
                                 reg_country.setImageResource(R.raw.hu);
-                            if(reg_country_code.equals("ID"))
+                            else if(reg_country_code.equals("ID"))
                                 reg_country.setImageResource(R.raw.id);
-                            if(reg_country_code.equals("IE"))
+                            else if(reg_country_code.equals("IE"))
                                 reg_country.setImageResource(R.raw.ie);
-                            if(reg_country_code.equals("IL"))
+                            else if(reg_country_code.equals("IL"))
                                 reg_country.setImageResource(R.raw.il);
-                            if(reg_country_code.equals("IN"))
+                            else if(reg_country_code.equals("IN"))
                                 reg_country.setImageResource(R.raw.in);
-                            if(reg_country_code.equals("IQ"))
+                            else if(reg_country_code.equals("IQ"))
                                 reg_country.setImageResource(R.raw.iq);
-                            if(reg_country_code.equals("IR"))
+                            else if(reg_country_code.equals("IR"))
                                 reg_country.setImageResource(R.raw.ir);
-                            if(reg_country_code.equals("IS"))
+                            else if(reg_country_code.equals("IS"))
                                 reg_country.setImageResource(R.raw.is);
-                            if(reg_country_code.equals("IT"))
+                            else if(reg_country_code.equals("IT"))
                                 reg_country.setImageResource(R.raw.it);
-                            if(reg_country_code.equals("JM"))
+                            else if(reg_country_code.equals("JM"))
                                 reg_country.setImageResource(R.raw.jm);
-                            if(reg_country_code.equals("JO"))
+                            else if(reg_country_code.equals("JO"))
                                 reg_country.setImageResource(R.raw.jo);
-                            if(reg_country_code.equals("JP"))
+                            else if(reg_country_code.equals("JP"))
                                 reg_country.setImageResource(R.raw.jp);
-                            if(reg_country_code.equals("KE"))
+                            else if(reg_country_code.equals("KE"))
                                 reg_country.setImageResource(R.raw.ke);
-                            if(reg_country_code.equals("KG"))
+                            else if(reg_country_code.equals("KG"))
                                 reg_country.setImageResource(R.raw.kg);
-                            if(reg_country_code.equals("KH"))
+                            else if(reg_country_code.equals("KH"))
                                 reg_country.setImageResource(R.raw.kh);
-                            if(reg_country_code.equals("KI"))
+                            else if(reg_country_code.equals("KI"))
                                 reg_country.setImageResource(R.raw.ki);
-                            if(reg_country_code.equals("KM"))
+                            else if(reg_country_code.equals("KM"))
                                 reg_country.setImageResource(R.raw.km);
-                            if(reg_country_code.equals("KN"))
+                            else if(reg_country_code.equals("KN"))
                                 reg_country.setImageResource(R.raw.kn);
-                            if(reg_country_code.equals("KP"))
+                            else if(reg_country_code.equals("KP"))
                                 reg_country.setImageResource(R.raw.kp);
-                            if(reg_country_code.equals("KR"))
+                            else if(reg_country_code.equals("KR"))
                                 reg_country.setImageResource(R.raw.kr);
-                            if(reg_country_code.equals("KS"))
+                            else if(reg_country_code.equals("KS"))
                                 reg_country.setImageResource(R.raw.ks);
-                            if(reg_country_code.equals("KW"))
+                            else if(reg_country_code.equals("KW"))
                                 reg_country.setImageResource(R.raw.kw);
-                            if(reg_country_code.equals("KZ"))
+                            else if(reg_country_code.equals("KZ"))
                                 reg_country.setImageResource(R.raw.kz);
-                            if(reg_country_code.equals("LA"))
+                            else if(reg_country_code.equals("LA"))
                                 reg_country.setImageResource(R.raw.la);
-                            if(reg_country_code.equals("LB"))
+                            else if(reg_country_code.equals("LB"))
                                 reg_country.setImageResource(R.raw.lb);
-                            if(reg_country_code.equals("LC"))
+                            else if(reg_country_code.equals("LC"))
                                 reg_country.setImageResource(R.raw.lc);
-                            if(reg_country_code.equals("LI"))
+                            else if(reg_country_code.equals("LI"))
                                 reg_country.setImageResource(R.raw.li);
-                            if(reg_country_code.equals("LK"))
+                            else if(reg_country_code.equals("LK"))
                                 reg_country.setImageResource(R.raw.lk);
-                            if(reg_country_code.equals("LR"))
+                            else if(reg_country_code.equals("LR"))
                                 reg_country.setImageResource(R.raw.lr);
-                            if(reg_country_code.equals("LS"))
+                            else if(reg_country_code.equals("LS"))
                                 reg_country.setImageResource(R.raw.ls);
-                            if(reg_country_code.equals("LT"))
+                            else if(reg_country_code.equals("LT"))
                                 reg_country.setImageResource(R.raw.lt);
-                            if(reg_country_code.equals("LU"))
+                            else if(reg_country_code.equals("LU"))
                                 reg_country.setImageResource(R.raw.lu);
-                            if(reg_country_code.equals("LV"))
+                            else if(reg_country_code.equals("LV"))
                                 reg_country.setImageResource(R.raw.lv);
-                            if(reg_country_code.equals("LY"))
+                            else if(reg_country_code.equals("LY"))
                                 reg_country.setImageResource(R.raw.ly);
-                            if(reg_country_code.equals("MA"))
+                            else if(reg_country_code.equals("MA"))
                                 reg_country.setImageResource(R.raw.ma);
-                            if(reg_country_code.equals("MC"))
+                            else if(reg_country_code.equals("MC"))
                                 reg_country.setImageResource(R.raw.mc);
-                            if(reg_country_code.equals("MD"))
+                            else if(reg_country_code.equals("MD"))
                                 reg_country.setImageResource(R.raw.md);
-                            if(reg_country_code.equals("ME"))
+                            else if(reg_country_code.equals("ME"))
                                 reg_country.setImageResource(R.raw.me);
-                            if(reg_country_code.equals("MG"))
+                            else if(reg_country_code.equals("MG"))
                                 reg_country.setImageResource(R.raw.mg);
-                            if(reg_country_code.equals("MH"))
+                            else if(reg_country_code.equals("MH"))
                                 reg_country.setImageResource(R.raw.mg);
-                            if(reg_country_code.equals("MK"))
+                            else if(reg_country_code.equals("MK"))
                                 reg_country.setImageResource(R.raw.mk);
-                            if(reg_country_code.equals("ML"))
+                            else if(reg_country_code.equals("ML"))
                                 reg_country.setImageResource(R.raw.ml);
-                            if(reg_country_code.equals("MM"))
+                            else if(reg_country_code.equals("MM"))
                                 reg_country.setImageResource(R.raw.mm);
-                            if(reg_country_code.equals("MN"))
+                            else if(reg_country_code.equals("MN"))
                                 reg_country.setImageResource(R.raw.mn);
-                            if(reg_country_code.equals("MO"))
+                            else if(reg_country_code.equals("MO"))
                                 reg_country.setImageResource(R.raw.mo);
-                            if(reg_country_code.equals("MQ"))
+                            else if(reg_country_code.equals("MQ"))
                                 reg_country.setImageResource(R.raw.mq);
-                            if(reg_country_code.equals("MR"))
+                            else if(reg_country_code.equals("MR"))
                                 reg_country.setImageResource(R.raw.mr);
-                            if(reg_country_code.equals("MT"))
+                            else if(reg_country_code.equals("MT"))
                                 reg_country.setImageResource(R.raw.mt);
-                            if(reg_country_code.equals("MU"))
+                            else if(reg_country_code.equals("MU"))
                                 reg_country.setImageResource(R.raw.mu);
-                            if(reg_country_code.equals("MV"))
+                            else if(reg_country_code.equals("MV"))
                                 reg_country.setImageResource(R.raw.mv);
-                            if(reg_country_code.equals("MW"))
+                            else if(reg_country_code.equals("MW"))
                                 reg_country.setImageResource(R.raw.mw);
-                            if(reg_country_code.equals("MX"))
+                            else if(reg_country_code.equals("MX"))
                                 reg_country.setImageResource(R.raw.mx);
-                            if(reg_country_code.equals("MY"))
+                            else if(reg_country_code.equals("MY"))
                                 reg_country.setImageResource(R.raw.my);
-                            if(reg_country_code.equals("MZ"))
+                            else if(reg_country_code.equals("MZ"))
                                 reg_country.setImageResource(R.raw.mz);
-                            if(reg_country_code.equals("NA"))
+                            else if(reg_country_code.equals("NA"))
                                 reg_country.setImageResource(R.raw.na);
-                            if(reg_country_code.equals("NC"))
+                            else if(reg_country_code.equals("NC"))
                                 reg_country.setImageResource(R.raw.nc);
-                            if(reg_country_code.equals("NE"))
+                            else if(reg_country_code.equals("NE"))
                                 reg_country.setImageResource(R.raw.ne);
-                            if(reg_country_code.equals("NG"))
+                            else if(reg_country_code.equals("NG"))
                                 reg_country.setImageResource(R.raw.ng);
-                            if(reg_country_code.equals("NI"))
+                            else if(reg_country_code.equals("NI"))
                                 reg_country.setImageResource(R.raw.ni);
-                            if(reg_country_code.equals("NL"))
+                            else if(reg_country_code.equals("NL"))
                                 reg_country.setImageResource(R.raw.nl);
-                            if(reg_country_code.equals("NO"))
+                            else if(reg_country_code.equals("NO"))
                                 reg_country.setImageResource(R.raw.no);
-                            if(reg_country_code.equals("NP"))
+                            else if(reg_country_code.equals("NP"))
                                 reg_country.setImageResource(R.raw.np);
-                            if(reg_country_code.equals("NR"))
+                            else if(reg_country_code.equals("NR"))
                                 reg_country.setImageResource(R.raw.nr);
-                            if(reg_country_code.equals("NZ"))
+                            else if(reg_country_code.equals("NZ"))
                                 reg_country.setImageResource(R.raw.nz);
-                            if(reg_country_code.equals("OM"))
+                            else if(reg_country_code.equals("OM"))
                                 reg_country.setImageResource(R.raw.om);
-                            if(reg_country_code.equals("PA"))
+                            else if(reg_country_code.equals("PA"))
                                 reg_country.setImageResource(R.raw.pa);
-                            if(reg_country_code.equals("PE"))
+                            else if(reg_country_code.equals("PE"))
                                 reg_country.setImageResource(R.raw.pe);
-                            if(reg_country_code.equals("PF"))
+                            else if(reg_country_code.equals("PF"))
                                 reg_country.setImageResource(R.raw.pf);
-                            if(reg_country_code.equals("PG"))
+                            else if(reg_country_code.equals("PG"))
                                 reg_country.setImageResource(R.raw.pg);
-                            if(reg_country_code.equals("PH"))
+                            else if(reg_country_code.equals("PH"))
                                 reg_country.setImageResource(R.raw.ph);
-                            if(reg_country_code.equals("PK"))
+                            else if(reg_country_code.equals("PK"))
                                 reg_country.setImageResource(R.raw.pk);
-                            if(reg_country_code.equals("PL"))
+                            else if(reg_country_code.equals("PL"))
                                 reg_country.setImageResource(R.raw.pl);
-                            if(reg_country_code.equals("PR"))
+                            else if(reg_country_code.equals("PR"))
                                 reg_country.setImageResource(R.raw.pr);
-                            if(reg_country_code.equals("PT"))
+                            else if(reg_country_code.equals("PT"))
                                 reg_country.setImageResource(R.raw.pt);
-                            if(reg_country_code.equals("PW"))
+                            else if(reg_country_code.equals("PW"))
                                 reg_country.setImageResource(R.raw.pw);
-                            if(reg_country_code.equals("PY"))
+                            else if(reg_country_code.equals("PY"))
                                 reg_country.setImageResource(R.raw.py);
-                            if(reg_country_code.equals("QA"))
+                            else if(reg_country_code.equals("QA"))
                                 reg_country.setImageResource(R.raw.qa);
-                            if(reg_country_code.equals("RE"))
+                            else if(reg_country_code.equals("RE"))
                                 reg_country.setImageResource(R.raw.re);
-                            if(reg_country_code.equals("RO"))
+                            else if(reg_country_code.equals("RO"))
                                 reg_country.setImageResource(R.raw.ro);
-                            if(reg_country_code.equals("RS"))
+                            else if(reg_country_code.equals("RS"))
                                 reg_country.setImageResource(R.raw.rs);
-                            if(reg_country_code.equals("RU"))
+                            else if(reg_country_code.equals("RU"))
                                 reg_country.setImageResource(R.raw.ru);
-                            if(reg_country_code.equals("RW"))
+                            else if(reg_country_code.equals("RW"))
                                 reg_country.setImageResource(R.raw.rw);
-                            if(reg_country_code.equals("SA"))
+                            else if(reg_country_code.equals("SA"))
                                 reg_country.setImageResource(R.raw.sa);
-                            if(reg_country_code.equals("SB"))
+                            else if(reg_country_code.equals("SB"))
                                 reg_country.setImageResource(R.raw.sb);
-                            if(reg_country_code.equals("SC"))
+                            else if(reg_country_code.equals("SC"))
                                 reg_country.setImageResource(R.raw.sc);
-                            if(reg_country_code.equals("SD"))
+                            else if(reg_country_code.equals("SD"))
                                 reg_country.setImageResource(R.raw.sd);
-                            if(reg_country_code.equals("SE"))
+                            else if(reg_country_code.equals("SE"))
                                 reg_country.setImageResource(R.raw.se);
-                            if(reg_country_code.equals("SG"))
+                            else if(reg_country_code.equals("SG"))
                                 reg_country.setImageResource(R.raw.sg);
-                            if(reg_country_code.equals("SI"))
+                            else if(reg_country_code.equals("SI"))
                                 reg_country.setImageResource(R.raw.si);
-                            if(reg_country_code.equals("SK"))
+                            else if(reg_country_code.equals("SK"))
                                 reg_country.setImageResource(R.raw.sk);
-                            if(reg_country_code.equals("SL"))
+                            else if(reg_country_code.equals("SL"))
                                 reg_country.setImageResource(R.raw.sl);
-                            if(reg_country_code.equals("SM"))
+                            else if(reg_country_code.equals("SM"))
                                 reg_country.setImageResource(R.raw.sm);
-                            if(reg_country_code.equals("SN"))
+                            else if(reg_country_code.equals("SN"))
                                 reg_country.setImageResource(R.raw.sn);
-                            if(reg_country_code.equals("SO"))
+                            else if(reg_country_code.equals("SO"))
                                 reg_country.setImageResource(R.raw.so);
-                            if(reg_country_code.equals("SR"))
+                            else if(reg_country_code.equals("SR"))
                                 reg_country.setImageResource(R.raw.sr);
-                            if(reg_country_code.equals("ST"))
+                            else if(reg_country_code.equals("ST"))
                                 reg_country.setImageResource(R.raw.st);
-                            if(reg_country_code.equals("SV"))
+                            else if(reg_country_code.equals("SV"))
                                 reg_country.setImageResource(R.raw.sv);
-                            if(reg_country_code.equals("SY"))
+                            else if(reg_country_code.equals("SY"))
                                 reg_country.setImageResource(R.raw.sy);
-                            if(reg_country_code.equals("SZ"))
+                            else if(reg_country_code.equals("SZ"))
                                 reg_country.setImageResource(R.raw.sz);
-                            if(reg_country_code.equals("TD"))
+                            else if(reg_country_code.equals("TD"))
                                 reg_country.setImageResource(R.raw.td);
-                            if(reg_country_code.equals("TG"))
+                            else if(reg_country_code.equals("TG"))
                                 reg_country.setImageResource(R.raw.tg);
-                            if(reg_country_code.equals("TH"))
+                            else if(reg_country_code.equals("TH"))
                                 reg_country.setImageResource(R.raw.th);
-                            if(reg_country_code.equals("TJ"))
+                            else if(reg_country_code.equals("TJ"))
                                 reg_country.setImageResource(R.raw.tj);
-                            if(reg_country_code.equals("TL"))
+                            else if(reg_country_code.equals("TL"))
                                 reg_country.setImageResource(R.raw.tl);
-                            if(reg_country_code.equals("TM"))
+                            else if(reg_country_code.equals("TM"))
                                 reg_country.setImageResource(R.raw.tm);
-                            if(reg_country_code.equals("TN"))
+                            else if(reg_country_code.equals("TN"))
                                 reg_country.setImageResource(R.raw.tn);
-                            if(reg_country_code.equals("TO"))
+                            else if(reg_country_code.equals("TO"))
                                 reg_country.setImageResource(R.raw.to);
-                            if(reg_country_code.equals("TR"))
+                            else if(reg_country_code.equals("TR"))
                                 reg_country.setImageResource(R.raw.tr);
-                            if(reg_country_code.equals("TT"))
+                            else if(reg_country_code.equals("TT"))
                                 reg_country.setImageResource(R.raw.tt);
-                            if(reg_country_code.equals("TV"))
+                            else if(reg_country_code.equals("TV"))
                                 reg_country.setImageResource(R.raw.tv);
-                            if(reg_country_code.equals("TW"))
+                            else if(reg_country_code.equals("TW"))
                                 reg_country.setImageResource(R.raw.tw);
-                            if(reg_country_code.equals("TZ"))
+                            else if(reg_country_code.equals("TZ"))
                                 reg_country.setImageResource(R.raw.tz);
-                            if(reg_country_code.equals("UA"))
+                            else if(reg_country_code.equals("UA"))
                                 reg_country.setImageResource(R.raw.ua);
-                            if(reg_country_code.equals("UG"))
+                            else if(reg_country_code.equals("UG"))
                                 reg_country.setImageResource(R.raw.ug);
-                            if(reg_country_code.equals("US"))
+                            else if(reg_country_code.equals("US"))
                                 reg_country.setImageResource(R.raw.us);
-                            if(reg_country_code.equals("UY"))
+                            else if(reg_country_code.equals("UY"))
                                 reg_country.setImageResource(R.raw.uy);
-                            if(reg_country_code.equals("UZ"))
+                            else if(reg_country_code.equals("UZ"))
                                 reg_country.setImageResource(R.raw.uz);
-                            if(reg_country_code.equals("VA"))
+                            else if(reg_country_code.equals("VA"))
                                 reg_country.setImageResource(R.raw.va);
-                            if(reg_country_code.equals("VC"))
+                            else if(reg_country_code.equals("VC"))
                                 reg_country.setImageResource(R.raw.vc);
-                            if(reg_country_code.equals("VE"))
+                            else if(reg_country_code.equals("VE"))
                                 reg_country.setImageResource(R.raw.ve);
-                            if(reg_country_code.equals("VN"))
+                            else if(reg_country_code.equals("VN"))
                                 reg_country.setImageResource(R.raw.vn);
-                            if(reg_country_code.equals("VU"))
+                            else if(reg_country_code.equals("VU"))
                                 reg_country.setImageResource(R.raw.vu);
-                            if(reg_country_code.equals("WS"))
+                            else if(reg_country_code.equals("WS"))
                                 reg_country.setImageResource(R.raw.ws);
-                            if(reg_country_code.equals("YE"))
+                            else if(reg_country_code.equals("YE"))
                                 reg_country.setImageResource(R.raw.ye);
-                            if(reg_country_code.equals("ZA"))
+                            else if(reg_country_code.equals("ZA"))
                                 reg_country.setImageResource(R.raw.za);
-                            if(reg_country_code.equals("ZM"))
+                            else if(reg_country_code.equals("ZM"))
                                 reg_country.setImageResource(R.raw.zm);
-                            if(reg_country_code.equals("ZW"))
+                            else if(reg_country_code.equals("ZW"))
                                 reg_country.setImageResource(R.raw.zw);
 
 
 
+                            int remfour=object_r1.getString("primaryStudents").length()%3;
 
-                            reg_primary_enrol.setText(object_r1.getString("primaryStudents"));
+                            if(remfour==1)
+                            {
+                                String primstu="";
+                                primstu+=object_r1.getString("primaryStudents").charAt(0)+".";
+                                primstu+=object_r1.getString("primaryStudents").charAt(1);
+                                if(object_r1.getString("primaryStudents").length()>9)
+                                    primstu+=" Billion";
+                                else if(object_r1.getString("primaryStudents").length()>6)
+                                    primstu+=" Million";
+                                else if(object_r1.getString("primaryStudents").length()>3)
+                                {
+                                    primstu+=" Thousand";
+                                }
+                                reg_primary_enrol.setText(primstu);
+                            }
+
+                            else if(remfour==2)
+                            {
+                                String primstu="";
+                                primstu+=object_r1.getString("primaryStudents").charAt(0);
+                                primstu+=object_r1.getString("primaryStudents").charAt(1)+".";
+                                        primstu+=object_r1.getString("primaryStudents").charAt(2);
+                                if(object_r1.getString("primaryStudents").length()>9)
+                                    primstu+=" Billion";
+                                else if(object_r1.getString("primaryStudents").length()>6)
+                                    primstu+=" Million";
+                                else if(object_r1.getString("primaryStudents").length()>3)
+                                {
+                                    primstu+=" Thousand";
+                                }
+                                reg_primary_enrol.setText(primstu);
+                            }
+
+                            else if(remfour==0)
+                            {
+                                String primstu="";
+                                primstu+=object_r1.getString("primaryStudents").charAt(0);
+                                primstu+=object_r1.getString("primaryStudents").charAt(1);
+                                primstu+=object_r1.getString("primaryStudents").charAt(2)+".";
+                                primstu+=object_r1.getString("primaryStudents").charAt(3);
+                                if(object_r1.getString("primaryStudents").length()>9)
+                                    primstu+=" Billion";
+                                else if(object_r1.getString("primaryStudents").length()>6)
+                                    primstu+=" Million";
+                                else if(object_r1.getString("primaryStudents").length()>3)
+                                {
+                                    primstu+=" Thousand";
+                                }
+                                reg_primary_enrol.setText(primstu);
+                            }
+
+                            //reg_primary_enrol.setText(object_r1.getString("primaryStudents"));
                             reg_primary_school.setText(object_r1.getString("primarySchool"));
                             reg_industry.setText(object_r1.getString("industry"));
                             reg_services.setText(object_r1.getString("services"));
-                            reg_agri.setText(object_r1.getString("agriculture"));
+                            String reg_agri1=object_r1.getString("agriculture");
+
+                            double agri_reg= Double.parseDouble(reg_agri1);
+                            DecimalFormat df1 = new DecimalFormat("#.##");
+
+                            reg_agri.setText(df1.format(agri_reg));
                             reg_health_per_capita.setText(object_r1.getString("wealthPerCapita"));
                             reg_access_elect.setText(object_r1.getString("eletricityConsumption"));
                             reg_happiness_index.setText(object_r1.getString("happinessScore"));
                             reg_ppp.setText(object_r1.getString("ppp"));
-                            reg_sdg.setText(object_r1.getString("sdgiScore"));
+
+                            int indexsdg1=object_r1.getString("sdgiScore").indexOf('.');
+
+                            reg_sdg.setText(object_r1.getString("sdgiScore").substring(0,(indexsdg+1))+object_r1.getString("sdgiScore").substring(indexsdg+1,indexsdg+3));
+                            //reg_sdg.setText(object_r1.getString("sdgiScore"));
                             reg_gini.setText(object_r1.getString("gini"));
                             reg_currency.setText(object_r1.getString("currencyName"));
                             reg_goiter.setText(object_r1.getString("goitre"));
@@ -1024,7 +1223,61 @@ public class StartLife extends AppCompatActivity {
                             reg_birth_rate.setText(object_r1.getString("birthRate"));
                             reg_death_rate.setText(object_r1.getString("deathRate"));
                             reg_unemployment_rate.setText(object_r1.getString("unEmploymentRate"));
-                            reg_population.setText(object_r1.getString("population"));
+
+                            int rem2=object_r1.getString("population").length()%3;
+
+                            if(rem2==1)
+                            {
+                                String pop="";
+                                pop+=object_r1.getString("population").charAt(0)+".";
+                                        pop+=object_r1.getString("population").charAt(1);
+                                if(object_r1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object_r1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object_r1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                reg_population.setText(pop);
+                            }
+
+                            else if(rem2==2)
+                            {
+                                String pop="";
+                                pop+=object_r1.getString("population").charAt(0);
+                                pop+=object_r1.getString("population").charAt(1)+".";
+                                pop+=object_r1.getString("population").charAt(2);
+                                if(object_r1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object_r1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object_r1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                reg_population.setText(pop);
+                            }
+
+                            else if(rem2==0)
+                            {
+                                String pop="";
+                                pop+=object_r1.getString("population").charAt(0);
+                                pop+=object_r1.getString("population").charAt(1);
+                                pop+=object_r1.getString("population").charAt(2)+".";
+                                pop+=object_r1.getString("population").charAt(3);
+                                if(object_r1.getString("population").length()>9)
+                                    pop+=" Billion";
+                                else if(object_r1.getString("population").length()>6)
+                                    pop+=" Million";
+                                else if(object_r1.getString("population").length()>3)
+                                {
+                                    pop+=" Thousand";
+                                }
+                                reg_population.setText(pop);
+                            }
+
+                            //reg_population.setText(object_r1.getString("population"));
                             reg_capital.setText(object_r1.getString("capital"));
 
                         } catch (JSONException e) {

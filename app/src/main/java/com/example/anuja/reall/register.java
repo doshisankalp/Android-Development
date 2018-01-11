@@ -1,11 +1,14 @@
 package com.example.anuja.reall;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -33,6 +36,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.anuja.reall.R.drawable.glob;
 
 
 public class register extends AppCompatActivity {
@@ -50,6 +54,7 @@ public class register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setBackgroundDrawableResource(R.drawable.glob);
         setContentView(R.layout.activity_register);
         radioGroup = (RadioGroup) findViewById(R.id.radio);
         et_fname = (EditText) findViewById(R.id.fname);
@@ -73,6 +78,8 @@ public class register extends AppCompatActivity {
             public void onClick(View view)
             {
                 register();
+
+
             }
         });
 
@@ -97,7 +104,7 @@ public class register extends AppCompatActivity {
                         }
 
                         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(register.this,
-                                android.R.layout.simple_spinner_item, mEntries);
+                                android.R.layout.simple_spinner_dropdown_item, mEntries);
                         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         spinner.setAdapter(arrayAdapter);
                     }
@@ -122,6 +129,8 @@ public class register extends AppCompatActivity {
         else
         {
             onSignupSuccess();
+
+
         }
     }
     public void onSignupSuccess()
@@ -154,22 +163,31 @@ public class register extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Toast.makeText(register.this,response.getString("status"),Toast.LENGTH_SHORT).show();
+
                     if(response.getString("status").equals("ok"))
                     {
-                        AlertDialog.Builder builder=new AlertDialog.Builder(register.this);
+                        AlertDialog.Builder mBuilder = new AlertDialog.Builder(register.this);
+                        View dialogView = getLayoutInflater().inflate(R.layout.dialog_quit, null);
 
-                        builder.setMessage("Registered Successfully!");
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        mBuilder.setMessage("Registered successfully !!!")
+                                .setCancelable(true);
+
+
+                        mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Intent i=new Intent(register.this,login.class);
+                                Intent i=new Intent(register.this,MainActivity.class);
                                 startActivity(i);
                             }
                         });
 
-                        AlertDialog dialog=builder.create();
-                        dialog.show();
+
+                        Dialog d = mBuilder.create();
+                        d.setContentView(dialogView);
+                        d.getWindow().setGravity(Gravity.CENTER);
+                        d.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(register.this, R.drawable.layout_bgnocorners));
+
+                        d.show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -179,7 +197,27 @@ public class register extends AppCompatActivity {
         , new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(register.this);
+                View dialogView = getLayoutInflater().inflate(R.layout.dialog_quit, null);
+
+                mBuilder.setMessage("Registered failed !!!")
+                        .setCancelable(true);
+
+
+                mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+
+                Dialog d = mBuilder.create();
+                d.setContentView(dialogView);
+                d.getWindow().setGravity(Gravity.CENTER);
+                d.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(register.this, R.drawable.layout_bgnocorners));
+
+                d.show();
                 error.printStackTrace();
             }
         })
