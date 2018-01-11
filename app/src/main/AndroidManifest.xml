@@ -106,7 +106,7 @@
             android:label="forget password"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <meta-data android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBWxDbPe4ff9XIxxAF-SPla5k1MviEl1qQ"/>
+            android:value="AIzaSyAnAmMk-giOQvmaR4ipCbHcD2ysE7gyL3I"/>
 
         <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>

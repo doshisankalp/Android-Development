@@ -31,8 +31,7 @@ import java.util.Map;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.example.anuja.reall.AttributesActivity.countryObject;
-import static com.example.anuja.reall.AttributesActivity.traitsObject;
-import static com.example.anuja.reall.AttributesActivity.traitsObject2;
+
 
 
 public class FirstNameFragment extends Fragment {

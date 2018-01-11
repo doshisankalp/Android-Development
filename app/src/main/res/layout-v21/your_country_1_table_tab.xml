@@ -15,7 +15,41 @@
             android:background="#ECF9FF"
             android:paddingBottom="16dp">
 
-+s
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.33"
+                    android:textColor="#404141" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_column="1"
+                    android:id="@+id/countryFlag"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="0.33"
+                    />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_column="2"
+                    android:id="@+id/registerCountryFlag"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="0.33"
+                    />
+            </TableRow>
+
+
             <!--Country Details-->
             <TextView
                 android:padding="16dp"

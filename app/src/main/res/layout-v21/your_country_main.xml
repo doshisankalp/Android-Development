@@ -96,35 +96,17 @@
             android:orientation="horizontal"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/worldView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="16dp"
-                android:text="World View"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_alignParentLeft="true" />
-
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_gravity="center_horizontal" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="Country View"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-
-                android:layout_alignParentRight="true" />
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_alignEnd="@+id/textView4"
+                android:layout_alignParentTop="true" />
 
         </RelativeLayout>
+
+
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"

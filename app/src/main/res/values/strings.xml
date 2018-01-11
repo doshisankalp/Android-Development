@@ -105,7 +105,7 @@
     <string name="sex_ratio">Sex Ratio</string>
     <string name="birth_rate">Birth Rate</string>
     <string name="death_rate">Death Rate</string>
-    <string name="infant_mortality">Infant Mortality Rate</string>
+    <string name="infant_mortality">Infant Mortality</string>
     <string name="female_smokers">Female Smokers(%)</string>
     <string name="male_smokers">Male smokers(%)</string>
 
@@ -132,4 +132,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Settings" />
+    <string name="selectname">SELECT FIRST NAME</string>
+    <string name="selectlastname">SELECT LAST NAME</string>
+    <string name="title_activity_first_name" />
 </resources>

@@ -34,7 +34,7 @@ public class CountryLonelyPlanetFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.your_country_3_lonelyplanet_tab, container, false);
         myWebView = (WebView) v.findViewById(R.id.webview);
-        myWebView.loadUrl("https://www.lonelyplanet.com/"+country.toLowerCase());
+        myWebView.loadUrl(country);
         myWebView.setWebViewClient(new WebViewClient());
         myWebView.canScrollHorizontally(0);
 //        myWebView.jav

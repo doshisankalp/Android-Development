@@ -57,7 +57,7 @@ public class CountryWikipediaFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.your_country_2_wikipedia_tab, container, false);
         myWebView = (WebView) v.findViewById(R.id.webview);
-        myWebView.loadUrl("https://en.wikipedia.org/wiki/"+country);
+        myWebView.loadUrl(country);
         myWebView.setWebViewClient(new WebViewClient());
         myWebView.setHorizontalScrollBarEnabled(false);
 

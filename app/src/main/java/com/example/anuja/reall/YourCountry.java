@@ -17,6 +17,12 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,11 +30,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 import android.util.*;
-public class YourCountry extends AppCompatActivity {
+public class YourCountry extends AppCompatActivity implements OnMapReadyCallback {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    GoogleMap mGoogleMap;
     Context context;
+    MapFragment map;
     Intent i;
     static JSONObject responce_object;
     CountryStatisticsFragment countryStatisticsFragment = new CountryStatisticsFragment();
@@ -50,6 +58,8 @@ public class YourCountry extends AppCompatActivity {
 
         if(googleServicesAvailable()){
             Toast.makeText(this,"perfect",Toast.LENGTH_LONG).show();
+            ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
+           // map.getMapAsync( this);
         }
 
 
@@ -106,6 +116,17 @@ public class YourCountry extends AppCompatActivity {
         adapter.addFragment(countryLonelyPlanetFragment,"Lonely Planet");
         viewPager.setAdapter(adapter);
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        //MapsInitializer.initialize(getContext())
+        mGoogleMap=googleMap;
+//        mGoogleMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(10, 10))
+//                .title("Hello world"));
+
+    }
+
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
