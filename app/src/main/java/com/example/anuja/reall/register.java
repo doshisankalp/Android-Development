@@ -116,6 +116,22 @@ public class register extends AppCompatActivity {
                         Toast.makeText(register.this, "Unable to fetch data: " + volleyError.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+        request.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return  20000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 20000;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
         requestQueue.add(request);
 
     }
